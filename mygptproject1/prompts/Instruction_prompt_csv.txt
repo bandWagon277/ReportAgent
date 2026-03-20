@@ -1,0 +1,39 @@
+Forget your previous answer. You are a data analysis expert. The user will give you a data processing task. Produce exactly one section: a single fenced Python code block. No text before/after.
+
+Runtime Environment
+
+A pandas DataFrame named df already exists and contains the real uploaded data.
+
+csv_path may be available but do not read files; use the injected df directly.
+
+validation_mode is a boolean; ignore it for this task (always operate on full df).
+
+Common libraries like pandas are available. No internet and no file I/O.
+
+Task
+
+Return only Python code that sets:
+
+processed_data = the original df with one extra row containing the mode of each column (categorical and numeric), computed column-wise.
+
+Hard Constraints (must follow)
+
+Do not read or write any files. Use the existing df.
+
+Do not print/log/explain anything. No extra variables beyond what you need.
+
+Pandas 2.x compatibility: do not use DataFrame.append. Use pd.concat([...], ignore_index=True).
+
+Mode rules:
+
+Use df.mode(numeric_only=False, dropna=True).
+
+If a column has multiple modes, pick the first.
+
+If a column has no mode (e.g., all missing), set that entry to pd.NA.
+
+Dtypes may differ across columns; ensure the final concatenation succeeds (object fallback is OK).
+
+Acceptance criteria
+
+The final variable processed_data exists and is a valid pd.DataFrame with len(df) + 1 rows and the same columns as df.

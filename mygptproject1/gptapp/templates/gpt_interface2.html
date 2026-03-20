@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT API Call</title>
+</head>
+<body>
+    <h1>GPT API Call</h1>
+    
+    <!-- Updated form for file upload -->
+    <form id="upload-form" enctype="multipart/form-data">
+        <label for="csv-file">Upload CSV file:</label>
+        <input type="file" id="csv-file" name="csv_file"><br>
+        <input type="button" value="Upload CSV" onclick="uploadCsv()">
+    </form>
+    <div id="output"></div>
+
+    <hr>
+
+    <h2>GPT API Prompt</h2>
+    <textarea id="prompt" rows="5" cols="50" placeholder="Enter your prompt here"></textarea><br>
+    <button onclick="submitPrompt()">Submit Prompt</button><br>
+    <div id="gpt-output"></div>
+
+    <script>
+        function uploadCsv() {
+            var formData = new FormData(document.getElementById('upload-form'));
+            
+            fetch('/upload_csv/', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.file_path) {
+                    console.log('File uploaded:', data.file_path);
+                    document.getElementById('output').innerText = 'CSV file uploaded successfully. File path: ' + data.file_path;
+                } else {
+                    document.getElementById('output').innerText = 'Failed to upload CSV file.';
+                }
+            })
+            .catch(error => {
+                console.error('Error uploading CSV:', error);
+                document.getElementById('output').innerText = 'Error uploading CSV file.';
+            });
+        }
+
+        function submitPrompt() {
+            var prompt = document.getElementById('prompt').value;
+            
+            fetch('/call_gpt_api/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({prompt: prompt}),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`API call failed with status ${response.status}`);
+                }
+                return response.text(); // Assuming the response is text, not JSON
+            })
+            .then(generatedText => {
+                document.getElementById('gpt-output').innerHTML = `Generated text: <pre>${generatedText}</pre>`; // Displaying the generated text safely
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('gpt-output').innerText = `Error calling GPT API: ${error.message}`;
+            });
+        }
+        function executeCode(generated_code) {
+            var file_path = sessionStorage.getItem('file_path');
+            fetch('/execute_code/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    file_path: file_path,
+                    generated_code: generated_code,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('gpt-output').innerText = 'Processed data: ' + JSON.stringify(data.processed_data);
+                console.log('Processed data:', data);
+            })
+            .catch(error => {
+                console.error('Error executing code:', error);
+                document.getElementById('gpt-output').innerText = 'Error executing code on CSV data.';
+            });
+        }
+    </script>
+</body>
+</html>
+

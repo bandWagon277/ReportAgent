@@ -1,0 +1,31 @@
+Variable,Type,Description,Values/Range,Source Reference
+patient_id,Char,"Unique patient identifier","PT_00001 to PT_00500",Synthetic
+age,Num,"Patient age in years at time of waitlist placement","2-79; mean ~52",SRTR Standard Analysis File (SAF)
+sex,Char,"Patient biological sex","Male, Female",SRTR SAF: CAN_GENDER
+race,Char,"Patient race/ethnicity","White, Black, Hispanic, Asian, Native American",SRTR SAF: CAN_RACE / CAN_ETHNICITY_SRTR
+blood_type,Char,"ABO blood type","O, A, B, AB",SRTR SAF: CAN_ABO
+bmi,Num,"Body mass index at listing (kg/m^2)","16.0-50.0; mean ~28.5",SRTR SAF: CAN_BMI
+cause_of_esrd,Char,"Primary cause of end-stage renal disease","Diabetes, Hypertension, Glomerulonephritis, Polycystic Kidney, Other",SRTR SAF: CAN_DGNS
+diabetes,Char,"Diabetes diagnosis (Yes if cause_of_esrd is Diabetes or comorbid diabetes)","Yes, No",SRTR SAF: CAN_DIAB
+hypertension,Char,"Hypertension diagnosis","Yes, No",SRTR comorbidity fields
+cardiovascular_disease,Char,"History of cardiovascular disease (CAD, CHF, PVD, or CVA)","Yes, No",SRTR comorbidity fields
+hepatitis_c,Char,"Hepatitis C antibody positive","Yes, No",SRTR SAF: CAN_HEP_C_ANTIBODY
+prior_transplant,Char,"History of prior kidney transplant (re-transplant candidate)","Yes, No",SRTR SAF: CAN_PREV_TX
+dialysis_modality,Char,"Type of dialysis at time of listing","Hemodialysis, Peritoneal Dialysis",SRTR SAF: CAN_DIAL
+dialysis_duration_months,Num,"Months on dialysis before waitlist placement; 0 = preemptive listing","0-120; mean ~22",SRTR SAF: derived from CAN_DIAL_DT
+insurance,Char,"Primary insurance/payer at listing","Medicare, Medicaid, Private, Other",SRTR SAF: CAN_PRIMARY_PAY
+unos_region,Num,"UNOS/OPTN region (1-11)","1-11",SRTR SAF: CAN_LISTING_CTR_ID -> region mapping
+listing_year,Num,"Calendar year of initial waitlist placement","2015-2022",SRTR SAF: CAN_LISTING_DT
+cpra,Num,"Calculated Panel Reactive Antibody percentage (sensitization level); higher = harder to match","0-100; bimodal (most <20, some 80-100)",SRTR SAF: CAN_CPRA
+status,Char,"Patient outcome/disposition as of study end","Transplanted (Deceased Donor), Transplanted (Living Donor), Died on Waitlist, Removed from Waitlist, Still Waiting",SRTR SAF: CAN_REM_CD
+follow_up_days,Num,"Days from waitlist placement to event or censoring","30-2800",SRTR SAF: derived from dates
+death_event,Num,"Death indicator: 1 = patient died (on waitlist or post-transplant), 0 = alive/censored","0 or 1",SRTR SAF: PX_STAT / TFL_DEATH_DT
+days_to_transplant,Num,"Days from listing to transplant (blank if not transplanted)","14-2500; blank for non-transplanted",SRTR SAF: derived from REC_TX_DT - CAN_LISTING_DT
+donor_age,Num,"Deceased donor age in years (blank if not transplanted or living donor)","1-75; mean ~42",SRTR SAF: DON_AGE
+donor_type,Char,"Donor death type (blank if not transplanted with deceased donor)","DBD (Donation after Brain Death), DCD (Donation after Circulatory Death)",SRTR SAF: DON_NON_HR_BEAT
+kdpi,Num,"Kidney Donor Profile Index percentile (0=best longevity, 100=worst); blank if not transplanted","1-100; mean ~48",SRTR SAF: REC_DR_KDPI
+cold_ischemia_hours,Num,"Hours kidney was preserved ex vivo before transplant (blank if not transplanted)","2.0-42.0; mean ~18.5",SRTR SAF: REC_COLD_ISCH_TM
+delayed_graft_function,Char,"Whether recipient required dialysis within 7 days post-transplant (blank if not transplanted)","Yes, No",SRTR SAF: REC_DGF
+post_tx_survival_days,Num,"Days of survival after transplant (blank if not transplanted)","1-2500",SRTR SAF: derived from TFL_LAFUDATE - REC_TX_DT
+facility_id,Char,"Transplant center / dialysis facility identifier","FAC_001 to FAC_030 (30 facilities)",Synthetic facility codes
+annual_hospitalizations,Num,"Number of hospital admissions in the past 12 months","0-12; mean ~1.8",SRTR/USRDS hospitalization data

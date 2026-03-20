@@ -1,0 +1,195 @@
+Variable,Type,Length,Format,Label
+CAN_ABO,char,3,$ABO,Patient/s Blood Type
+CAN_ACADEMIC_LEVEL,num,8,ACDMACTV,Academic Activity Level:
+CAN_ACADEMIC_PROGRESS,num,8,ACDMPRG,Academic Progress:
+CAN_ACCEPT_HIV_ORG,num,3,,willingness to accept HIV organ?
+CAN_ACPT_HBC_POS,char,1,,Accept an Hepatitis B Core Antibody Positive Donor?
+CAN_ACPT_HCV_POS,char,1,,Accept an HCV Positive donor?
+CAN_ACPT_ORG_OTHER_TEAM,char,1,,Accept a Pancreas procured by another team?
+CAN_ACTIVATE_DT,num,8,MMDDYY,Activation Date - date/time waiting time clock started
+CAN_AGE_AT_LISTING,num,8,AGE9A,Calculated Candidate Age at Listing
+CAN_AGE_DIAB,num,8,,Age at Diabetes Onset
+CAN_AGE_IN_MONTHS_AT_LISTING,num,8,,Calculated Candidate Age in Months at Listing
+CAN_ANASTOMOSIS,num,3,,Was anastomosis initiated?
+CAN_ANESTH_PRIOR_DEATH,num,3,,Did the patient go to the operating room and receive anesthesia for transplant prior to death?
+CAN_ANGINA,num,8,ANGINA,Angina/Coronary Artery Disease
+CAN_ANGINA_CAD,num,8,ANGNACAD,Angina:
+CAN_AVN,char,1,AVN,(avascular necrosis): (Ped Only)
+CAN_BMI,num,8,,BMI:
+CAN_CEREB_VASC,char,1,,Symptomatic Cerebrovascular Disease
+CAN_CITIZENSHIP,num,8,CTZNLDTC,Patient/s Citizenship
+CAN_CMV_STAT,char,2,$SRLSTT,Candidate/s CMV Status
+CAN_COGNITIVE_DEVELOP,num,8,COGDEV,Cognitive Development (Ped Only)
+CAN_CREAT_CLEAR,num,8,,Calculated Creatinine Clearance
+CAN_CREAT_CLEAR_DT,num,8,MMDDYY,Date Candidate met the minimum Creatinine Clearance to begin accuring waiting time
+CAN_C_PEPTIDE,num,8,,C-Peptide Value
+CAN_DEATH_DT,num,8,MMDDYY,"If removed due to Death, date of death"
+CAN_DGN,num,8,DGN,Primary Diagnosis
+CAN_DGN2,num,8,PADGN,Primary Pancreas Diagnosis
+CAN_DGN_OSTXT,char,50,,Primary Diagnosis/Specify
+CAN_DIAB,num,8,DBINSLDP,Diabetes
+CAN_DIAB_TY,num,8,DIABTY,Diabetes
+CAN_DIAL,num,8,DIALTYLI,Dialysis
+CAN_DIAL_DT,num,8,MMDDYY,Date Candidate went on Dialysis
+CAN_DONATED_ORG,char,1,,Will receive Donation Status points
+CAN_DRUG_TREAT_COPD,char,1,,Drug Treated COPD
+CAN_DRUG_TREAT_HYPERTEN,char,1,,Drug Treated Systemic Hypertension
+CAN_ECMO,num,3,,Life Support: ECMO
+CAN_EDUCATION,num,8,EDLEVEL,Patient/s Educational Status
+CAN_EMPL_STAT,num,8,EMPLSTAT,Patient/s Employment Status - Pre-6/30/2004
+CAN_ENDWLFU,num,8,MMDDYY,Candidate cohort censoring date
+CAN_ETHNICITY_SRTR,char,10,$ETHSR,SRTR Patient Ethnicity
+CAN_EXHAUST_PERIT_ACCESS,char,1,,Exhausted Peritoneal Access
+CAN_EXHAUST_VASC_ACCESS,char,1,,Exhausted Vascular Access
+CAN_FOLLOWS_OPO_ALLOC,num,3,,Does candidate follow the OPO/s current allocation
+CAN_FRAC_EXTREM,num,3,,Extremity fracture? (Ped Only)
+CAN_FRAC_EXTREM_NUM,num,8,,# of Extremity fractures (Ped Only)
+CAN_FRAC_OTHER,num,3,,Other fracture? (Ped Only)
+CAN_FRAC_OTHER_NUM,num,8,,# of Other fractures (Ped Only)
+CAN_FRAC_PASTYR,char,1,,Fracture in the past year (or since last follow-up) (Ped Only)
+CAN_FRAC_SPINE,num,3,,Spine-compression fracture? (Ped Only)
+CAN_FRAC_SPINE_NUM,num,8,,# of Spine-compression fractures (Ped Only)
+CAN_FUNCTN_STAT,num,8,FUNCSTAT,Patient/s Functional Status
+CAN_GENDER,char,1,,Patient/s Gender
+CAN_GFR,num,8,,Measured GFR Score
+CAN_GFR_DT,num,8,MMDDYY,Date Candidate met the minimum GFR score to begin accruing waiting time
+CAN_GROWTH_HORMONE,char,1,,Is growth hormone therapy used at time of listing (Ped Only)
+CAN_HGT_CM,num,8,,Candidate/s Height (stored in cm)
+CAN_HGT_WGT_DT,num,8,MMDDYY,Date of Height & Weight Measurement (Ped Only)
+CAN_IABP,num,3,,Life Support: IABP
+CAN_INIT_ACT_STAT_CD,num,8,,First Active Status
+CAN_INIT_ACT_STAT_DT,num,8,MMDDYY,Date of First Active Status
+CAN_INIT_ALLOC_PRA,num,8,,First Allocation PRA (at listing)
+CAN_INIT_CUR_PRA,num,8,,First non-missing Current PRA
+CAN_INIT_INACT_STAT_DT,num,8,MMDDYY,Date of First Inactive Status
+CAN_INIT_ISOLATED_ORG_KI,num,8,,Initial value of: will KP candidate accept isolated KI?
+CAN_INIT_ISOLATED_ORG_PA,num,8,,Initial value of: will KP candidate accept isolated PA?
+CAN_INIT_SRTR_PEAK_PRA,num,8,,"Initial Peak PRA (max of peak, cur)"
+CAN_INIT_STAT,num,8,CANDSTAT,Initial Status of Patient
+CAN_IV_INOTROP,num,3,,Life Support: IV Inotropes
+CAN_LAST_ACT_STAT_DT,num,8,MMDDYY,Last Date of Active Status
+CAN_LAST_INACT_STAT_DT,num,8,MMDDYY,Last Date of Inactive Status
+CAN_LAST_STAT,num,8,CANDSTAT,Last Status of Patient (with 2 day rule)
+CAN_LATEST_SRTR_PEAK_PRA,num,8,,"Most-recent Peak PRA (max of peak, cur)"
+CAN_LIFE_SUPPORT,char,1,,Patient on Life Support
+CAN_LIFE_SUPPORT_OTHER,num,3,,Life Support: Other Mechanism
+CAN_LISTING_CTR_CD,char,4,,Transplant Center Code of where candidate is wait listed
+CAN_LISTING_CTR_TY,char,3,,Type of Transplant Center where candidate is wait listed
+CAN_LISTING_DT,num,8,MMDDYY,Listing Date - date/time candidate was physically added to the waiting list - this date/time does not change for transfers
+CAN_MALIG,char,1,,Any previous Malignancy
+CAN_MALIG_TY,num,8,MALIG,Previous Malignancy Type(s)
+CAN_MALIG_TY_BREAST,num,8,,Previous Malignancy - Breast (14)
+CAN_MALIG_TY_CNS_TUMOR,num,8,,Previous Malignancy - CNS Tumor (14)
+CAN_MALIG_TY_GENITOURINARY,num,8,,Previous Malignancy - Genitourinary (14)
+CAN_MALIG_TY_HEPBLAST,num,8,,Previous Malignancy - Hepatoblastoma (14)
+CAN_MALIG_TY_HEPCARCINOMA,num,8,,Previous Malignancy - Hepatocellular Carcinoma (14)
+CAN_MALIG_TY_LEUK_LYMPH,num,8,,Previous Malignancy - Leukemia/Lymphoma (14)
+CAN_MALIG_TY_LIVER,num,8,,Previous Malignancy - Liver (14)
+CAN_MALIG_TY_LU,num,8,,Previous Malignancy - Lung (14)
+CAN_MALIG_TY_OTHER,num,8,,"Previous Malignancy - Other, specify (14)"
+CAN_MALIG_TY_SKIN_MEL,num,8,,Previous Malignancy - Skin Melanoma (14)
+CAN_MALIG_TY_SKIN_NON_MEL,num,8,,Previous Malignancy - Skin Non-Melanoma (14)
+CAN_MALIG_TY_THROAT,num,8,,Previous Malignancy - Tongue/Throat/Larynx (14)
+CAN_MALIG_TY_THYROID,num,8,,Previous Malignancy - Thyroid (14)
+CAN_MALIG_TY_UNK,num,8,,Previous Malignancy - Type Unknown (14)
+CAN_MAX_AGE,num,8,,Maximum acceptable Donor age
+CAN_MAX_COLD_TM,num,8,,Maximum acceptable Cold Ischemic time
+CAN_MAX_EXPAND_MM_A,num,3,,Maximum Acceptable Number of HLA Mismatches for the A locus for an expanded donor
+CAN_MAX_EXPAND_MM_AB,num,3,,Maximum Acceptable Number of HLA Mismatches for A & B loci for an expanded donor
+CAN_MAX_EXPAND_MM_ABDR,num,3,,"Maximum Acceptable Number of HLA Mismatches for A, B & DR loci for an expanded donor"
+CAN_MAX_EXPAND_MM_ADR,num,3,,Maximum ADR HLA mismatches for an expanded donor kidney
+CAN_MAX_EXPAND_MM_B,num,3,,Maximum Acceptable Number of HLA Mismatches for B loci for an expanded donor
+CAN_MAX_EXPAND_MM_BDR,num,3,,Maximum Acceptable Number of HLA Mismatches for B & DR loci for an expanded donor
+CAN_MAX_EXPAND_MM_DR,num,3,,Maximum Acceptable Number of HLA Mismatches for the DR locus for an expanded donor
+CAN_MAX_MILE,num,8,,Maximum miles the implant team will travel
+CAN_MAX_MM_A,num,3,,Maximum Acceptable Number of HLA Mismatches for the A locus
+CAN_MAX_MM_AB,num,3,,Maximum Acceptable Number of HLA Mismatches for the A & B loci
+CAN_MAX_MM_ABDR,num,3,,"Maximum Acceptable Number of HLA Mismatches for A, B & DR loci"
+CAN_MAX_MM_ADR,num,3,,Maximum Acceptable Number of HLA Mismatches for A & DR loci
+CAN_MAX_MM_B,num,3,,Maximum Acceptable Number of HLA Mismatches for B loci
+CAN_MAX_MM_BDR,num,3,,Maximum Acceptable Number of HLA Mismatches for B & DR loci
+CAN_MAX_MM_DR,num,3,,Maximum Acceptable Number of HLA Mismatches for DR locus
+CAN_MAX_PCT_SCLER_GE10,num,8,,Maximum acceptable percent glomerular sclerosis with greater than 10 glomeruli observed
+CAN_MAX_PCT_SCLER_LT10,num,8,,Maximum acceptable percent glomerular sclerosis with less than 10 glomeruli observed
+CAN_MAX_WARM_TM,num,8,,Maximum acceptable Warm Ischemic time
+CAN_MAX_WGT,num,8,,Maximum acceptable Donor Weight
+CAN_MED_COND,num,8,MEDCOND,Medical Condition
+CAN_MIN_AGE,num,8,,Minimum acceptable Donor Age
+CAN_MIN_FINAL_CREAT,num,8,,Minimum acceptable donor Serum Creainine - Final
+CAN_MIN_PEAK_CREAT,num,8,,Minimum acceptable donor Serum Creatinine - Peak
+CAN_MIN_WGT,num,8,,Minimum acceptable Donor Weight
+CAN_MM_ACPT_CD,num,8,MSACACCD,Minimum HLA Match Acceptance Required for Candidate
+CAN_MOST_RECENT_CREAT,num,8,,Most Recent Absolute Creatinine
+CAN_MOST_RECENT_HGT_CM,num,8,,Candidate/s most recent Waitlist Height in centimeter
+CAN_MOST_RECENT_WGT_KG,num,8,,Candidate/s most recent Waitlist Weight in kilograms
+CAN_MOTOR_DEVELOP,num,8,MOTDEV,Motor Development (Ped Only)
+CAN_NEW_PREV_PI_TX,char,1,,Previous Pancreas Islet Transplantation:
+CAN_ON_DIAL,char,1,,Is Candidate currently on Dialysis?
+CAN_ON_EXPAND_DON_LIST,num,3,,Candidate will accept a kidney from a local expanded donor
+CAN_PAIRED_LIVE_DONOR_ID,num,8,,Encrypted Living Donor ID to which Candidate is Paired with (currently only used for DCTC Kidney variance)
+CAN_PEPTIC_ULCER,num,8,PEPULCER,Peptic Ulcer Disease
+CAN_PERIPH_VASC,char,1,,Symptomatic Peripheral Vascular Disease
+CAN_PERM_STATE,char,2,$STATE,Patient/s Permanent State
+CAN_PGE,num,3,,Life Support: PGE
+CAN_PHYSC_CAPACITY,num,8,PHYSCP,Physical Capacity:
+CAN_PRELIM_XMATCH_REQUEST,char,1,,Preliminary Crossmatch Required
+CAN_PREV_BONE_MARROW_DT,num,8,MMDDYY,Date of Latest Bone Marrow Transplant
+CAN_PREV_BONE_MARROW_TX,num,8,,Number Bone Marrow Transplants
+CAN_PREV_HL,num,8,,Prev Heart-Lung Tx
+CAN_PREV_HR,num,8,,Prev Heart Tx
+CAN_PREV_IN,num,8,,Prev Intestine Tx
+CAN_PREV_KI,num,8,,Prev Kidney Tx
+CAN_PREV_KI_TX_FUNCTN,char,1,,"If Candidate has had a prior Kidney Transplant, is the prior Kidney graft still functioning?"
+CAN_PREV_KP,num,8,,Prev Kidney-Pancreas Tx
+CAN_PREV_LI,num,8,,Prev Liver Tx
+CAN_PREV_LU,num,8,,Prev Lung Tx
+CAN_PREV_PA,num,8,,Prev Pancreas Tx
+CAN_PREV_TX,num,8,,Previous Transplants
+CAN_PREV_TXFUS,char,1,,Any Previous Transfusions
+CAN_PRIMARY_PAY,num,8,PRMSRCPY,Source of Payment//Primary:
+CAN_PULM_EMBOL,char,1,,Pulmonary Embolism
+CAN_RACE,num,8,RACE,Patient/s Race
+CAN_RACE_AMERICAN_INDIAN,num,3,,Race: American Indian or Alaskan Native
+CAN_RACE_ASIAN,num,3,,Race: Asian
+CAN_RACE_BLACK_AFRICAN_AMERICAN,num,3,,Race: Black or African American
+CAN_RACE_HISPANIC_LATINO,num,3,,Race: Hispanic or Latino
+CAN_RACE_NATIVE_HAWAIIAN,num,3,,Race: Native Hawaiian or Pacific Islander
+CAN_RACE_SRTR,char,10,$RACEBSR,SRTR Patient Race
+CAN_RACE_WHITE,num,3,,Race: White
+CAN_REM_CD,num,8,REMCD,Reason why candidate was removed (removal code)
+CAN_REM_COD,num,8,COD,Cause of Death
+CAN_REM_DT,num,8,MMDDYY,"rem_dt /remreg, censored by CAN_DEATH_DT, tx_dt"
+CAN_SECONDARY_PAY,num,8,SNDSRCPY,Source of Payment//Secondary:
+CAN_SOURCE,char,1,,"Source of Candidate Data: A =Active Waitlist,R= Removed from Waitlist,L=Live Don Organ Recipient never on waitlist"
+CAN_STAT_EXTEND_FLG,num,3,,Status Extension granted for Liver candidate
+CAN_TIEBREAKER_DT,num,8,MMDDYY,Tiebreaker Date - used as the ultimate tiebreaker
+CAN_TOT_ALBUMIN,num,8,,Total Serum Albumin
+CAN_TRR_EXISTS,num,8,TRR,found for this PX_ID-org_ty
+CAN_TX_COUNTRY,num,8,CTRYID,"Country of transplant, if outside the US"
+CAN_VAD_TAH,num,8,VADTAH,Life Support: VAD/TAH
+CAN_VENTILATOR,num,3,,Life Support: Ventilator
+CAN_WGT_KG,num,8,,Candidate/s Weight in kilograms
+CAN_WLKIPA_A1,num,8,ALOCUS,Candidate/s HLA - A (1) antigen
+CAN_WLKIPA_A2,num,8,ALOCUS,Candidate/s HLA - A (2) antigen
+CAN_WLKIPA_B1,num,8,BLOCUS,Candidate/s HLA - B (1) antigen
+CAN_WLKIPA_B2,num,8,BLOCUS,Candidate/s HLA - B (2) antigen
+CAN_WLKIPA_DR1,num,8,DRLOCUS,Candidate/s HLA - DR (1) antigen
+CAN_WLKIPA_DR2,num,8,DRLOCUS,Candidate/s HLA - DR (2) antigen
+CAN_WORK_INCOME,char,1,,Working for income:
+CAN_WORK_NO_STAT,num,8,NOTWRK,"Working for income//If No, Not Working Due To:"
+CAN_WORK_YES_STAT,num,8,WRKNCM,Working for income//If Yes:
+CAN_YEAR_ENTRY_US,num,8,,Year of Entry to the U.S.
+DONCRIT_ACPT_DCD,char,1,,Accept an DCD donor?
+DONCRIT_ACPT_DCD_IMPORT,char,1,,Accept an DCD donor from an Import Donor?
+DONOR_ID,num,8,,Encrypted Unique Donor ID (all donors) - foreign key
+DON_TY,char,3,,"Donor Type (C-deceased, L-living)"
+ORG_AR,char,3,,Organ type with pancreas expanded to PTA and PAK
+PERS_ID,num,8,,Unique Person ID for Recipient
+PERS_NEXTTX,num,8,MMDDYY,Transplant Date
+PERS_NEXTTX_TRR_ID,num,8,,Unique identifier for TRR - unique key
+PERS_OPTN_DEATH_DT,num,8,MMDDYY,OPTN Death date by unique person
+PERS_SSA_DEATH_DT,num,8,MMDDYY,Death date determined from SSA database
+PX_ID,num,8,,Patient Identifier
+REC_TX_DT,num,8,MMDDYY,Transplant Date
+REC_TX_PROCEDURE_TY,num,8,TXPROC,Transplant Procedure Type
+WL_ORG,char,4,$WLORG,Organ of this waitlisted record

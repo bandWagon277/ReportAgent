@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Data Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error.active {
+            display: block;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #c3e6cb;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success.active {
+            display: block;
+        }
+
+        .analysis-result {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .analysis-result.active {
+            display: block;
+        }
+
+        .variable-card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .variable-card h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .variable-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .preview-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .preview-container.active {
+            display: block;
+        }
+
+        .data-preview {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .example-prompts {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .example-prompts h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .example-item {
+            background: white;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .example-item:hover {
+            background: #bbdefb;
+            transform: translateX(5px);
+        }
+
+        .stats-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎲 Synthetic Data Generator</h1>
+            <p>Describe your data needs, and we'll generate it for you</p>
+            <div style="background: #667eea; padding: 15px; text-align: center;">
+                <a href="/gpt/" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">
+                    📊 Data Analysis
+                </a>
+                <a href="/synthetic/" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">
+                    🎲 Synthetic Data
+                </a>
+            </div>
+        </div>
+    
+        <div class="content">
+            <!-- Step 1: Input Description -->
+            <div class="section" id="step1">
+                <h2 class="section-title">Step 1: Describe Your Data</h2>
+                
+                <div class="example-prompts">
+                    <h4>💡 Example Prompts (click to use):</h4>
+                    <div class="example-item" onclick="useExample(0)">
+                        Generate 500 customer records with age (normal distribution, mean=35, std=10), 
+                        income (log-normal), gender (balanced), and purchase_amount (correlated with income)
+                    </div>
+                    <div class="example-item" onclick="useExample(1)">
+                        Create 200 sensor readings with timestamp, temperature (20-30°C, normal), 
+                        humidity (40-80%, uniform), and sensor_id (10 different sensors)
+                    </div>
+                    <div class="example-item" onclick="useExample(2)">
+                        I need 1000 rows of student data: test scores (0-100, normal around 75), 
+                        study_hours (0-10, exponential), attendance (categorical: high/medium/low), 
+                        and final_grade (strongly correlated with test scores and study hours)
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="description">Data Description:</label>
+                    <textarea id="description" rows="6" 
+                        placeholder="Example: Generate 1000 rows of customer data with age (normal distribution, mean 40, std 12), income (50k-200k, log-normal), city (New York, LA, Chicago with 40%, 35%, 25% probability), and purchase_frequency (correlated with income)"></textarea>
+                </div>
+
+                <button class="btn btn-primary" onclick="analyzeDescription()" id="analyzeBtn">
+                    🔍 Analyze Description
+                </button>
+
+                <div class="loading" id="loading1">
+                    <div class="spinner"></div>
+                    <p>Analyzing your description...</p>
+                </div>
+
+                <div class="error" id="error1"></div>
+            </div>
+
+            <!-- Step 2: Review Analysis -->
+            <div class="section analysis-result" id="analysisSection">
+                <h2 class="section-title">Step 2: Review Data Specification</h2>
+                
+                <div class="stats-summary" id="statsSummary"></div>
+                
+                <div id="variablesList"></div>
+
+                <div id="relationshipsList"></div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-success" onclick="generateData()" id="generateBtn">
+                        ✨ Generate Data
+                    </button>
+                    <button class="btn btn-secondary" onclick="resetForm()">
+                        🔄 Start Over
+                    </button>
+                </div>
+
+                <div class="loading" id="loading2">
+                    <div class="spinner"></div>
+                    <p>Generating synthetic data...</p>
+                </div>
+
+                <div class="error" id="error2"></div>
+            </div>
+
+            <!-- Step 3: Preview and Download -->
+            <div class="section preview-container" id="previewSection">
+                <h2 class="section-title">Step 3: Data Preview & Download</h2>
+                
+                <div class="success" id="success"></div>
+                
+                <div class="data-preview" id="dataPreview"></div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-success" onclick="downloadData()" id="downloadBtn">
+                        📥 Download CSV
+                    </button>
+                    <button class="btn btn-secondary" onclick="resetForm()">
+                        🔄 Generate New Dataset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentAnalysis = null;
+        let currentResultId = null;
+
+        const examples = [
+            "Generate 500 customer records with age (normal distribution, mean=35, std=10), income (log-normal), gender (balanced), and purchase_amount (correlated with income)",
+            "Create 200 sensor readings with timestamp, temperature (20-30°C, normal), humidity (40-80%, uniform), and sensor_id (10 different sensors)",
+            "I need 1000 rows of student data: test scores (0-100, normal around 75), study_hours (0-10, exponential), attendance (categorical: high/medium/low), and final_grade (strongly correlated with test scores and study hours)"
+        ];
+
+        function useExample(index) {
+            document.getElementById('description').value = examples[index];
+        }
+
+        async function analyzeDescription() {
+            const description = document.getElementById('description').value.trim();
+            
+            if (!description) {
+                showError('error1', 'Please enter a description');
+                return;
+            }
+
+            hideError('error1');
+            showLoading('loading1');
+            disableButton('analyzeBtn');
+
+            try {
+                const response = await fetch('/api/analyze-synthetic/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ description })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentAnalysis = data.analysis;
+                    displayAnalysis(data.analysis);
+                    document.getElementById('analysisSection').classList.add('active');
+                    
+                    // Scroll to analysis section
+                    document.getElementById('analysisSection').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                } else {
+                    showError('error1', data.error || 'Analysis failed');
+                }
+            } catch (error) {
+                showError('error1', 'Error: ' + error.message);
+            } finally {
+                hideLoading('loading1');
+                enableButton('analyzeBtn');
+            }
+        }
+
+        function displayAnalysis(analysis) {
+            // Display stats summary
+            const statsSummary = document.getElementById('statsSummary');
+            statsSummary.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${analysis.sample_size || 'N/A'}</div>
+                    <div class="stat-label">Sample Size</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${analysis.variables?.length || 0}</div>
+                    <div class="stat-label">Variables</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${analysis.relationships?.length || 0}</div>
+                    <div class="stat-label">Relationships</div>
+                </div>
+            `;
+
+            // Display variables
+            const variablesList = document.getElementById('variablesList');
+            let variablesHtml = '<h3>Variables:</h3>';
+            
+            if (analysis.variables && analysis.variables.length > 0) {
+                analysis.variables.forEach(v => {
+                    variablesHtml += `
+                        <div class="variable-card">
+                            <h4>${v.name}</h4>
+                            <p><strong>Type:</strong> ${v.type}</p>
+                            <p><strong>Distribution:</strong> ${v.distribution}</p>
+                            <p><strong>Description:</strong> ${v.description || 'N/A'}</p>
+                            <p><strong>Parameters:</strong> ${JSON.stringify(v.parameters)}</p>
+                        </div>
+                    `;
+                });
+            } else {
+                variablesHtml += '<p>No variables specified</p>';
+            }
+            
+            variablesList.innerHTML = variablesHtml;
+
+            // Display relationships
+            const relationshipsList = document.getElementById('relationshipsList');
+            if (analysis.relationships && analysis.relationships.length > 0) {
+                let relHtml = '<h3>Relationships:</h3>';
+                analysis.relationships.forEach(r => {
+                    relHtml += `
+                        <div class="variable-card">
+                            <p><strong>Type:</strong> ${r.type}</p>
+                            <p><strong>Variables:</strong> ${r.variables.join(', ')}</p>
+                            <p><strong>Strength:</strong> ${r.strength || 'N/A'}</p>
+                            <p><strong>Description:</strong> ${r.description}</p>
+                        </div>
+                    `;
+                });
+                relationshipsList.innerHTML = relHtml;
+            } else {
+                relationshipsList.innerHTML = '';
+            }
+        }
+
+        async function generateData() {
+            if (!currentAnalysis) {
+                showError('error2', 'No analysis available');
+                return;
+            }
+
+            hideError('error2');
+            showLoading('loading2');
+            disableButton('generateBtn');
+
+            try {
+                const response = await fetch('/api/generate-synthetic/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ analysis: currentAnalysis })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentResultId = data.result_id;
+                    displayPreview(data);
+                    document.getElementById('previewSection').classList.add('active');
+                    
+                    // Show success message
+                    const successMsg = document.getElementById('success');
+                    successMsg.textContent = `Successfully generated ${data.row_count} rows × ${data.column_count} columns!`;
+                    successMsg.classList.add('active');
+                    
+                    // Scroll to preview
+                    document.getElementById('previewSection').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                } else {
+                    showError('error2', data.error || 'Generation failed');
+                }
+            } catch (error) {
+                showError('error2', 'Error: ' + error.message);
+            } finally {
+                hideLoading('loading2');
+                enableButton('generateBtn');
+            }
+        }
+
+        function displayPreview(data) {
+            const previewDiv = document.getElementById('dataPreview');
+            previewDiv.innerHTML = data.preview_html;
+        }
+
+        async function downloadData() {
+            if (!currentResultId) {
+                alert('No data to download');
+                return;
+            }
+
+            window.location.href = `/api/download-synthetic/?result_id=${currentResultId}`;
+        }
+
+        function resetForm() {
+            document.getElementById('description').value = '';
+            document.getElementById('analysisSection').classList.remove('active');
+            document.getElementById('previewSection').classList.remove('active');
+            hideError('error1');
+            hideError('error2');
+            document.getElementById('success').classList.remove('active');
+            currentAnalysis = null;
+            currentResultId = null;
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showError(id, message) {
+            const errorDiv = document.getElementById(id);
+            errorDiv.textContent = message;
+            errorDiv.classList.add('active');
+        }
+
+        function hideError(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function showLoading(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function hideLoading(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function disableButton(id) {
+            document.getElementById(id).disabled = true;
+        }
+
+        function enableButton(id) {
+            document.getElementById(id).disabled = false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Find mode for each column.
+Add new column into the data.
+Change all values in the first column into 1.
+Add a new row with all values 1 into data
+Please remove all empty rows in data.
+Please fill all na values by Mean interpolation
+Please add a new row contain all mode in each column for data
+Please remove rows in data with all values are na.
+
+
+csv example:
+Change all org_type_id into 0.
+image example:
+Create a bar chart showing distribution of org_type_id
+pdf example:
+// Generate data analysis report of org_type_id
+Generate comprehensive analysis report with CSV data. Preserve all text template
+
+#always fail:Add a new row into data

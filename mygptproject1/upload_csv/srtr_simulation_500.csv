@@ -1,0 +1,501 @@
+patient_id,age,sex,race,blood_type,bmi,cause_of_esrd,diabetes,hypertension,cardiovascular_disease,hepatitis_c,prior_transplant,dialysis_modality,dialysis_duration_months,insurance,unos_region,listing_year,cpra,status,follow_up_days,death_event,days_to_transplant,donor_age,donor_type,kdpi,cold_ischemia_hours,delayed_graft_function,post_tx_survival_days,facility_id,annual_hospitalizations
+PT_00001,59,Female,Hispanic,O,25.2,Hypertension,No,No,No,No,No,Hemodialysis,4,Other,3,2021,13,Transplanted (Living Donor),1308,0,649.0,44.0,Living,,6.0,No,267.0,FAC_017,0
+PT_00002,49,Female,White,O,33.7,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,31,Medicare,3,2019,14,Still Waiting,266,0,,,,,,,,FAC_002,0
+PT_00003,61,Male,Black,A,26.2,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,5,Medicare,2,2019,10,Transplanted (Living Donor),285,0,627.0,45.0,Living,,6.0,No,531.0,FAC_019,1
+PT_00004,74,Female,White,A,28.2,Hypertension,No,Yes,No,No,No,Hemodialysis,1,Private,10,2022,6,Transplanted (Living Donor),324,0,85.0,47.0,Living,,6.0,No,1068.0,FAC_007,3
+PT_00005,48,Female,White,B,28.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,19,Medicare,6,2021,8,Transplanted (Deceased Donor),474,1,440.0,66.0,DBD,98.0,14.0,No,74.0,FAC_018,2
+PT_00006,48,Male,Black,A,17.0,Polycystic Kidney,No,Yes,No,No,Yes,Hemodialysis,21,Private,10,2016,0,Died on Waitlist,483,1,,,,,,,,FAC_013,3
+PT_00007,75,Male,White,AB,28.4,Hypertension,No,Yes,No,No,No,Hemodialysis,49,Other,2,2021,9,Removed from Waitlist,411,0,,,,,,,,FAC_005,3
+PT_00008,63,Male,Black,B,24.4,Other,No,Yes,No,No,No,Hemodialysis,20,Medicare,10,2016,9,Transplanted (Deceased Donor),219,0,39.0,2.0,DBD,40.0,24.0,Yes,812.0,FAC_018,4
+PT_00009,44,Male,Hispanic,O,25.5,Hypertension,No,Yes,Yes,No,No,Hemodialysis,10,Medicare,4,2015,82,Transplanted (Deceased Donor),1572,0,283.0,30.0,DBD,12.0,25.9,Yes,801.0,FAC_023,2
+PT_00010,60,Male,White,AB,37.2,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,38,Private,10,2018,7,Still Waiting,532,0,,,,,,,,FAC_026,1
+PT_00011,45,Male,White,O,21.0,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,18,Medicare,9,2022,93,Transplanted (Deceased Donor),314,0,70.0,38.0,DBD,92.0,16.9,No,1037.0,FAC_024,1
+PT_00012,45,Male,White,B,33.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,1,Medicare,9,2016,3,Transplanted (Deceased Donor),631,0,215.0,50.0,DCD,11.0,12.3,No,415.0,FAC_024,5
+PT_00013,55,Male,Black,O,26.8,Glomerulonephritis,No,No,Yes,No,No,Hemodialysis,20,Medicare,6,2020,10,Removed from Waitlist,876,0,,,,,,,,FAC_029,2
+PT_00014,23,Female,Native American,B,26.8,Diabetes,Yes,No,No,No,No,Hemodialysis,57,Medicare,4,2016,2,Transplanted (Deceased Donor),1942,0,715.0,60.0,DBD,10.0,19.1,No,536.0,FAC_016,1
+PT_00015,26,Male,Black,B,33.2,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,12,Private,7,2021,3,Still Waiting,415,0,,,,,,,,FAC_015,0
+PT_00016,43,Male,White,B,30.5,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,8,Medicare,1,2019,17,Transplanted (Deceased Donor),71,0,1742.0,71.0,DCD,92.0,31.5,Yes,360.0,FAC_008,1
+PT_00017,36,Male,Black,A,31.9,Diabetes,Yes,Yes,No,No,No,Hemodialysis,3,Medicare,4,2020,8,Removed from Waitlist,348,0,,,,,,,,FAC_026,1
+PT_00018,56,Female,White,O,34.3,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,3,Medicaid,5,2017,7,Transplanted (Living Donor),391,0,153.0,33.0,Living,,6.0,No,1486.0,FAC_015,2
+PT_00019,38,Male,Black,O,26.5,Diabetes,Yes,No,No,No,No,Hemodialysis,13,Medicare,8,2021,3,Still Waiting,1363,0,,,,,,,,FAC_025,1
+PT_00020,30,Male,White,O,24.8,Glomerulonephritis,Yes,Yes,No,No,No,Hemodialysis,21,Medicare,2,2022,13,Transplanted (Deceased Donor),301,0,303.0,41.0,DBD,60.0,15.3,No,125.0,FAC_001,1
+PT_00021,73,Female,Black,O,22.0,Glomerulonephritis,Yes,Yes,No,No,No,Hemodialysis,2,Private,5,2020,83,Removed from Waitlist,1838,0,,,,,,,,FAC_028,0
+PT_00022,48,Female,White,A,23.5,Hypertension,No,No,Yes,No,Yes,Peritoneal Dialysis,67,Medicare,6,2019,13,Died on Waitlist,398,1,,,,,,,,FAC_017,7
+PT_00023,53,Female,Asian,O,46.2,Diabetes,Yes,Yes,No,Yes,No,Hemodialysis,33,Private,5,2022,0,Transplanted (Living Donor),2184,0,286.0,21.0,Living,,6.0,Yes,2500.0,FAC_030,0
+PT_00024,30,Male,White,AB,36.0,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,21,Private,9,2015,96,Transplanted (Living Donor),30,0,1235.0,45.0,Living,,6.0,No,906.0,FAC_015,3
+PT_00025,43,Male,Black,A,20.4,Diabetes,Yes,Yes,No,No,No,Hemodialysis,42,Medicare,10,2021,6,Still Waiting,1374,0,,,,,,,,FAC_014,2
+PT_00026,53,Female,Asian,B,20.6,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,2,Medicare,1,2022,86,Still Waiting,1605,0,,,,,,,,FAC_014,2
+PT_00027,34,Female,White,O,31.4,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,15,Medicare,3,2015,9,Transplanted (Deceased Donor),1946,0,260.0,23.0,DBD,31.0,6.6,No,1961.0,FAC_010,1
+PT_00028,57,Female,Asian,B,31.8,Other,Yes,Yes,No,Yes,No,Hemodialysis,23,Medicare,2,2019,9,Transplanted (Deceased Donor),30,0,480.0,40.0,DBD,40.0,26.3,Yes,499.0,FAC_002,2
+PT_00029,42,Female,Black,B,31.8,Other,No,Yes,No,No,No,Hemodialysis,42,Private,3,2017,94,Still Waiting,113,0,,,,,,,,FAC_027,1
+PT_00030,47,Male,White,A,27.0,Glomerulonephritis,No,Yes,No,No,Yes,Hemodialysis,36,Private,10,2019,14,Transplanted (Deceased Donor),636,0,1019.0,53.0,DBD,46.0,26.3,Yes,363.0,FAC_006,1
+PT_00031,42,Female,White,A,27.7,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,7,Medicare,9,2020,88,Still Waiting,30,0,,,,,,,,FAC_030,3
+PT_00032,79,Male,Black,A,30.5,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,67,Medicaid,9,2018,23,Removed from Waitlist,39,0,,,,,,,,FAC_017,0
+PT_00033,51,Male,White,O,29.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Private,10,2019,17,Removed from Waitlist,149,0,,,,,,,,FAC_005,2
+PT_00034,36,Male,Black,A,16.0,Other,No,Yes,No,No,Yes,Hemodialysis,49,Other,2,2017,86,Transplanted (Deceased Donor),431,1,186.0,38.0,DBD,13.0,16.0,No,2078.0,FAC_005,2
+PT_00035,64,Male,White,O,27.1,Glomerulonephritis,Yes,Yes,No,No,No,Hemodialysis,84,Medicare,3,2018,16,Transplanted (Deceased Donor),473,0,929.0,48.0,DBD,27.0,34.7,Yes,93.0,FAC_015,1
+PT_00036,33,Male,Black,O,23.4,Hypertension,No,Yes,Yes,No,No,Hemodialysis,4,Medicare,4,2016,99,Removed from Waitlist,30,0,,,,,,,,FAC_015,3
+PT_00037,55,Male,White,O,29.6,Diabetes,Yes,Yes,Yes,Yes,No,Hemodialysis,30,Medicare,9,2022,1,Still Waiting,112,0,,,,,,,,FAC_020,2
+PT_00038,22,Female,Hispanic,O,46.4,Hypertension,No,Yes,No,No,No,Hemodialysis,0,Other,3,2015,32,Still Waiting,415,0,,,,,,,,FAC_011,0
+PT_00039,32,Male,Asian,O,30.7,Hypertension,No,Yes,No,No,No,Hemodialysis,12,Medicare,7,2022,10,Transplanted (Deceased Donor),540,0,997.0,12.0,DBD,1.0,25.9,No,112.0,FAC_005,3
+PT_00040,54,Female,Asian,O,26.6,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,17,Medicaid,3,2020,85,Transplanted (Deceased Donor),96,0,1067.0,42.0,DBD,49.0,25.5,No,320.0,FAC_028,1
+PT_00041,63,Male,Black,AB,34.0,Hypertension,No,Yes,Yes,No,No,Hemodialysis,20,Medicare,7,2018,5,Transplanted (Deceased Donor),305,1,126.0,35.0,DBD,49.0,25.6,No,2500.0,FAC_001,4
+PT_00042,54,Male,White,A,31.4,Hypertension,No,Yes,No,No,Yes,Hemodialysis,65,Medicare,7,2021,3,Still Waiting,1408,0,,,,,,,,FAC_011,1
+PT_00043,50,Male,Black,AB,31.0,Other,No,Yes,Yes,Yes,No,Hemodialysis,26,Medicare,9,2019,83,Transplanted (Deceased Donor),2800,0,204.0,21.0,DCD,92.0,25.5,No,902.0,FAC_011,1
+PT_00044,47,Male,White,O,32.1,Diabetes,Yes,Yes,Yes,Yes,Yes,Hemodialysis,15,Other,2,2019,91,Transplanted (Deceased Donor),2615,0,817.0,52.0,DBD,57.0,18.4,Yes,727.0,FAC_006,2
+PT_00045,29,Male,White,O,40.8,Hypertension,No,No,No,No,No,Hemodialysis,39,Medicare,6,2016,3,Transplanted (Deceased Donor),1280,0,177.0,71.0,DBD,34.0,17.8,No,1099.0,FAC_023,0
+PT_00046,41,Male,White,A,21.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,72,Medicaid,9,2018,6,Transplanted (Deceased Donor),301,0,366.0,57.0,DBD,42.0,12.8,No,486.0,FAC_008,2
+PT_00047,45,Male,White,O,31.3,Glomerulonephritis,No,No,No,No,No,Hemodialysis,0,Medicare,2,2017,6,Still Waiting,696,0,,,,,,,,FAC_002,2
+PT_00048,67,Female,Black,O,22.9,Other,No,Yes,Yes,No,No,Hemodialysis,97,Medicare,2,2015,6,Died on Waitlist,323,1,,,,,,,,FAC_015,1
+PT_00049,57,Male,Black,A,31.8,Diabetes,Yes,Yes,No,No,No,Hemodialysis,2,Medicare,5,2018,1,Transplanted (Deceased Donor),627,0,50.0,58.0,DCD,60.0,15.0,No,1277.0,FAC_023,3
+PT_00050,25,Female,White,O,23.0,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,40,Medicare,10,2016,1,Transplanted (Deceased Donor),222,0,23.0,53.0,DBD,53.0,16.6,No,449.0,FAC_022,1
+PT_00051,56,Male,White,A,26.0,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,7,Medicare,10,2017,2,Transplanted (Deceased Donor),559,0,212.0,52.0,DBD,62.0,18.9,No,1575.0,FAC_009,1
+PT_00052,46,Female,Native American,A,26.7,Other,No,Yes,Yes,No,No,Hemodialysis,3,Medicare,10,2016,91,Transplanted (Deceased Donor),445,0,345.0,13.0,DBD,57.0,28.1,No,279.0,FAC_015,2
+PT_00053,41,Female,White,O,34.4,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,13,Medicare,8,2016,94,Transplanted (Deceased Donor),30,0,199.0,39.0,DBD,41.0,5.9,Yes,292.0,FAC_008,0
+PT_00054,61,Female,White,O,34.0,Polycystic Kidney,No,No,Yes,No,No,Hemodialysis,24,Medicare,11,2017,14,Removed from Waitlist,938,0,,,,,,,,FAC_030,4
+PT_00055,67,Male,White,A,21.0,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,11,Other,9,2022,14,Transplanted (Deceased Donor),30,0,344.0,50.0,DBD,34.0,26.6,No,665.0,FAC_016,1
+PT_00056,65,Male,Black,A,28.8,Other,No,Yes,No,No,No,Hemodialysis,1,Private,2,2015,16,Transplanted (Deceased Donor),208,0,289.0,50.0,DBD,33.0,12.4,Yes,507.0,FAC_027,1
+PT_00057,39,Male,Black,O,24.2,Glomerulonephritis,Yes,No,No,No,No,Peritoneal Dialysis,21,Medicare,5,2020,21,Transplanted (Deceased Donor),30,0,462.0,62.0,DCD,24.0,17.9,No,940.0,FAC_014,2
+PT_00058,47,Female,White,AB,20.9,Diabetes,Yes,No,No,No,No,Hemodialysis,55,Medicaid,7,2016,89,Still Waiting,283,0,,,,,,,,FAC_015,2
+PT_00059,56,Female,White,O,27.2,Polycystic Kidney,No,No,No,No,No,Peritoneal Dialysis,0,Private,6,2022,2,Died on Waitlist,39,1,,,,,,,,FAC_020,1
+PT_00060,66,Female,Black,A,26.6,Diabetes,Yes,Yes,Yes,Yes,No,Hemodialysis,5,Medicare,6,2016,6,Removed from Waitlist,1468,0,,,,,,,,FAC_030,1
+PT_00061,44,Male,Black,AB,43.1,Other,No,Yes,No,Yes,No,Hemodialysis,14,Private,7,2022,3,Died on Waitlist,322,1,,,,,,,,FAC_013,1
+PT_00062,49,Female,White,O,31.1,Diabetes,Yes,Yes,Yes,No,Yes,Hemodialysis,1,Private,3,2020,13,Removed from Waitlist,369,0,,,,,,,,FAC_009,1
+PT_00063,35,Female,Asian,O,20.2,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,41,Medicare,3,2015,10,Transplanted (Deceased Donor),258,0,419.0,25.0,DBD,20.0,14.2,No,407.0,FAC_001,1
+PT_00064,34,Male,White,O,25.1,Hypertension,No,No,Yes,No,No,Hemodialysis,0,Medicare,10,2022,20,Still Waiting,592,0,,,,,,,,FAC_027,0
+PT_00065,64,Male,White,O,34.6,Diabetes,Yes,Yes,No,No,No,Hemodialysis,21,Other,9,2019,0,Transplanted (Deceased Donor),920,0,220.0,51.0,DBD,93.0,29.6,No,235.0,FAC_006,0
+PT_00066,72,Female,Asian,O,41.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,10,Medicare,8,2017,24,Transplanted (Living Donor),626,0,221.0,43.0,Living,,6.0,No,571.0,FAC_008,2
+PT_00067,50,Female,White,A,19.0,Diabetes,Yes,No,Yes,No,No,Peritoneal Dialysis,38,Medicare,5,2021,95,Still Waiting,827,0,,,,,,,,FAC_027,2
+PT_00068,67,Female,Black,O,17.2,Hypertension,No,Yes,No,No,No,Hemodialysis,19,Medicare,6,2022,86,Transplanted (Living Donor),1418,0,60.0,35.0,Living,,6.0,No,740.0,FAC_027,1
+PT_00069,57,Male,White,A,39.7,Diabetes,Yes,No,Yes,Yes,No,Hemodialysis,41,Medicare,11,2019,5,Still Waiting,1195,0,,,,,,,,FAC_020,2
+PT_00070,42,Female,White,AB,30.8,Hypertension,No,Yes,No,No,No,Hemodialysis,23,Medicaid,10,2018,14,Transplanted (Living Donor),672,0,287.0,59.0,Living,,6.0,No,138.0,FAC_018,2
+PT_00071,57,Male,Native American,B,23.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,36,Private,1,2021,5,Still Waiting,144,0,,,,,,,,FAC_027,1
+PT_00072,75,Male,White,A,31.7,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,21,Other,10,2020,28,Still Waiting,609,0,,,,,,,,FAC_018,1
+PT_00073,51,Male,Hispanic,O,16.0,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,12,Medicare,1,2022,23,Still Waiting,423,0,,,,,,,,FAC_026,3
+PT_00074,75,Female,White,A,28.5,Diabetes,Yes,Yes,Yes,No,No,Peritoneal Dialysis,76,Medicare,4,2020,20,Still Waiting,757,0,,,,,,,,FAC_017,2
+PT_00075,12,Female,White,A,30.5,Other,Yes,No,No,No,No,Hemodialysis,18,Medicare,2,2017,0,Still Waiting,1073,0,,,,,,,,FAC_021,0
+PT_00076,64,Male,White,O,34.0,Polycystic Kidney,No,No,Yes,No,No,Hemodialysis,22,Medicare,11,2022,19,Still Waiting,814,0,,,,,,,,FAC_016,3
+PT_00077,53,Male,Black,O,22.4,Glomerulonephritis,No,Yes,No,No,Yes,Hemodialysis,5,Medicare,7,2016,15,Transplanted (Deceased Donor),1124,0,353.0,55.0,DBD,58.0,11.5,No,732.0,FAC_013,1
+PT_00078,47,Female,White,B,29.0,Hypertension,No,Yes,No,No,No,Hemodialysis,23,Other,2,2017,1,Transplanted (Deceased Donor),39,0,258.0,53.0,DBD,78.0,17.9,No,346.0,FAC_022,4
+PT_00079,53,Male,Hispanic,O,22.9,Other,No,No,Yes,No,No,Hemodialysis,20,Private,10,2019,93,Removed from Waitlist,30,0,,,,,,,,FAC_004,3
+PT_00080,22,Female,White,O,30.0,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,4,Medicare,2,2019,1,Still Waiting,179,0,,,,,,,,FAC_004,4
+PT_00081,48,Male,Asian,O,23.1,Diabetes,Yes,Yes,No,No,No,Hemodialysis,1,Medicaid,5,2015,0,Still Waiting,1385,0,,,,,,,,FAC_021,1
+PT_00082,57,Male,White,O,26.1,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,22,Medicare,4,2021,7,Still Waiting,1041,0,,,,,,,,FAC_014,0
+PT_00083,74,Male,Hispanic,B,22.5,Polycystic Kidney,No,No,No,No,No,Hemodialysis,34,Medicare,8,2018,88,Still Waiting,688,0,,,,,,,,FAC_005,4
+PT_00084,44,Male,Black,A,32.4,Diabetes,Yes,Yes,No,No,No,Hemodialysis,17,Medicaid,4,2018,83,Transplanted (Deceased Donor),723,0,157.0,43.0,DBD,66.0,25.7,No,448.0,FAC_016,0
+PT_00085,39,Female,Black,A,33.7,Hypertension,No,Yes,No,No,No,Hemodialysis,6,Medicare,6,2021,82,Transplanted (Deceased Donor),778,0,511.0,7.0,DBD,71.0,13.3,Yes,294.0,FAC_014,2
+PT_00086,44,Male,Hispanic,O,27.1,Other,No,Yes,Yes,No,No,Hemodialysis,26,Other,5,2018,34,Transplanted (Deceased Donor),1714,0,31.0,49.0,DBD,33.0,23.5,No,2411.0,FAC_030,4
+PT_00087,65,Male,Black,O,28.7,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,2,Medicaid,11,2015,2,Transplanted (Deceased Donor),1070,0,983.0,37.0,DBD,47.0,16.5,Yes,1034.0,FAC_014,2
+PT_00088,56,Female,Black,A,19.8,Hypertension,No,No,No,No,No,Hemodialysis,13,Medicare,2,2016,81,Died on Waitlist,585,1,,,,,,,,FAC_014,2
+PT_00089,44,Male,White,O,26.7,Diabetes,Yes,No,No,No,No,Hemodialysis,4,Private,11,2022,7,Still Waiting,657,0,,,,,,,,FAC_025,0
+PT_00090,59,Male,White,O,28.2,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,4,Medicare,8,2015,8,Still Waiting,144,0,,,,,,,,FAC_024,2
+PT_00091,53,Female,Hispanic,A,44.2,Hypertension,No,Yes,Yes,No,No,Hemodialysis,5,Medicare,2,2018,89,Transplanted (Living Donor),642,0,14.0,42.0,Living,,6.0,No,273.0,FAC_025,0
+PT_00092,66,Female,Black,O,21.8,Diabetes,Yes,No,No,No,No,Hemodialysis,11,Medicare,9,2019,8,Transplanted (Deceased Donor),331,0,1311.0,60.0,DCD,50.0,29.0,No,932.0,FAC_029,2
+PT_00093,41,Male,Black,A,37.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,1,Medicare,9,2019,0,Transplanted (Deceased Donor),99,0,248.0,26.0,DBD,79.0,6.5,No,1698.0,FAC_014,1
+PT_00094,47,Female,White,O,34.5,Other,No,Yes,Yes,No,No,Hemodialysis,12,Private,3,2015,14,Died on Waitlist,985,1,,,,,,,,FAC_019,0
+PT_00095,46,Female,White,O,30.2,Glomerulonephritis,No,No,Yes,No,No,Hemodialysis,17,Medicare,4,2019,3,Transplanted (Deceased Donor),428,0,212.0,51.0,DBD,58.0,10.5,Yes,462.0,FAC_030,2
+PT_00096,30,Male,White,O,39.1,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,15,Private,8,2018,21,Transplanted (Deceased Donor),2274,1,118.0,51.0,DCD,88.0,15.9,Yes,1594.0,FAC_003,1
+PT_00097,56,Male,Black,AB,30.7,Other,No,Yes,No,No,No,Hemodialysis,11,Medicaid,9,2022,4,Transplanted (Living Donor),198,0,14.0,44.0,Living,,6.0,No,150.0,FAC_017,1
+PT_00098,55,Female,White,B,30.8,Hypertension,No,Yes,No,No,No,Hemodialysis,43,Medicare,3,2016,91,Transplanted (Deceased Donor),393,0,128.0,48.0,DCD,27.0,21.7,No,1557.0,FAC_014,1
+PT_00099,52,Female,White,AB,28.2,Hypertension,No,Yes,No,No,No,Hemodialysis,3,Private,5,2018,11,Still Waiting,356,0,,,,,,,,FAC_010,1
+PT_00100,48,Male,White,A,35.8,Hypertension,No,Yes,No,No,No,Hemodialysis,16,Medicare,11,2018,94,Transplanted (Deceased Donor),77,0,46.0,52.0,DBD,60.0,11.0,No,699.0,FAC_013,3
+PT_00101,30,Female,White,O,35.1,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,1,Medicare,8,2018,14,Transplanted (Deceased Donor),333,0,431.0,66.0,DBD,50.0,22.6,Yes,227.0,FAC_022,4
+PT_00102,45,Female,Black,A,24.7,Hypertension,Yes,No,No,No,No,Hemodialysis,1,Medicare,3,2020,34,Transplanted (Deceased Donor),203,0,153.0,33.0,DBD,56.0,13.0,Yes,470.0,FAC_004,6
+PT_00103,46,Male,White,A,20.6,Glomerulonephritis,No,Yes,No,Yes,No,Peritoneal Dialysis,20,Medicare,7,2017,93,Transplanted (Deceased Donor),104,1,582.0,27.0,DCD,52.0,23.7,No,2500.0,FAC_011,2
+PT_00104,39,Male,Black,B,27.3,Hypertension,Yes,Yes,No,Yes,No,Hemodialysis,20,Medicare,11,2017,82,Removed from Waitlist,198,0,,,,,,,,FAC_015,2
+PT_00105,49,Male,White,O,23.7,Other,No,Yes,Yes,No,No,Peritoneal Dialysis,50,Medicaid,8,2021,9,Still Waiting,159,0,,,,,,,,FAC_015,2
+PT_00106,58,Female,White,A,28.1,Hypertension,No,Yes,No,No,No,Peritoneal Dialysis,19,Medicare,10,2019,99,Transplanted (Living Donor),794,0,92.0,21.0,Living,,6.0,No,1377.0,FAC_030,3
+PT_00107,79,Male,White,O,35.9,Hypertension,No,Yes,No,No,Yes,Peritoneal Dialysis,77,Medicare,11,2018,87,Removed from Waitlist,30,0,,,,,,,,FAC_024,3
+PT_00108,54,Female,White,O,25.8,Hypertension,No,Yes,Yes,No,No,Hemodialysis,1,Other,3,2016,88,Transplanted (Deceased Donor),576,0,921.0,11.0,DCD,52.0,13.0,No,770.0,FAC_002,2
+PT_00109,55,Female,White,A,28.2,Hypertension,No,Yes,No,No,No,Hemodialysis,0,Medicaid,2,2017,6,Removed from Waitlist,857,0,,,,,,,,FAC_011,3
+PT_00110,50,Female,White,A,28.8,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,1,Private,10,2015,80,Transplanted (Deceased Donor),393,0,296.0,52.0,DBD,72.0,18.1,No,110.0,FAC_002,2
+PT_00111,23,Male,Black,O,33.6,Diabetes,Yes,No,No,No,No,Hemodialysis,4,Medicare,7,2016,98,Transplanted (Living Donor),1609,0,48.0,43.0,Living,,6.0,No,486.0,FAC_023,2
+PT_00112,51,Female,White,O,16.0,Hypertension,No,Yes,No,No,No,Hemodialysis,18,Medicaid,9,2019,82,Still Waiting,738,0,,,,,,,,FAC_029,1
+PT_00113,52,Male,Black,A,24.9,Diabetes,Yes,Yes,No,No,No,Hemodialysis,24,Private,1,2022,5,Still Waiting,826,0,,,,,,,,FAC_005,0
+PT_00114,79,Female,Hispanic,A,29.8,Hypertension,No,Yes,Yes,No,Yes,Hemodialysis,1,Medicaid,3,2017,17,Removed from Waitlist,131,0,,,,,,,,FAC_013,3
+PT_00115,49,Male,Black,B,35.7,Hypertension,No,Yes,No,No,No,Hemodialysis,70,Private,5,2018,26,Transplanted (Deceased Donor),901,0,204.0,4.0,DBD,35.0,7.1,No,274.0,FAC_001,1
+PT_00116,56,Male,White,AB,25.5,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,44,Medicare,3,2016,9,Transplanted (Deceased Donor),1070,0,92.0,31.0,DBD,53.0,20.3,No,66.0,FAC_007,1
+PT_00117,51,Female,White,A,17.2,Other,No,Yes,No,No,No,Hemodialysis,8,Medicare,1,2018,91,Still Waiting,268,0,,,,,,,,FAC_007,0
+PT_00118,34,Male,White,O,32.2,Hypertension,No,Yes,No,No,No,Hemodialysis,1,Medicare,7,2015,2,Transplanted (Deceased Donor),143,0,89.0,67.0,DCD,84.0,11.9,Yes,703.0,FAC_010,4
+PT_00119,69,Male,White,A,24.7,Glomerulonephritis,Yes,No,No,No,No,Hemodialysis,4,Medicare,7,2022,40,Transplanted (Deceased Donor),291,0,282.0,18.0,DCD,36.0,18.4,No,1979.0,FAC_006,3
+PT_00120,63,Female,Native American,O,21.4,Hypertension,No,Yes,Yes,No,No,Hemodialysis,3,Private,10,2020,92,Transplanted (Deceased Donor),807,0,445.0,45.0,DBD,31.0,21.2,No,1013.0,FAC_020,2
+PT_00121,63,Female,White,O,24.8,Hypertension,No,Yes,Yes,No,No,Hemodialysis,0,Medicare,8,2022,25,Transplanted (Deceased Donor),324,0,970.0,25.0,DBD,67.0,30.6,Yes,258.0,FAC_012,0
+PT_00122,38,Female,White,B,27.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,17,Other,5,2022,15,Transplanted (Deceased Donor),800,0,278.0,30.0,DBD,63.0,18.3,No,767.0,FAC_013,3
+PT_00123,73,Female,Black,O,24.9,Diabetes,Yes,Yes,Yes,No,No,Peritoneal Dialysis,6,Other,10,2019,3,Transplanted (Living Donor),72,0,1350.0,23.0,Living,,6.0,No,2500.0,FAC_024,3
+PT_00124,30,Male,Black,B,16.0,Diabetes,Yes,No,No,No,No,Hemodialysis,10,Medicare,5,2019,16,Transplanted (Living Donor),983,0,1136.0,43.0,Living,,6.0,No,1155.0,FAC_028,1
+PT_00125,60,Male,White,A,33.9,Hypertension,No,Yes,No,No,No,Hemodialysis,109,Medicare,5,2017,5,Still Waiting,175,0,,,,,,,,FAC_011,1
+PT_00126,79,Male,White,A,36.1,Diabetes,Yes,Yes,No,No,No,Hemodialysis,27,Private,1,2019,97,Transplanted (Deceased Donor),171,0,801.0,50.0,DBD,53.0,15.5,No,1052.0,FAC_018,1
+PT_00127,37,Male,White,A,32.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,71,Other,10,2022,13,Transplanted (Deceased Donor),535,0,277.0,40.0,DBD,37.0,22.0,No,2500.0,FAC_002,2
+PT_00128,43,Female,White,B,21.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,3,Medicare,5,2015,0,Died on Waitlist,43,1,,,,,,,,FAC_016,1
+PT_00129,53,Female,White,A,27.3,Other,No,Yes,No,No,Yes,Hemodialysis,11,Medicare,6,2022,0,Removed from Waitlist,30,0,,,,,,,,FAC_002,2
+PT_00130,44,Male,White,A,28.5,Diabetes,Yes,No,Yes,No,No,Hemodialysis,19,Medicare,1,2018,5,Transplanted (Living Donor),181,0,60.0,30.0,Living,,6.0,No,1443.0,FAC_019,6
+PT_00131,28,Male,White,O,32.1,Hypertension,No,Yes,No,No,No,Hemodialysis,1,Medicaid,11,2022,5,Still Waiting,463,0,,,,,,,,FAC_006,2
+PT_00132,53,Female,White,A,32.5,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Medicare,7,2022,22,Transplanted (Deceased Donor),1429,0,98.0,23.0,DBD,30.0,16.5,Yes,132.0,FAC_001,3
+PT_00133,36,Male,White,O,24.1,Hypertension,No,Yes,No,No,Yes,Hemodialysis,26,Private,1,2020,1,Still Waiting,1124,0,,,,,,,,FAC_011,3
+PT_00134,59,Female,White,A,29.0,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,24,Medicare,11,2020,97,Transplanted (Living Donor),404,0,417.0,32.0,Living,,6.0,Yes,384.0,FAC_018,2
+PT_00135,38,Male,White,A,31.2,Diabetes,Yes,Yes,No,No,Yes,Peritoneal Dialysis,12,Medicare,2,2019,1,Transplanted (Deceased Donor),30,0,219.0,44.0,DBD,44.0,26.5,No,2500.0,FAC_010,2
+PT_00136,75,Female,Black,A,37.2,Hypertension,No,Yes,Yes,No,No,Hemodialysis,16,Medicare,2,2021,0,Still Waiting,459,0,,,,,,,,FAC_018,3
+PT_00137,40,Male,Black,O,32.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,12,Medicare,5,2022,84,Removed from Waitlist,732,0,,,,,,,,FAC_030,4
+PT_00138,47,Female,White,O,33.2,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Medicare,10,2021,10,Transplanted (Deceased Donor),248,0,63.0,29.0,DBD,87.0,16.8,No,605.0,FAC_028,2
+PT_00139,64,Female,White,A,29.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,9,Medicare,7,2020,5,Transplanted (Deceased Donor),70,0,260.0,41.0,DBD,1.0,12.4,No,106.0,FAC_001,5
+PT_00140,33,Female,White,O,37.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,4,Medicare,1,2020,14,Transplanted (Deceased Donor),195,0,14.0,52.0,DBD,81.0,13.4,Yes,552.0,FAC_019,4
+PT_00141,55,Female,Black,O,31.0,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,2,Medicare,10,2021,49,Removed from Waitlist,885,0,,,,,,,,FAC_016,0
+PT_00142,71,Female,Black,O,23.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,75,Medicare,1,2019,10,Transplanted (Deceased Donor),259,0,529.0,49.0,DBD,39.0,22.5,No,1074.0,FAC_026,0
+PT_00143,27,Female,White,AB,36.9,Polycystic Kidney,No,No,Yes,No,No,Hemodialysis,21,Other,1,2021,0,Transplanted (Deceased Donor),1002,0,30.0,29.0,DCD,35.0,32.0,No,2500.0,FAC_007,2
+PT_00144,54,Male,Asian,A,32.7,Hypertension,No,Yes,No,No,No,Hemodialysis,31,Medicare,6,2019,1,Transplanted (Deceased Donor),230,0,396.0,16.0,DBD,9.0,15.4,No,352.0,FAC_015,1
+PT_00145,55,Female,White,O,25.8,Hypertension,No,Yes,Yes,No,No,Peritoneal Dialysis,0,Medicare,2,2015,21,Still Waiting,107,0,,,,,,,,FAC_029,0
+PT_00146,63,Female,White,O,25.6,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,11,Medicaid,1,2018,7,Still Waiting,343,0,,,,,,,,FAC_001,4
+PT_00147,33,Male,Black,O,30.3,Other,No,Yes,No,No,No,Hemodialysis,6,Other,6,2019,17,Still Waiting,361,0,,,,,,,,FAC_023,2
+PT_00148,32,Female,Hispanic,A,31.3,Hypertension,No,Yes,No,No,No,Hemodialysis,2,Medicare,2,2016,87,Transplanted (Deceased Donor),30,0,630.0,35.0,DCD,59.0,31.4,No,649.0,FAC_021,3
+PT_00149,59,Female,Black,A,29.7,Diabetes,Yes,No,No,No,No,Hemodialysis,4,Medicaid,6,2016,97,Still Waiting,74,0,,,,,,,,FAC_009,1
+PT_00150,56,Female,Black,O,30.4,Hypertension,No,Yes,Yes,No,No,Hemodialysis,38,Private,10,2019,90,Removed from Waitlist,122,0,,,,,,,,FAC_002,1
+PT_00151,55,Male,White,O,38.7,Diabetes,Yes,Yes,Yes,No,No,Peritoneal Dialysis,27,Medicaid,8,2016,8,Still Waiting,72,0,,,,,,,,FAC_017,3
+PT_00152,57,Male,Black,O,34.9,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,19,Medicare,2,2018,4,Transplanted (Living Donor),250,0,56.0,41.0,Living,,6.0,No,1905.0,FAC_025,2
+PT_00153,41,Female,White,A,29.6,Hypertension,No,No,Yes,No,Yes,Hemodialysis,15,Medicaid,11,2021,32,Transplanted (Living Donor),2005,0,292.0,38.0,Living,,6.0,No,395.0,FAC_024,4
+PT_00154,55,Female,Hispanic,A,34.1,Other,No,No,Yes,No,No,Hemodialysis,61,Medicare,9,2022,7,Still Waiting,427,0,,,,,,,,FAC_010,4
+PT_00155,56,Male,White,O,22.3,Hypertension,No,Yes,No,No,No,Hemodialysis,1,Medicaid,8,2021,0,Transplanted (Deceased Donor),592,0,603.0,48.0,DBD,10.0,13.0,No,104.0,FAC_006,1
+PT_00156,41,Female,Black,O,30.9,Glomerulonephritis,No,No,No,No,No,Hemodialysis,7,Private,10,2022,10,Died on Waitlist,264,1,,,,,,,,FAC_005,0
+PT_00157,79,Female,White,O,39.4,Other,No,Yes,No,No,No,Hemodialysis,10,Medicare,1,2020,8,Still Waiting,234,0,,,,,,,,FAC_008,2
+PT_00158,59,Male,Black,AB,27.2,Diabetes,Yes,No,No,No,No,Hemodialysis,36,Private,7,2017,22,Still Waiting,30,0,,,,,,,,FAC_008,3
+PT_00159,34,Female,White,O,23.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,117,Medicare,10,2020,97,Still Waiting,416,0,,,,,,,,FAC_030,1
+PT_00160,61,Male,Black,A,24.6,Hypertension,Yes,Yes,No,No,No,Hemodialysis,6,Private,6,2021,4,Removed from Waitlist,396,0,,,,,,,,FAC_005,1
+PT_00161,37,Male,White,A,22.0,Hypertension,Yes,Yes,Yes,No,No,Hemodialysis,49,Medicare,6,2018,33,Transplanted (Deceased Donor),103,0,120.0,39.0,DBD,14.0,17.3,No,2500.0,FAC_012,0
+PT_00162,63,Male,White,O,23.8,Hypertension,No,Yes,No,No,Yes,Peritoneal Dialysis,42,Medicare,6,2015,16,Transplanted (Deceased Donor),867,1,71.0,33.0,DBD,18.0,14.0,No,603.0,FAC_007,3
+PT_00163,69,Female,White,O,26.3,Other,No,Yes,No,No,No,Hemodialysis,6,Medicare,6,2021,9,Transplanted (Living Donor),407,0,164.0,44.0,Living,,6.0,Yes,628.0,FAC_013,2
+PT_00164,39,Male,White,O,20.1,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,12,Other,10,2015,3,Transplanted (Living Donor),248,0,323.0,60.0,Living,,6.0,No,873.0,FAC_013,1
+PT_00165,66,Male,Hispanic,A,28.6,Hypertension,No,Yes,Yes,No,No,Hemodialysis,12,Medicare,7,2020,4,Transplanted (Deceased Donor),95,0,342.0,58.0,DBD,85.0,29.1,No,3.0,FAC_017,3
+PT_00166,58,Male,White,A,33.9,Diabetes,Yes,Yes,No,No,No,Hemodialysis,91,Medicare,3,2016,11,Transplanted (Deceased Donor),481,1,56.0,37.0,DBD,32.0,24.9,No,2407.0,FAC_004,1
+PT_00167,64,Male,Asian,A,23.1,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,4,Medicare,6,2019,87,Died on Waitlist,838,1,,,,,,,,FAC_018,1
+PT_00168,79,Female,White,A,37.6,Other,No,No,Yes,No,No,Hemodialysis,38,Medicaid,3,2019,99,Still Waiting,198,0,,,,,,,,FAC_010,0
+PT_00169,48,Male,White,O,31.6,Polycystic Kidney,No,No,Yes,No,No,Hemodialysis,9,Medicare,7,2015,84,Still Waiting,148,0,,,,,,,,FAC_003,2
+PT_00170,40,Male,Black,AB,34.7,Diabetes,Yes,No,No,No,No,Hemodialysis,31,Medicare,7,2018,90,Still Waiting,442,0,,,,,,,,FAC_012,2
+PT_00171,38,Female,Black,A,24.6,Hypertension,No,Yes,No,No,No,Hemodialysis,13,Medicare,8,2020,5,Still Waiting,101,0,,,,,,,,FAC_001,2
+PT_00172,39,Male,White,O,33.6,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,20,Medicare,2,2021,1,Removed from Waitlist,659,0,,,,,,,,FAC_027,1
+PT_00173,50,Male,White,AB,21.9,Diabetes,Yes,No,No,No,No,Peritoneal Dialysis,42,Medicare,9,2022,5,Still Waiting,557,0,,,,,,,,FAC_011,1
+PT_00174,57,Male,Black,A,33.8,Diabetes,Yes,No,No,No,Yes,Hemodialysis,39,Medicare,5,2019,14,Removed from Waitlist,54,0,,,,,,,,FAC_018,3
+PT_00175,56,Male,White,A,29.5,Hypertension,Yes,Yes,No,No,No,Hemodialysis,48,Private,9,2021,3,Still Waiting,30,0,,,,,,,,FAC_013,1
+PT_00176,64,Male,Native American,A,31.8,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,1,Medicare,10,2018,89,Still Waiting,581,0,,,,,,,,FAC_017,3
+PT_00177,52,Male,Asian,B,21.4,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,28,Medicare,5,2018,11,Still Waiting,209,0,,,,,,,,FAC_008,0
+PT_00178,73,Male,Black,A,23.1,Hypertension,No,Yes,No,No,No,Hemodialysis,3,Medicare,7,2017,35,Transplanted (Living Donor),54,0,244.0,38.0,Living,,6.0,No,403.0,FAC_020,2
+PT_00179,48,Female,White,O,32.1,Hypertension,No,Yes,No,No,No,Hemodialysis,12,Other,11,2019,9,Transplanted (Deceased Donor),854,0,124.0,43.0,DBD,60.0,17.6,No,455.0,FAC_019,3
+PT_00180,79,Male,Black,O,22.8,Diabetes,Yes,Yes,No,No,No,Hemodialysis,19,Other,9,2018,93,Transplanted (Deceased Donor),226,0,738.0,36.0,DCD,39.0,18.5,No,172.0,FAC_017,1
+PT_00181,61,Female,White,B,31.3,Diabetes,Yes,No,No,No,No,Hemodialysis,12,Private,4,2016,3,Transplanted (Deceased Donor),369,0,150.0,65.0,DBD,59.0,13.8,No,427.0,FAC_002,2
+PT_00182,39,Female,White,O,20.3,Hypertension,No,Yes,Yes,No,No,Hemodialysis,17,Medicare,2,2020,92,Transplanted (Deceased Donor),162,0,729.0,9.0,DBD,47.0,11.7,No,1466.0,FAC_003,6
+PT_00183,35,Male,White,O,33.6,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,120,Medicare,9,2021,99,Transplanted (Deceased Donor),592,0,223.0,49.0,DBD,41.0,22.8,No,1448.0,FAC_003,2
+PT_00184,59,Female,White,O,21.1,Diabetes,Yes,Yes,Yes,No,Yes,Hemodialysis,3,Medicare,2,2018,90,Transplanted (Deceased Donor),215,0,518.0,40.0,DCD,12.0,16.9,Yes,2471.0,FAC_006,3
+PT_00185,48,Male,Hispanic,O,31.8,Diabetes,Yes,No,No,No,No,Hemodialysis,27,Medicare,3,2015,94,Died on Waitlist,2065,1,,,,,,,,FAC_010,1
+PT_00186,62,Female,Black,A,32.3,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,12,Medicare,10,2018,91,Removed from Waitlist,728,0,,,,,,,,FAC_024,3
+PT_00187,59,Male,Black,AB,24.3,Other,No,Yes,No,No,No,Hemodialysis,3,Private,2,2019,16,Transplanted (Deceased Donor),88,1,285.0,65.0,DBD,51.0,20.5,No,464.0,FAC_022,0
+PT_00188,50,Male,White,O,32.0,Glomerulonephritis,No,Yes,No,No,Yes,Hemodialysis,4,Private,3,2020,13,Removed from Waitlist,323,0,,,,,,,,FAC_018,4
+PT_00189,39,Male,White,O,30.1,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,71,Private,6,2018,10,Removed from Waitlist,292,0,,,,,,,,FAC_018,1
+PT_00190,29,Female,White,O,25.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,50,Medicare,3,2020,2,Died on Waitlist,458,1,,,,,,,,FAC_014,1
+PT_00191,45,Male,Native American,B,22.4,Hypertension,No,Yes,No,No,No,Peritoneal Dialysis,57,Medicaid,10,2022,87,Still Waiting,1106,0,,,,,,,,FAC_016,1
+PT_00192,64,Female,White,A,16.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,114,Medicare,8,2017,8,Transplanted (Deceased Donor),525,0,389.0,51.0,DBD,71.0,8.5,No,1110.0,FAC_007,3
+PT_00193,55,Male,Hispanic,O,30.6,Hypertension,No,Yes,No,No,No,Hemodialysis,5,Medicare,11,2022,82,Transplanted (Deceased Donor),38,0,201.0,44.0,DBD,28.0,16.6,No,636.0,FAC_001,3
+PT_00194,33,Female,White,B,19.1,Other,No,Yes,Yes,No,No,Hemodialysis,10,Private,6,2018,2,Transplanted (Living Donor),639,0,584.0,44.0,Living,,6.0,No,1466.0,FAC_017,0
+PT_00195,54,Male,White,B,29.1,Hypertension,No,Yes,No,No,No,Hemodialysis,26,Medicare,7,2017,0,Transplanted (Deceased Donor),30,0,221.0,25.0,DBD,40.0,21.4,No,1122.0,FAC_023,4
+PT_00196,57,Female,Black,B,26.9,Other,No,Yes,No,No,No,Peritoneal Dialysis,15,Medicare,1,2018,90,Died on Waitlist,908,1,,,,,,,,FAC_025,3
+PT_00197,38,Male,White,B,32.6,Glomerulonephritis,Yes,No,No,No,No,Hemodialysis,13,Medicare,3,2016,49,Transplanted (Living Donor),659,0,244.0,21.0,Living,,6.0,No,412.0,FAC_005,0
+PT_00198,54,Male,Hispanic,O,26.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,10,Medicaid,3,2016,15,Transplanted (Deceased Donor),221,0,291.0,20.0,DCD,78.0,27.3,No,369.0,FAC_027,2
+PT_00199,52,Male,Hispanic,A,26.5,Other,No,Yes,No,No,No,Hemodialysis,0,Private,2,2018,25,Transplanted (Deceased Donor),207,0,713.0,47.0,DBD,33.0,14.7,No,261.0,FAC_001,0
+PT_00200,34,Male,White,A,32.9,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,0,Medicare,7,2021,2,Transplanted (Deceased Donor),960,0,430.0,42.0,DBD,59.0,11.7,No,773.0,FAC_021,2
+PT_00201,57,Female,White,B,30.5,Hypertension,Yes,Yes,No,No,No,Hemodialysis,4,Private,9,2022,32,Removed from Waitlist,917,0,,,,,,,,FAC_027,2
+PT_00202,60,Male,Black,A,30.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,15,Medicare,4,2020,1,Died on Waitlist,260,1,,,,,,,,FAC_017,2
+PT_00203,68,Female,Hispanic,A,31.3,Diabetes,Yes,Yes,Yes,No,Yes,Hemodialysis,19,Medicare,5,2016,7,Transplanted (Deceased Donor),213,0,171.0,13.0,DBD,63.0,16.0,No,2500.0,FAC_010,3
+PT_00204,67,Male,White,A,19.3,Hypertension,No,Yes,No,No,No,Hemodialysis,20,Private,3,2020,94,Transplanted (Deceased Donor),492,0,443.0,43.0,DBD,85.0,14.3,No,200.0,FAC_012,1
+PT_00205,31,Male,Black,O,33.0,Diabetes,Yes,No,No,No,No,Hemodialysis,5,Medicaid,11,2020,82,Transplanted (Deceased Donor),30,0,411.0,46.0,DBD,9.0,21.1,No,90.0,FAC_025,4
+PT_00206,37,Male,Black,A,32.2,Hypertension,No,No,Yes,No,No,Peritoneal Dialysis,32,Other,9,2021,5,Transplanted (Deceased Donor),51,0,1069.0,31.0,DBD,21.0,10.1,No,114.0,FAC_020,3
+PT_00207,59,Male,Black,AB,22.4,Hypertension,No,No,No,No,No,Hemodialysis,0,Medicare,4,2021,1,Still Waiting,80,0,,,,,,,,FAC_025,1
+PT_00208,59,Female,White,AB,27.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,10,Medicaid,5,2022,84,Transplanted (Deceased Donor),123,0,736.0,25.0,DBD,1.0,8.0,Yes,1375.0,FAC_002,2
+PT_00209,59,Male,Black,O,28.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,36,Medicaid,1,2018,9,Still Waiting,430,0,,,,,,,,FAC_023,2
+PT_00210,79,Male,Hispanic,O,27.7,Hypertension,No,Yes,No,No,No,Hemodialysis,19,Private,11,2020,11,Still Waiting,2800,0,,,,,,,,FAC_016,6
+PT_00211,60,Female,White,O,30.5,Diabetes,Yes,Yes,No,No,No,Hemodialysis,7,Medicare,2,2017,15,Transplanted (Deceased Donor),634,0,417.0,49.0,DBD,31.0,16.4,No,387.0,FAC_015,1
+PT_00212,69,Female,White,A,37.1,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,28,Private,9,2022,82,Transplanted (Living Donor),37,0,167.0,65.0,Living,,6.0,No,228.0,FAC_028,2
+PT_00213,66,Male,Asian,B,35.0,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,20,Medicaid,2,2016,10,Still Waiting,447,0,,,,,,,,FAC_013,2
+PT_00214,61,Male,White,O,20.6,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,38,Medicare,5,2015,0,Still Waiting,411,0,,,,,,,,FAC_018,1
+PT_00215,47,Female,Hispanic,A,32.2,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,31,Medicare,8,2016,1,Transplanted (Living Donor),93,0,604.0,26.0,Living,,6.0,Yes,391.0,FAC_028,2
+PT_00216,63,Male,White,B,36.5,Hypertension,No,Yes,No,No,No,Hemodialysis,22,Medicare,3,2021,41,Still Waiting,1517,0,,,,,,,,FAC_020,4
+PT_00217,40,Male,White,A,30.8,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,16,Medicaid,6,2019,0,Still Waiting,348,0,,,,,,,,FAC_022,1
+PT_00218,48,Male,Hispanic,A,35.0,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,3,Private,4,2019,11,Transplanted (Deceased Donor),2800,0,342.0,42.0,DBD,15.0,23.6,Yes,932.0,FAC_014,1
+PT_00219,44,Female,White,A,40.6,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,7,Medicaid,11,2022,88,Still Waiting,326,0,,,,,,,,FAC_018,0
+PT_00220,53,Female,White,A,34.6,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,13,Medicaid,7,2022,93,Transplanted (Living Donor),561,0,1687.0,30.0,Living,,6.0,No,712.0,FAC_002,1
+PT_00221,79,Male,White,O,30.0,Hypertension,No,Yes,No,No,No,Hemodialysis,21,Medicare,10,2018,12,Died on Waitlist,66,1,,,,,,,,FAC_002,0
+PT_00222,23,Male,Black,A,34.8,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,17,Medicare,3,2017,2,Still Waiting,363,0,,,,,,,,FAC_003,3
+PT_00223,62,Male,White,A,29.4,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,8,Medicare,6,2021,3,Still Waiting,163,0,,,,,,,,FAC_005,2
+PT_00224,27,Female,White,B,28.6,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,0,Medicare,10,2022,80,Transplanted (Deceased Donor),1083,0,113.0,75.0,DBD,54.0,27.8,Yes,1224.0,FAC_025,6
+PT_00225,44,Male,Asian,A,26.4,Other,No,No,Yes,No,No,Hemodialysis,16,Medicare,9,2019,91,Transplanted (Deceased Donor),919,0,33.0,37.0,DBD,22.0,13.7,Yes,372.0,FAC_016,0
+PT_00226,68,Male,White,A,37.9,Hypertension,Yes,No,Yes,No,No,Hemodialysis,8,Medicare,11,2020,2,Removed from Waitlist,1042,0,,,,,,,,FAC_022,1
+PT_00227,52,Female,Black,O,23.6,Diabetes,Yes,Yes,No,No,No,Hemodialysis,31,Medicare,10,2017,13,Removed from Waitlist,771,0,,,,,,,,FAC_015,0
+PT_00228,35,Male,White,A,37.7,Hypertension,No,Yes,No,No,No,Hemodialysis,0,Medicare,1,2021,83,Removed from Waitlist,1072,0,,,,,,,,FAC_012,2
+PT_00229,41,Female,Black,O,31.5,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,21,Medicare,3,2020,19,Still Waiting,134,0,,,,,,,,FAC_030,1
+PT_00230,62,Male,White,O,20.1,Hypertension,No,Yes,Yes,No,No,Hemodialysis,68,Medicare,2,2019,7,Still Waiting,360,0,,,,,,,,FAC_009,1
+PT_00231,41,Male,Asian,A,30.7,Glomerulonephritis,No,No,No,No,No,Hemodialysis,4,Medicare,8,2015,1,Transplanted (Living Donor),706,0,28.0,26.0,Living,,6.0,No,541.0,FAC_026,3
+PT_00232,55,Male,White,AB,16.0,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,15,Private,7,2022,11,Transplanted (Deceased Donor),608,0,408.0,42.0,DBD,51.0,22.1,No,96.0,FAC_014,2
+PT_00233,52,Female,White,O,32.3,Diabetes,Yes,No,No,No,No,Hemodialysis,2,Private,2,2020,7,Transplanted (Living Donor),756,0,1120.0,31.0,Living,,6.0,No,68.0,FAC_029,1
+PT_00234,42,Female,White,O,33.8,Diabetes,Yes,Yes,No,No,No,Hemodialysis,23,Private,6,2017,94,Removed from Waitlist,152,0,,,,,,,,FAC_021,1
+PT_00235,79,Female,White,B,24.9,Hypertension,No,Yes,Yes,No,Yes,Hemodialysis,19,Medicare,3,2020,5,Removed from Waitlist,62,0,,,,,,,,FAC_016,2
+PT_00236,61,Male,White,O,29.2,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,12,Private,8,2020,3,Died on Waitlist,1491,1,,,,,,,,FAC_011,1
+PT_00237,21,Female,White,A,40.2,Other,No,Yes,No,No,No,Peritoneal Dialysis,0,Private,10,2019,3,Transplanted (Living Donor),492,0,14.0,42.0,Living,,6.0,No,558.0,FAC_006,1
+PT_00238,54,Male,Black,A,25.5,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,54,Private,3,2021,1,Transplanted (Deceased Donor),100,0,517.0,71.0,DCD,28.0,12.2,Yes,323.0,FAC_010,0
+PT_00239,42,Male,White,A,22.1,Diabetes,Yes,Yes,No,No,No,Hemodialysis,5,Medicare,10,2020,4,Transplanted (Deceased Donor),946,0,428.0,23.0,DBD,95.0,23.2,No,853.0,FAC_028,1
+PT_00240,64,Female,White,O,37.4,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Medicaid,9,2022,2,Transplanted (Living Donor),1478,0,527.0,35.0,Living,,6.0,Yes,39.0,FAC_008,2
+PT_00241,40,Male,Black,O,40.3,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,47,Private,1,2015,87,Transplanted (Deceased Donor),111,1,175.0,24.0,DBD,54.0,19.7,No,116.0,FAC_016,2
+PT_00242,50,Male,Black,A,28.5,Hypertension,Yes,Yes,No,No,No,Hemodialysis,20,Medicaid,5,2016,11,Transplanted (Deceased Donor),1020,1,687.0,33.0,DBD,64.0,15.7,Yes,1803.0,FAC_003,1
+PT_00243,59,Male,White,A,34.6,Diabetes,Yes,Yes,No,No,No,Hemodialysis,53,Medicaid,3,2016,6,Transplanted (Deceased Donor),1623,0,18.0,69.0,DCD,3.0,20.6,No,751.0,FAC_002,2
+PT_00244,64,Male,White,O,36.5,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,21,Medicare,6,2020,15,Died on Waitlist,1671,1,,,,,,,,FAC_016,1
+PT_00245,33,Male,White,A,24.0,Hypertension,Yes,Yes,No,No,No,Hemodialysis,39,Medicare,10,2020,18,Transplanted (Deceased Donor),1473,0,563.0,46.0,DBD,47.0,11.3,No,1120.0,FAC_019,1
+PT_00246,46,Female,Black,O,25.6,Diabetes,Yes,Yes,No,No,No,Hemodialysis,13,Medicare,2,2022,91,Still Waiting,474,0,,,,,,,,FAC_030,5
+PT_00247,44,Male,Black,A,35.9,Glomerulonephritis,No,Yes,No,Yes,No,Hemodialysis,33,Medicaid,9,2021,9,Died on Waitlist,264,1,,,,,,,,FAC_009,2
+PT_00248,42,Female,White,O,38.6,Hypertension,Yes,No,No,No,No,Hemodialysis,58,Medicare,6,2019,94,Removed from Waitlist,30,0,,,,,,,,FAC_016,3
+PT_00249,78,Female,Hispanic,AB,31.9,Diabetes,Yes,Yes,No,No,No,Hemodialysis,20,Medicare,7,2022,22,Removed from Waitlist,37,0,,,,,,,,FAC_022,0
+PT_00250,58,Male,Black,O,23.2,Diabetes,Yes,Yes,No,No,No,Hemodialysis,4,Medicare,5,2017,98,Transplanted (Deceased Donor),336,0,124.0,46.0,DBD,6.0,21.5,Yes,1660.0,FAC_026,2
+PT_00251,33,Male,Black,O,40.4,Other,No,Yes,Yes,No,No,Hemodialysis,7,Medicare,9,2021,4,Transplanted (Living Donor),305,0,259.0,36.0,Living,,6.0,No,560.0,FAC_028,2
+PT_00252,65,Male,Hispanic,O,25.3,Hypertension,No,Yes,Yes,No,No,Hemodialysis,5,Medicare,1,2018,12,Still Waiting,122,0,,,,,,,,FAC_004,2
+PT_00253,79,Female,White,O,26.5,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,6,Medicaid,5,2020,0,Still Waiting,301,0,,,,,,,,FAC_010,2
+PT_00254,67,Male,White,B,30.6,Diabetes,Yes,Yes,Yes,No,No,Peritoneal Dialysis,8,Private,11,2021,2,Still Waiting,115,0,,,,,,,,FAC_019,2
+PT_00255,29,Female,White,AB,37.8,Hypertension,No,Yes,Yes,No,No,Hemodialysis,19,Medicare,10,2020,81,Still Waiting,1133,0,,,,,,,,FAC_013,1
+PT_00256,44,Male,White,O,33.6,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,21,Medicare,11,2016,94,Transplanted (Deceased Donor),212,0,691.0,35.0,DCD,82.0,19.2,Yes,1288.0,FAC_018,1
+PT_00257,71,Female,White,O,31.0,Hypertension,No,Yes,No,No,No,Peritoneal Dialysis,13,Medicare,6,2019,13,Transplanted (Deceased Donor),547,0,126.0,71.0,DBD,23.0,28.4,No,669.0,FAC_015,2
+PT_00258,41,Male,Asian,A,31.3,Other,No,Yes,No,No,No,Hemodialysis,22,Private,7,2019,16,Died on Waitlist,419,1,,,,,,,,FAC_030,1
+PT_00259,58,Male,White,B,28.8,Hypertension,No,No,Yes,No,No,Hemodialysis,2,Medicare,4,2021,1,Transplanted (Deceased Donor),31,0,81.0,49.0,DCD,6.0,19.7,No,226.0,FAC_004,2
+PT_00260,63,Female,White,A,31.8,Diabetes,Yes,No,Yes,No,No,Hemodialysis,2,Medicare,1,2019,87,Transplanted (Deceased Donor),1710,0,457.0,36.0,DBD,95.0,24.0,No,370.0,FAC_009,2
+PT_00261,38,Female,White,O,16.0,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,4,Medicare,11,2022,11,Still Waiting,449,0,,,,,,,,FAC_004,3
+PT_00262,51,Male,Asian,O,26.7,Hypertension,No,Yes,No,No,No,Hemodialysis,17,Medicaid,8,2019,3,Transplanted (Deceased Donor),235,0,304.0,49.0,DBD,19.0,19.1,No,606.0,FAC_029,4
+PT_00263,3,Female,White,A,29.9,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,5,Private,10,2019,9,Transplanted (Deceased Donor),103,0,288.0,46.0,DBD,10.0,23.5,No,342.0,FAC_016,1
+PT_00264,36,Male,White,O,21.6,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,7,Private,4,2021,95,Still Waiting,247,0,,,,,,,,FAC_028,1
+PT_00265,48,Female,White,A,30.8,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,12,Medicaid,3,2020,6,Still Waiting,30,0,,,,,,,,FAC_021,2
+PT_00266,33,Female,White,O,27.3,Hypertension,No,Yes,No,No,No,Hemodialysis,40,Medicare,7,2022,89,Transplanted (Deceased Donor),271,0,118.0,28.0,DCD,88.0,9.3,Yes,367.0,FAC_015,2
+PT_00267,76,Male,Native American,A,39.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Medicare,2,2020,80,Still Waiting,454,0,,,,,,,,FAC_024,1
+PT_00268,30,Male,Asian,O,37.9,Other,No,Yes,Yes,No,No,Hemodialysis,25,Medicare,8,2019,7,Still Waiting,1232,0,,,,,,,,FAC_002,5
+PT_00269,45,Male,White,A,25.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,26,Medicare,6,2015,6,Transplanted (Living Donor),697,0,14.0,39.0,Living,,6.0,Yes,370.0,FAC_028,2
+PT_00270,53,Male,Asian,A,27.6,Other,No,Yes,No,No,No,Hemodialysis,38,Medicare,7,2018,96,Transplanted (Deceased Donor),70,1,211.0,75.0,DBD,89.0,11.7,No,117.0,FAC_027,4
+PT_00271,73,Female,Black,A,28.1,Diabetes,Yes,Yes,No,Yes,Yes,Peritoneal Dialysis,64,Medicare,5,2017,0,Transplanted (Deceased Donor),95,0,45.0,48.0,DBD,54.0,19.3,No,79.0,FAC_014,2
+PT_00272,30,Male,Hispanic,O,25.8,Other,No,Yes,No,No,No,Hemodialysis,0,Medicare,9,2021,96,Died on Waitlist,335,1,,,,,,,,FAC_003,1
+PT_00273,69,Male,White,A,29.7,Hypertension,No,Yes,No,No,No,Hemodialysis,4,Private,5,2017,5,Transplanted (Deceased Donor),130,0,945.0,16.0,DBD,80.0,20.8,No,42.0,FAC_022,0
+PT_00274,52,Female,White,A,24.0,Polycystic Kidney,No,No,No,No,No,Hemodialysis,52,Medicaid,11,2017,4,Still Waiting,30,0,,,,,,,,FAC_028,2
+PT_00275,37,Female,White,A,21.7,Other,Yes,No,No,No,Yes,Hemodialysis,14,Private,5,2017,88,Still Waiting,980,0,,,,,,,,FAC_023,2
+PT_00276,58,Male,Black,A,32.2,Diabetes,Yes,Yes,No,No,No,Hemodialysis,19,Private,3,2016,3,Still Waiting,30,0,,,,,,,,FAC_004,2
+PT_00277,54,Male,White,A,32.3,Other,No,Yes,Yes,No,No,Hemodialysis,26,Medicare,11,2018,11,Still Waiting,1065,0,,,,,,,,FAC_030,1
+PT_00278,42,Male,White,B,23.7,Hypertension,No,Yes,No,No,No,Hemodialysis,27,Private,1,2022,95,Still Waiting,93,0,,,,,,,,FAC_001,1
+PT_00279,53,Male,White,O,33.9,Hypertension,No,Yes,No,No,No,Peritoneal Dialysis,64,Medicare,2,2021,3,Transplanted (Deceased Donor),2205,0,16.0,50.0,DBD,52.0,23.3,No,105.0,FAC_023,2
+PT_00280,46,Female,Black,B,24.7,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,120,Medicaid,8,2021,2,Transplanted (Deceased Donor),555,0,226.0,62.0,DBD,74.0,21.4,No,379.0,FAC_028,6
+PT_00281,53,Male,White,A,30.0,Hypertension,No,Yes,No,No,Yes,Hemodialysis,30,Medicare,1,2021,1,Still Waiting,796,0,,,,,,,,FAC_009,2
+PT_00282,61,Female,Black,O,33.4,Diabetes,Yes,Yes,No,Yes,Yes,Hemodialysis,8,Other,7,2017,82,Transplanted (Deceased Donor),70,1,21.0,27.0,DBD,25.0,16.5,No,810.0,FAC_017,0
+PT_00283,75,Male,Asian,O,28.3,Hypertension,No,Yes,No,No,No,Hemodialysis,50,Medicare,5,2022,88,Transplanted (Living Donor),1188,0,40.0,31.0,Living,,6.0,Yes,187.0,FAC_014,0
+PT_00284,33,Female,White,O,31.2,Hypertension,No,No,No,No,No,Hemodialysis,1,Medicare,3,2016,2,Removed from Waitlist,1096,0,,,,,,,,FAC_017,3
+PT_00285,79,Female,Black,A,25.4,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,6,Private,11,2018,80,Still Waiting,635,0,,,,,,,,FAC_001,1
+PT_00286,22,Female,White,A,27.3,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,0,Medicare,7,2020,86,Transplanted (Living Donor),418,0,430.0,45.0,Living,,4.4,No,1970.0,FAC_010,3
+PT_00287,49,Male,Hispanic,A,27.3,Hypertension,No,Yes,Yes,No,No,Hemodialysis,7,Medicaid,9,2016,8,Still Waiting,766,0,,,,,,,,FAC_023,3
+PT_00288,60,Male,White,A,24.0,Diabetes,Yes,Yes,Yes,No,Yes,Peritoneal Dialysis,5,Private,2,2021,7,Transplanted (Deceased Donor),30,0,416.0,42.0,DBD,72.0,18.9,No,1487.0,FAC_016,3
+PT_00289,56,Male,Black,O,27.4,Diabetes,Yes,Yes,No,No,No,Hemodialysis,3,Private,8,2018,13,Removed from Waitlist,538,0,,,,,,,,FAC_027,8
+PT_00290,42,Female,Hispanic,O,19.2,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Other,9,2021,0,Transplanted (Deceased Donor),1127,0,14.0,39.0,DBD,58.0,25.3,No,661.0,FAC_025,0
+PT_00291,48,Female,Asian,O,25.6,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,16,Other,11,2019,81,Still Waiting,264,0,,,,,,,,FAC_019,4
+PT_00292,44,Female,Black,O,26.8,Diabetes,Yes,No,Yes,No,No,Hemodialysis,26,Medicare,3,2017,81,Transplanted (Deceased Donor),68,0,14.0,20.0,DCD,22.0,19.2,Yes,1159.0,FAC_024,1
+PT_00293,43,Female,White,O,27.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,6,Private,2,2021,2,Removed from Waitlist,327,0,,,,,,,,FAC_025,2
+PT_00294,64,Female,Black,O,27.1,Other,No,No,No,No,No,Hemodialysis,34,Medicaid,7,2017,2,Transplanted (Deceased Donor),779,0,32.0,59.0,DBD,4.0,18.0,Yes,410.0,FAC_003,1
+PT_00295,57,Male,Hispanic,A,28.1,Hypertension,No,Yes,No,No,No,Hemodialysis,34,Medicaid,5,2019,5,Transplanted (Deceased Donor),68,0,575.0,38.0,DBD,55.0,19.4,No,33.0,FAC_028,3
+PT_00296,41,Female,White,A,31.4,Diabetes,Yes,Yes,No,No,No,Hemodialysis,8,Medicare,5,2015,17,Transplanted (Living Donor),138,0,351.0,32.0,Living,,6.0,No,2112.0,FAC_012,1
+PT_00297,65,Male,White,AB,33.7,Hypertension,No,Yes,No,No,No,Hemodialysis,12,Medicaid,10,2020,18,Transplanted (Living Donor),95,0,15.0,36.0,Living,,6.0,No,123.0,FAC_003,2
+PT_00298,56,Male,Asian,AB,24.6,Diabetes,Yes,Yes,Yes,Yes,No,Hemodialysis,5,Other,5,2020,7,Transplanted (Deceased Donor),956,0,267.0,33.0,DBD,31.0,16.1,Yes,2500.0,FAC_015,0
+PT_00299,64,Male,Black,A,21.3,Hypertension,No,Yes,No,No,No,Hemodialysis,90,Private,4,2018,19,Transplanted (Deceased Donor),38,0,497.0,24.0,DBD,24.0,13.1,No,763.0,FAC_017,1
+PT_00300,61,Male,Black,O,22.2,Hypertension,No,Yes,No,No,No,Hemodialysis,24,Medicare,5,2022,0,Still Waiting,696,0,,,,,,,,FAC_018,2
+PT_00301,39,Male,White,A,25.6,Hypertension,No,Yes,No,No,Yes,Hemodialysis,65,Medicare,4,2022,97,Removed from Waitlist,273,0,,,,,,,,FAC_007,0
+PT_00302,43,Female,Black,A,26.4,Hypertension,No,Yes,No,No,No,Hemodialysis,8,Medicare,6,2021,24,Transplanted (Deceased Donor),845,0,812.0,27.0,DBD,79.0,18.0,No,328.0,FAC_019,0
+PT_00303,63,Male,White,O,23.9,Other,No,Yes,Yes,No,No,Hemodialysis,36,Private,4,2021,14,Still Waiting,2000,0,,,,,,,,FAC_007,3
+PT_00304,61,Female,Black,O,20.7,Other,No,Yes,No,No,No,Hemodialysis,34,Private,2,2017,5,Transplanted (Deceased Donor),72,0,1087.0,75.0,DCD,28.0,17.9,No,615.0,FAC_005,1
+PT_00305,51,Male,White,B,25.8,Hypertension,No,Yes,Yes,No,Yes,Hemodialysis,28,Medicare,9,2020,14,Died on Waitlist,226,1,,,,,,,,FAC_026,5
+PT_00306,53,Male,Black,O,29.6,Hypertension,No,No,No,No,No,Hemodialysis,80,Medicare,2,2017,31,Transplanted (Deceased Donor),996,0,158.0,53.0,DBD,38.0,29.8,Yes,626.0,FAC_008,3
+PT_00307,71,Male,Native American,A,32.1,Hypertension,No,Yes,No,No,No,Hemodialysis,12,Medicare,9,2016,14,Died on Waitlist,185,1,,,,,,,,FAC_021,3
+PT_00308,43,Male,White,A,25.2,Diabetes,Yes,Yes,No,No,No,Hemodialysis,3,Medicare,10,2022,99,Transplanted (Deceased Donor),145,0,58.0,1.0,DBD,74.0,13.7,No,21.0,FAC_016,2
+PT_00309,60,Female,Asian,O,26.0,Hypertension,No,Yes,No,No,No,Hemodialysis,26,Private,6,2020,14,Still Waiting,1047,0,,,,,,,,FAC_016,5
+PT_00310,48,Male,White,O,22.9,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,31,Medicaid,9,2019,95,Transplanted (Deceased Donor),2609,0,108.0,36.0,DCD,63.0,17.5,Yes,395.0,FAC_019,1
+PT_00311,48,Female,Hispanic,O,28.3,Hypertension,No,Yes,No,No,No,Hemodialysis,0,Medicare,9,2017,93,Transplanted (Deceased Donor),488,0,598.0,40.0,DBD,39.0,17.0,No,1211.0,FAC_025,3
+PT_00312,68,Male,Black,O,23.4,Hypertension,No,No,No,No,No,Hemodialysis,5,Medicare,3,2020,86,Transplanted (Deceased Donor),195,0,1422.0,18.0,DBD,30.0,15.8,No,642.0,FAC_015,1
+PT_00313,64,Female,White,O,31.9,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,16,Medicare,1,2015,22,Still Waiting,305,0,,,,,,,,FAC_007,3
+PT_00314,64,Female,Black,B,17.8,Other,No,Yes,No,No,No,Peritoneal Dialysis,8,Other,1,2016,81,Removed from Waitlist,111,0,,,,,,,,FAC_005,2
+PT_00315,71,Female,Hispanic,O,26.3,Other,No,Yes,No,No,Yes,Hemodialysis,0,Medicare,3,2015,11,Still Waiting,861,0,,,,,,,,FAC_023,2
+PT_00316,52,Male,White,A,30.3,Glomerulonephritis,No,No,Yes,No,No,Hemodialysis,24,Medicare,5,2019,6,Still Waiting,890,0,,,,,,,,FAC_011,1
+PT_00317,62,Male,White,O,29.6,Hypertension,No,No,No,Yes,No,Hemodialysis,32,Medicare,3,2020,96,Still Waiting,1248,0,,,,,,,,FAC_010,0
+PT_00318,47,Male,Black,AB,44.7,Polycystic Kidney,Yes,Yes,No,No,No,Hemodialysis,6,Medicaid,9,2015,3,Still Waiting,30,0,,,,,,,,FAC_025,1
+PT_00319,56,Female,Black,O,30.6,Diabetes,Yes,Yes,No,No,No,Hemodialysis,12,Medicaid,9,2021,41,Transplanted (Deceased Donor),495,0,251.0,50.0,DCD,84.0,21.6,Yes,252.0,FAC_021,3
+PT_00320,50,Male,Black,O,22.5,Polycystic Kidney,Yes,Yes,No,No,No,Hemodialysis,0,Private,3,2017,32,Still Waiting,144,0,,,,,,,,FAC_023,0
+PT_00321,53,Male,Black,B,27.9,Diabetes,Yes,No,Yes,No,No,Hemodialysis,5,Medicare,3,2020,3,Transplanted (Deceased Donor),250,0,145.0,9.0,DBD,20.0,31.9,No,367.0,FAC_027,1
+PT_00322,60,Female,White,B,17.8,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,36,Medicare,5,2022,55,Still Waiting,922,0,,,,,,,,FAC_009,0
+PT_00323,39,Male,Black,O,28.0,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,57,Medicare,2,2020,18,Removed from Waitlist,127,0,,,,,,,,FAC_001,2
+PT_00324,79,Female,White,B,23.5,Other,No,Yes,No,No,No,Hemodialysis,11,Medicaid,6,2022,85,Still Waiting,610,0,,,,,,,,FAC_020,1
+PT_00325,36,Male,White,A,34.0,Other,No,Yes,No,No,No,Hemodialysis,33,Medicare,7,2022,99,Died on Waitlist,637,1,,,,,,,,FAC_001,2
+PT_00326,33,Male,White,A,25.2,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,54,Medicaid,9,2019,97,Removed from Waitlist,1848,0,,,,,,,,FAC_008,1
+PT_00327,69,Female,White,O,27.8,Hypertension,No,No,No,No,No,Peritoneal Dialysis,44,Private,6,2021,8,Still Waiting,895,0,,,,,,,,FAC_003,2
+PT_00328,63,Male,White,O,24.7,Other,No,Yes,Yes,No,No,Hemodialysis,4,Private,3,2022,20,Transplanted (Deceased Donor),976,0,224.0,59.0,DBD,42.0,16.6,Yes,1789.0,FAC_002,2
+PT_00329,61,Female,White,A,38.9,Hypertension,Yes,Yes,Yes,No,No,Peritoneal Dialysis,75,Medicare,5,2018,93,Transplanted (Deceased Donor),455,0,145.0,65.0,DCD,10.0,21.6,No,671.0,FAC_030,1
+PT_00330,61,Male,Black,A,26.6,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,11,Medicare,4,2017,92,Removed from Waitlist,124,0,,,,,,,,FAC_004,0
+PT_00331,51,Male,White,O,39.5,Hypertension,No,No,No,No,No,Hemodialysis,9,Medicare,5,2022,11,Still Waiting,332,0,,,,,,,,FAC_027,2
+PT_00332,38,Female,White,A,33.4,Diabetes,Yes,No,Yes,No,No,Hemodialysis,1,Medicaid,8,2021,3,Transplanted (Deceased Donor),478,0,118.0,75.0,DBD,77.0,7.0,Yes,676.0,FAC_019,1
+PT_00333,53,Female,White,A,31.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,15,Private,8,2017,4,Transplanted (Deceased Donor),680,0,360.0,16.0,DCD,36.0,16.1,No,2500.0,FAC_011,3
+PT_00334,41,Female,White,O,30.7,Diabetes,Yes,No,No,Yes,No,Hemodialysis,2,Medicare,6,2019,3,Transplanted (Deceased Donor),561,0,14.0,20.0,DBD,30.0,27.8,No,348.0,FAC_005,1
+PT_00335,66,Male,White,A,30.9,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,6,Medicare,1,2021,0,Transplanted (Deceased Donor),300,0,120.0,53.0,DBD,64.0,18.2,No,587.0,FAC_029,1
+PT_00336,49,Female,White,O,16.9,Hypertension,No,Yes,No,No,No,Hemodialysis,9,Private,8,2019,80,Still Waiting,184,0,,,,,,,,FAC_024,1
+PT_00337,39,Male,Black,A,26.8,Hypertension,No,Yes,Yes,No,No,Peritoneal Dialysis,39,Private,8,2020,12,Still Waiting,110,0,,,,,,,,FAC_010,1
+PT_00338,47,Male,Black,A,33.6,Hypertension,No,No,No,No,No,Hemodialysis,50,Medicare,2,2021,19,Removed from Waitlist,710,0,,,,,,,,FAC_024,0
+PT_00339,58,Female,Black,AB,28.2,Hypertension,No,No,No,No,No,Hemodialysis,8,Medicaid,4,2020,1,Died on Waitlist,622,1,,,,,,,,FAC_027,3
+PT_00340,43,Male,White,O,20.1,Polycystic Kidney,No,Yes,No,No,Yes,Hemodialysis,46,Medicare,2,2019,7,Still Waiting,697,0,,,,,,,,FAC_023,2
+PT_00341,39,Female,White,O,28.2,Other,No,Yes,Yes,No,No,Hemodialysis,46,Medicare,4,2021,0,Transplanted (Deceased Donor),279,0,433.0,60.0,DBD,12.0,21.5,No,1502.0,FAC_008,1
+PT_00342,55,Male,Hispanic,O,38.7,Hypertension,No,Yes,No,No,No,Hemodialysis,34,Private,10,2021,0,Transplanted (Living Donor),182,0,14.0,35.0,Living,,6.0,No,1280.0,FAC_013,3
+PT_00343,55,Male,White,O,36.0,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,3,Private,7,2020,0,Transplanted (Living Donor),855,0,34.0,50.0,Living,,6.0,No,278.0,FAC_029,1
+PT_00344,44,Male,White,O,28.1,Glomerulonephritis,No,Yes,Yes,No,No,Peritoneal Dialysis,28,Private,9,2018,95,Transplanted (Deceased Donor),891,0,138.0,64.0,DBD,17.0,28.3,No,147.0,FAC_005,0
+PT_00345,44,Female,White,B,34.2,Hypertension,No,Yes,No,No,No,Hemodialysis,69,Medicare,8,2018,0,Transplanted (Living Donor),364,1,840.0,45.0,Living,,6.0,No,1085.0,FAC_026,1
+PT_00346,55,Female,White,O,26.3,Other,No,Yes,No,No,No,Hemodialysis,27,Private,9,2022,12,Transplanted (Deceased Donor),567,0,579.0,38.0,DBD,30.0,31.6,No,268.0,FAC_026,1
+PT_00347,30,Female,White,O,18.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,9,Medicare,8,2016,2,Transplanted (Deceased Donor),280,0,14.0,20.0,DCD,36.0,9.2,No,2303.0,FAC_027,4
+PT_00348,30,Female,White,A,23.0,Diabetes,Yes,Yes,Yes,No,Yes,Peritoneal Dialysis,16,Medicare,2,2017,86,Transplanted (Deceased Donor),726,0,278.0,37.0,DCD,18.0,15.6,No,124.0,FAC_012,4
+PT_00349,41,Female,Black,O,37.9,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,24,Medicare,7,2019,16,Still Waiting,1083,0,,,,,,,,FAC_027,3
+PT_00350,48,Female,White,A,26.9,Hypertension,Yes,Yes,Yes,No,No,Hemodialysis,17,Medicare,2,2021,85,Transplanted (Deceased Donor),699,0,128.0,39.0,DBD,55.0,13.5,No,344.0,FAC_013,4
+PT_00351,56,Male,Black,O,27.0,Polycystic Kidney,No,No,No,No,No,Hemodialysis,3,Private,11,2016,21,Still Waiting,431,0,,,,,,,,FAC_022,1
+PT_00352,74,Male,Black,A,26.7,Other,Yes,Yes,Yes,No,No,Hemodialysis,8,Medicaid,2,2017,82,Transplanted (Deceased Donor),368,0,418.0,26.0,DCD,17.0,16.9,No,50.0,FAC_008,2
+PT_00353,64,Male,Black,O,39.9,Diabetes,Yes,No,No,No,No,Hemodialysis,38,Medicare,4,2015,93,Still Waiting,616,0,,,,,,,,FAC_015,2
+PT_00354,49,Female,Black,O,38.3,Other,No,Yes,No,No,No,Hemodialysis,0,Medicare,1,2021,11,Still Waiting,683,0,,,,,,,,FAC_013,2
+PT_00355,51,Female,Asian,B,41.8,Hypertension,No,Yes,No,No,No,Hemodialysis,3,Medicare,5,2017,1,Still Waiting,490,0,,,,,,,,FAC_001,3
+PT_00356,36,Male,White,O,27.5,Hypertension,No,Yes,Yes,No,No,Hemodialysis,73,Medicare,6,2018,3,Still Waiting,588,0,,,,,,,,FAC_022,0
+PT_00357,51,Female,White,A,30.3,Hypertension,No,Yes,No,No,No,Hemodialysis,9,Medicaid,9,2019,99,Transplanted (Deceased Donor),60,0,511.0,41.0,DBD,1.0,13.4,No,1093.0,FAC_006,4
+PT_00358,47,Female,White,O,19.4,Other,No,Yes,No,No,No,Hemodialysis,26,Private,10,2022,9,Transplanted (Deceased Donor),1819,0,794.0,25.0,DBD,95.0,13.0,Yes,1996.0,FAC_011,4
+PT_00359,56,Male,Black,O,37.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,33,Medicare,8,2018,7,Transplanted (Living Donor),938,0,258.0,49.0,Living,,6.0,No,909.0,FAC_013,3
+PT_00360,39,Female,Hispanic,B,21.5,Hypertension,No,Yes,No,No,Yes,Hemodialysis,40,Medicare,2,2016,85,Transplanted (Deceased Donor),280,1,2077.0,48.0,DBD,98.0,22.4,No,2498.0,FAC_021,1
+PT_00361,59,Female,White,O,29.8,Glomerulonephritis,Yes,Yes,No,No,No,Hemodialysis,69,Medicaid,1,2019,94,Transplanted (Deceased Donor),496,0,1564.0,34.0,DBD,21.0,17.1,No,123.0,FAC_020,2
+PT_00362,74,Male,Hispanic,A,21.9,Glomerulonephritis,No,Yes,No,No,Yes,Hemodialysis,9,Private,2,2022,5,Still Waiting,30,0,,,,,,,,FAC_001,1
+PT_00363,50,Female,White,AB,25.0,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,46,Medicare,7,2020,7,Died on Waitlist,30,1,,,,,,,,FAC_011,2
+PT_00364,58,Male,Asian,A,23.5,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,3,Medicare,4,2022,35,Removed from Waitlist,173,0,,,,,,,,FAC_026,2
+PT_00365,62,Female,White,AB,24.9,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,29,Medicaid,10,2021,3,Still Waiting,702,0,,,,,,,,FAC_011,1
+PT_00366,45,Female,White,O,25.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,32,Medicare,5,2015,15,Removed from Waitlist,1146,0,,,,,,,,FAC_008,2
+PT_00367,55,Female,White,O,25.2,Polycystic Kidney,Yes,No,Yes,No,No,Hemodialysis,27,Medicare,7,2020,2,Removed from Waitlist,491,0,,,,,,,,FAC_022,2
+PT_00368,52,Male,White,O,33.5,Diabetes,Yes,Yes,No,No,No,Hemodialysis,6,Private,3,2017,11,Still Waiting,455,0,,,,,,,,FAC_003,2
+PT_00369,53,Female,White,A,21.9,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,49,Medicaid,10,2019,96,Transplanted (Deceased Donor),308,1,855.0,45.0,DCD,59.0,15.5,No,82.0,FAC_028,3
+PT_00370,40,Female,White,AB,29.8,Other,No,Yes,No,No,No,Hemodialysis,4,Medicaid,2,2017,21,Transplanted (Deceased Donor),105,1,342.0,24.0,DBD,70.0,20.2,Yes,1640.0,FAC_019,5
+PT_00371,52,Male,Black,O,35.8,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,1,Private,7,2018,8,Still Waiting,75,0,,,,,,,,FAC_012,0
+PT_00372,59,Female,White,A,25.4,Other,No,Yes,No,No,No,Hemodialysis,30,Medicaid,5,2022,2,Still Waiting,857,0,,,,,,,,FAC_006,0
+PT_00373,73,Male,White,O,24.2,Glomerulonephritis,No,No,Yes,No,No,Hemodialysis,15,Medicare,1,2017,2,Still Waiting,1574,0,,,,,,,,FAC_028,5
+PT_00374,66,Female,Black,A,27.1,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,45,Medicare,1,2022,6,Transplanted (Living Donor),367,0,203.0,31.0,Living,,6.0,No,1741.0,FAC_023,2
+PT_00375,79,Male,Black,A,35.6,Diabetes,Yes,Yes,Yes,No,Yes,Hemodialysis,11,Medicare,9,2015,32,Still Waiting,646,0,,,,,,,,FAC_008,2
+PT_00376,40,Male,White,AB,29.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,4,Medicare,5,2016,90,Transplanted (Deceased Donor),1475,0,181.0,31.0,DBD,11.0,20.3,No,1600.0,FAC_005,1
+PT_00377,65,Male,White,A,25.3,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,43,Medicaid,1,2022,6,Transplanted (Deceased Donor),56,0,14.0,38.0,DCD,41.0,17.9,No,1443.0,FAC_010,4
+PT_00378,54,Female,White,O,31.4,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,19,Private,7,2020,4,Transplanted (Living Donor),883,0,114.0,39.0,Living,,6.0,No,404.0,FAC_022,2
+PT_00379,79,Male,White,O,21.9,Glomerulonephritis,No,Yes,Yes,No,Yes,Peritoneal Dialysis,5,Other,9,2021,96,Transplanted (Living Donor),575,0,507.0,46.0,Living,,6.0,No,220.0,FAC_016,0
+PT_00380,39,Female,Black,O,32.6,Diabetes,Yes,Yes,No,No,No,Hemodialysis,30,Medicaid,11,2017,13,Transplanted (Deceased Donor),547,0,370.0,20.0,DBD,47.0,28.4,No,2378.0,FAC_012,4
+PT_00381,39,Male,White,O,31.0,Glomerulonephritis,Yes,Yes,No,No,No,Hemodialysis,17,Medicare,1,2019,94,Transplanted (Deceased Donor),207,0,992.0,40.0,DBD,70.0,20.4,No,330.0,FAC_017,1
+PT_00382,43,Male,White,O,26.7,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,0,Medicare,10,2021,3,Transplanted (Deceased Donor),691,0,20.0,28.0,DBD,69.0,17.3,No,457.0,FAC_006,0
+PT_00383,20,Male,Black,B,23.5,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,14,Private,4,2020,84,Transplanted (Living Donor),950,0,67.0,39.0,Living,,6.0,No,1082.0,FAC_009,3
+PT_00384,44,Female,White,A,23.2,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,42,Medicaid,3,2019,10,Still Waiting,71,0,,,,,,,,FAC_010,2
+PT_00385,40,Male,White,A,31.7,Polycystic Kidney,Yes,Yes,No,No,No,Hemodialysis,42,Medicaid,5,2022,91,Removed from Waitlist,457,0,,,,,,,,FAC_020,1
+PT_00386,54,Female,White,O,35.9,Hypertension,No,Yes,No,No,No,Hemodialysis,29,Private,7,2020,89,Transplanted (Deceased Donor),64,0,622.0,75.0,DBD,9.0,4.2,No,312.0,FAC_014,0
+PT_00387,57,Female,Asian,B,24.7,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,2,Private,8,2022,15,Transplanted (Living Donor),1236,0,177.0,35.0,Living,,6.0,No,1538.0,FAC_014,2
+PT_00388,79,Female,White,A,31.3,Hypertension,No,Yes,No,No,No,Hemodialysis,43,Private,2,2021,12,Removed from Waitlist,425,0,,,,,,,,FAC_026,0
+PT_00389,66,Male,Black,O,16.0,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,26,Medicare,7,2021,80,Died on Waitlist,990,1,,,,,,,,FAC_029,0
+PT_00390,43,Male,White,A,25.0,Hypertension,No,No,No,No,No,Hemodialysis,28,Private,1,2016,18,Transplanted (Living Donor),275,0,50.0,52.0,Living,,6.0,No,65.0,FAC_017,2
+PT_00391,38,Female,White,A,28.3,Hypertension,No,Yes,No,No,No,Hemodialysis,10,Private,7,2018,5,Removed from Waitlist,80,0,,,,,,,,FAC_030,4
+PT_00392,59,Male,Black,O,23.0,Diabetes,Yes,Yes,No,No,No,Peritoneal Dialysis,50,Medicare,8,2022,3,Still Waiting,30,0,,,,,,,,FAC_027,2
+PT_00393,32,Female,Asian,A,22.9,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,0,Medicaid,2,2017,92,Transplanted (Deceased Donor),198,0,2256.0,20.0,DBD,51.0,3.3,No,1409.0,FAC_025,2
+PT_00394,79,Male,Black,A,24.5,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Medicare,9,2016,18,Transplanted (Living Donor),168,0,619.0,27.0,Living,,6.0,No,828.0,FAC_016,1
+PT_00395,69,Female,Black,O,30.3,Polycystic Kidney,No,No,Yes,No,No,Hemodialysis,12,Other,1,2018,1,Transplanted (Living Donor),493,0,210.0,28.0,Living,,6.0,Yes,765.0,FAC_004,1
+PT_00396,44,Female,Hispanic,AB,27.4,Other,No,Yes,No,No,No,Peritoneal Dialysis,52,Medicare,6,2017,6,Died on Waitlist,30,1,,,,,,,,FAC_002,5
+PT_00397,26,Female,White,B,16.0,Diabetes,Yes,Yes,Yes,No,Yes,Hemodialysis,1,Medicaid,1,2022,97,Transplanted (Deceased Donor),441,1,693.0,63.0,DBD,80.0,23.0,No,551.0,FAC_016,1
+PT_00398,72,Male,White,A,16.0,Other,No,Yes,No,No,No,Hemodialysis,78,Medicare,3,2022,95,Transplanted (Deceased Donor),298,0,456.0,38.0,DCD,22.0,24.9,Yes,291.0,FAC_001,2
+PT_00399,50,Female,Black,A,24.9,Hypertension,No,Yes,Yes,No,No,Hemodialysis,27,Private,11,2019,85,Transplanted (Deceased Donor),516,0,624.0,36.0,DCD,75.0,23.8,Yes,561.0,FAC_003,1
+PT_00400,70,Male,White,O,31.2,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,23,Medicare,6,2015,17,Still Waiting,727,0,,,,,,,,FAC_023,2
+PT_00401,28,Male,Hispanic,A,16.0,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,7,Medicare,3,2021,90,Still Waiting,603,0,,,,,,,,FAC_011,4
+PT_00402,43,Female,Hispanic,A,25.5,Hypertension,No,Yes,No,No,No,Hemodialysis,6,Medicare,8,2020,3,Removed from Waitlist,2505,0,,,,,,,,FAC_016,2
+PT_00403,52,Female,White,O,25.3,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,68,Private,5,2022,20,Still Waiting,89,0,,,,,,,,FAC_026,2
+PT_00404,52,Female,White,A,36.8,Glomerulonephritis,Yes,Yes,No,No,No,Hemodialysis,8,Medicare,2,2019,14,Transplanted (Deceased Donor),336,0,675.0,61.0,DBD,89.0,23.9,Yes,538.0,FAC_018,0
+PT_00405,45,Female,Black,B,26.2,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,35,Medicare,4,2018,5,Still Waiting,331,0,,,,,,,,FAC_015,2
+PT_00406,61,Male,White,A,30.8,Diabetes,Yes,Yes,No,No,No,Hemodialysis,11,Private,9,2019,82,Died on Waitlist,323,1,,,,,,,,FAC_009,0
+PT_00407,35,Male,Black,O,29.3,Hypertension,No,Yes,No,No,No,Hemodialysis,3,Medicare,4,2022,32,Transplanted (Deceased Donor),654,1,35.0,33.0,DBD,49.0,9.7,No,788.0,FAC_012,2
+PT_00408,49,Female,White,A,16.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Private,10,2020,6,Still Waiting,403,0,,,,,,,,FAC_029,3
+PT_00409,53,Male,Black,O,33.1,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,18,Medicare,10,2020,85,Still Waiting,437,0,,,,,,,,FAC_027,1
+PT_00410,59,Male,White,O,29.8,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,89,Medicaid,8,2017,89,Still Waiting,339,0,,,,,,,,FAC_018,1
+PT_00411,62,Male,Black,O,31.5,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,11,Medicare,5,2021,9,Transplanted (Deceased Donor),2800,0,390.0,42.0,DBD,100.0,17.6,Yes,297.0,FAC_005,1
+PT_00412,35,Male,White,O,50.0,Other,No,Yes,No,No,No,Hemodialysis,10,Medicare,11,2021,1,Still Waiting,1575,0,,,,,,,,FAC_024,1
+PT_00413,28,Male,Black,A,16.0,Hypertension,No,Yes,Yes,No,Yes,Hemodialysis,10,Medicaid,11,2018,82,Still Waiting,220,0,,,,,,,,FAC_029,2
+PT_00414,71,Male,White,A,38.8,Other,No,Yes,No,No,No,Hemodialysis,17,Medicaid,10,2019,6,Transplanted (Deceased Donor),70,0,14.0,27.0,DBD,26.0,22.0,No,72.0,FAC_029,4
+PT_00415,56,Male,Black,O,26.8,Diabetes,Yes,No,No,No,Yes,Hemodialysis,13,Private,1,2017,19,Transplanted (Deceased Donor),1098,0,17.0,68.0,DBD,32.0,18.8,Yes,141.0,FAC_028,3
+PT_00416,40,Male,Hispanic,B,30.2,Hypertension,No,Yes,Yes,No,No,Hemodialysis,50,Medicare,7,2017,7,Transplanted (Deceased Donor),2800,0,937.0,58.0,DCD,64.0,17.6,Yes,1081.0,FAC_026,2
+PT_00417,75,Female,White,B,28.2,Diabetes,Yes,Yes,No,No,No,Hemodialysis,16,Medicare,3,2015,2,Still Waiting,207,0,,,,,,,,FAC_008,0
+PT_00418,53,Male,White,B,26.0,Glomerulonephritis,No,No,No,No,No,Hemodialysis,17,Medicare,10,2017,87,Died on Waitlist,265,1,,,,,,,,FAC_003,1
+PT_00419,69,Male,White,O,25.1,Other,No,Yes,No,Yes,Yes,Hemodialysis,3,Other,8,2019,7,Transplanted (Deceased Donor),1704,0,299.0,39.0,DBD,49.0,18.7,Yes,20.0,FAC_002,1
+PT_00420,53,Female,Black,A,30.5,Hypertension,Yes,Yes,No,No,No,Hemodialysis,97,Medicare,3,2015,2,Transplanted (Deceased Donor),745,0,532.0,35.0,DCD,29.0,20.0,No,1746.0,FAC_025,0
+PT_00421,79,Male,Black,AB,19.4,Diabetes,Yes,Yes,No,No,No,Hemodialysis,6,Medicare,1,2017,8,Transplanted (Deceased Donor),210,0,729.0,41.0,DBD,63.0,18.0,No,1066.0,FAC_019,0
+PT_00422,78,Female,White,A,33.0,Glomerulonephritis,No,Yes,No,No,Yes,Hemodialysis,1,Medicare,5,2022,17,Removed from Waitlist,521,0,,,,,,,,FAC_008,1
+PT_00423,48,Female,White,O,26.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,26,Medicaid,2,2020,0,Transplanted (Living Donor),1731,0,1195.0,35.0,Living,,6.0,No,1315.0,FAC_002,2
+PT_00424,66,Male,White,O,21.7,Other,No,Yes,Yes,No,No,Peritoneal Dialysis,21,Medicare,11,2020,9,Still Waiting,1002,0,,,,,,,,FAC_019,2
+PT_00425,61,Male,Black,A,25.8,Hypertension,No,Yes,No,No,No,Hemodialysis,12,Private,4,2018,4,Removed from Waitlist,812,0,,,,,,,,FAC_001,3
+PT_00426,72,Female,White,B,36.0,Hypertension,No,Yes,No,No,No,Hemodialysis,13,Medicare,1,2020,3,Still Waiting,801,0,,,,,,,,FAC_030,2
+PT_00427,37,Female,Native American,A,25.3,Hypertension,No,No,No,Yes,No,Hemodialysis,36,Private,9,2017,4,Transplanted (Deceased Donor),117,0,814.0,17.0,DBD,33.0,8.3,No,1627.0,FAC_027,0
+PT_00428,62,Male,White,A,30.7,Hypertension,No,Yes,No,No,No,Hemodialysis,5,Medicare,6,2021,4,Transplanted (Deceased Donor),1044,1,264.0,59.0,DCD,52.0,17.3,No,117.0,FAC_022,2
+PT_00429,67,Female,Black,O,24.1,Diabetes,Yes,No,No,No,No,Hemodialysis,41,Medicaid,8,2016,17,Transplanted (Living Donor),193,0,163.0,25.0,Living,,6.0,No,1555.0,FAC_013,2
+PT_00430,25,Male,White,A,33.0,Glomerulonephritis,Yes,No,Yes,Yes,No,Hemodialysis,25,Private,11,2020,3,Transplanted (Deceased Donor),1598,0,67.0,72.0,DBD,32.0,18.8,Yes,632.0,FAC_023,5
+PT_00431,34,Female,White,B,32.6,Diabetes,Yes,Yes,Yes,Yes,No,Hemodialysis,13,Medicare,4,2018,84,Transplanted (Deceased Donor),272,0,204.0,48.0,DCD,60.0,24.2,No,1950.0,FAC_020,2
+PT_00432,21,Male,Black,O,39.6,Glomerulonephritis,No,No,Yes,No,No,Hemodialysis,14,Other,9,2021,0,Still Waiting,1169,0,,,,,,,,FAC_017,1
+PT_00433,47,Female,Black,A,27.4,Polycystic Kidney,No,Yes,No,No,No,Hemodialysis,7,Medicare,2,2019,30,Transplanted (Living Donor),185,0,182.0,56.0,Living,,6.0,No,1959.0,FAC_003,1
+PT_00434,62,Female,Native American,AB,32.5,Polycystic Kidney,No,No,No,No,No,Hemodialysis,33,Private,9,2019,9,Transplanted (Deceased Donor),433,0,328.0,21.0,DBD,31.0,17.9,No,22.0,FAC_009,1
+PT_00435,74,Female,White,O,29.1,Hypertension,No,Yes,No,No,No,Hemodialysis,17,Medicaid,5,2016,81,Transplanted (Deceased Donor),67,0,438.0,7.0,DBD,75.0,17.9,No,434.0,FAC_005,0
+PT_00436,53,Male,White,A,36.3,Hypertension,No,Yes,No,No,No,Hemodialysis,9,Medicare,6,2020,3,Transplanted (Deceased Donor),647,0,1532.0,21.0,DBD,63.0,21.9,No,672.0,FAC_006,0
+PT_00437,76,Male,Black,O,24.2,Diabetes,Yes,Yes,No,No,No,Hemodialysis,21,Medicare,3,2022,85,Still Waiting,1085,0,,,,,,,,FAC_004,2
+PT_00438,31,Male,White,A,33.0,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,120,Medicare,4,2021,2,Transplanted (Deceased Donor),760,0,521.0,15.0,DBD,1.0,21.1,No,1020.0,FAC_017,1
+PT_00439,26,Male,White,A,27.3,Diabetes,Yes,No,No,No,No,Hemodialysis,13,Medicare,6,2015,94,Transplanted (Deceased Donor),444,0,412.0,46.0,DBD,38.0,15.8,No,303.0,FAC_030,4
+PT_00440,51,Male,White,A,28.1,Hypertension,Yes,No,No,No,Yes,Hemodialysis,60,Medicare,7,2018,90,Removed from Waitlist,30,0,,,,,,,,FAC_021,2
+PT_00441,57,Female,White,A,29.1,Diabetes,Yes,Yes,No,No,No,Hemodialysis,10,Medicare,1,2022,9,Transplanted (Deceased Donor),1625,0,163.0,36.0,DBD,60.0,22.5,No,261.0,FAC_021,0
+PT_00442,51,Male,Hispanic,O,30.0,Diabetes,Yes,No,No,No,No,Hemodialysis,1,Medicare,7,2019,13,Transplanted (Deceased Donor),733,0,14.0,53.0,DBD,51.0,17.6,No,432.0,FAC_021,0
+PT_00443,20,Male,White,B,27.8,Hypertension,Yes,Yes,No,No,No,Peritoneal Dialysis,5,Private,1,2020,4,Transplanted (Deceased Donor),821,0,135.0,41.0,DBD,63.0,17.7,No,625.0,FAC_016,1
+PT_00444,50,Female,White,A,29.8,Diabetes,Yes,Yes,No,No,No,Hemodialysis,13,Medicare,5,2022,12,Transplanted (Deceased Donor),949,0,585.0,38.0,DBD,50.0,21.1,No,2500.0,FAC_016,0
+PT_00445,32,Female,White,O,38.0,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,5,Medicare,6,2022,11,Transplanted (Deceased Donor),826,1,91.0,74.0,DCD,44.0,16.7,No,1292.0,FAC_022,2
+PT_00446,62,Female,White,A,34.4,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,0,Medicaid,2,2019,12,Transplanted (Deceased Donor),349,0,498.0,45.0,DCD,43.0,19.1,Yes,504.0,FAC_011,1
+PT_00447,57,Female,White,A,33.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,59,Medicare,10,2019,6,Still Waiting,793,0,,,,,,,,FAC_002,3
+PT_00448,37,Male,White,O,25.8,Hypertension,No,Yes,No,No,Yes,Hemodialysis,44,Medicare,9,2018,4,Transplanted (Deceased Donor),588,1,346.0,40.0,DBD,75.0,20.3,No,50.0,FAC_017,2
+PT_00449,44,Male,White,B,23.2,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,32,Medicare,10,2021,2,Still Waiting,1154,0,,,,,,,,FAC_015,1
+PT_00450,36,Female,Black,B,34.2,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,4,Private,6,2017,17,Still Waiting,973,0,,,,,,,,FAC_018,4
+PT_00451,51,Female,White,O,33.8,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,3,Private,7,2017,9,Died on Waitlist,30,1,,,,,,,,FAC_029,3
+PT_00452,66,Male,White,AB,37.3,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,1,Medicare,10,2018,84,Transplanted (Deceased Donor),285,0,75.0,28.0,DBD,65.0,23.4,Yes,166.0,FAC_010,2
+PT_00453,37,Female,Hispanic,O,24.9,Polycystic Kidney,No,Yes,Yes,Yes,No,Hemodialysis,30,Medicaid,8,2016,28,Transplanted (Deceased Donor),30,0,121.0,23.0,DBD,58.0,23.0,No,547.0,FAC_006,6
+PT_00454,59,Male,Black,O,27.1,Diabetes,Yes,No,Yes,No,No,Peritoneal Dialysis,63,Medicare,11,2020,84,Still Waiting,64,0,,,,,,,,FAC_021,6
+PT_00455,44,Male,White,O,18.7,Diabetes,Yes,No,Yes,No,No,Hemodialysis,13,Medicaid,10,2020,18,Removed from Waitlist,551,0,,,,,,,,FAC_016,0
+PT_00456,40,Male,White,B,26.1,Glomerulonephritis,Yes,Yes,Yes,No,No,Hemodialysis,0,Medicaid,1,2019,60,Removed from Waitlist,1242,0,,,,,,,,FAC_005,3
+PT_00457,50,Female,White,A,34.5,Diabetes,Yes,Yes,No,No,No,Hemodialysis,17,Medicaid,8,2018,21,Transplanted (Deceased Donor),76,0,274.0,54.0,DBD,50.0,20.1,No,1512.0,FAC_012,2
+PT_00458,36,Female,Black,O,25.7,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,10,Medicare,4,2022,16,Still Waiting,359,0,,,,,,,,FAC_028,3
+PT_00459,43,Male,Native American,O,32.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,0,Medicare,10,2015,88,Transplanted (Deceased Donor),1450,1,216.0,53.0,DBD,34.0,2.8,No,431.0,FAC_006,2
+PT_00460,34,Female,Black,A,27.4,Diabetes,Yes,Yes,No,No,No,Hemodialysis,23,Medicare,8,2021,2,Transplanted (Deceased Donor),1010,1,603.0,67.0,DBD,40.0,20.0,No,695.0,FAC_014,4
+PT_00461,79,Male,White,O,30.4,Polycystic Kidney,No,Yes,No,No,Yes,Hemodialysis,30,Private,6,2022,13,Transplanted (Living Donor),439,0,530.0,21.0,Living,,6.0,No,2001.0,FAC_026,0
+PT_00462,52,Male,Black,B,21.6,Diabetes,Yes,Yes,Yes,No,No,Hemodialysis,2,Medicaid,11,2019,84,Transplanted (Deceased Donor),885,0,341.0,35.0,DBD,72.0,22.1,Yes,2205.0,FAC_023,0
+PT_00463,41,Female,White,B,29.0,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,0,Private,9,2019,1,Transplanted (Living Donor),443,0,691.0,32.0,Living,,6.0,No,218.0,FAC_016,3
+PT_00464,55,Female,White,A,16.0,Other,No,Yes,Yes,No,No,Hemodialysis,120,Other,11,2022,95,Still Waiting,103,0,,,,,,,,FAC_025,3
+PT_00465,50,Female,White,AB,27.4,Hypertension,Yes,Yes,Yes,No,No,Hemodialysis,6,Medicare,4,2017,87,Still Waiting,79,0,,,,,,,,FAC_007,1
+PT_00466,48,Female,Asian,O,18.7,Other,No,Yes,No,No,No,Peritoneal Dialysis,1,Medicaid,2,2019,24,Still Waiting,125,0,,,,,,,,FAC_002,1
+PT_00467,61,Female,White,AB,35.7,Diabetes,Yes,No,Yes,No,No,Hemodialysis,5,Medicaid,2,2019,18,Transplanted (Living Donor),259,0,330.0,28.0,Living,,5.8,No,40.0,FAC_006,2
+PT_00468,63,Female,Black,A,33.2,Other,No,Yes,Yes,No,No,Hemodialysis,0,Other,5,2017,18,Removed from Waitlist,1600,0,,,,,,,,FAC_009,2
+PT_00469,44,Male,White,A,31.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,11,Other,10,2021,14,Transplanted (Deceased Donor),964,1,1334.0,55.0,DBD,60.0,23.3,No,327.0,FAC_007,2
+PT_00470,43,Male,White,O,37.6,Glomerulonephritis,Yes,Yes,No,No,No,Peritoneal Dialysis,38,Medicaid,9,2022,21,Transplanted (Living Donor),340,0,97.0,57.0,Living,,6.0,No,1071.0,FAC_002,3
+PT_00471,47,Male,White,B,22.8,Hypertension,No,Yes,Yes,No,No,Hemodialysis,10,Medicare,3,2021,92,Transplanted (Deceased Donor),407,0,500.0,39.0,DBD,58.0,25.8,No,2500.0,FAC_019,3
+PT_00472,17,Male,White,O,39.0,Hypertension,No,No,Yes,No,No,Hemodialysis,14,Private,8,2017,93,Transplanted (Deceased Donor),185,0,184.0,70.0,DCD,20.0,15.0,No,72.0,FAC_008,0
+PT_00473,29,Female,Black,O,34.1,Hypertension,No,Yes,Yes,No,No,Hemodialysis,27,Medicare,4,2016,3,Transplanted (Deceased Donor),731,0,130.0,61.0,DBD,18.0,12.3,No,26.0,FAC_011,3
+PT_00474,72,Male,White,O,27.1,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,17,Private,6,2020,21,Transplanted (Living Donor),974,0,79.0,25.0,Living,,6.0,No,1939.0,FAC_025,3
+PT_00475,76,Male,Black,A,35.3,Diabetes,Yes,Yes,No,No,No,Hemodialysis,47,Private,10,2015,18,Died on Waitlist,163,1,,,,,,,,FAC_004,2
+PT_00476,48,Male,Black,A,21.9,Diabetes,Yes,Yes,No,No,No,Hemodialysis,48,Medicare,6,2020,6,Still Waiting,30,0,,,,,,,,FAC_016,1
+PT_00477,60,Female,Hispanic,A,23.6,Glomerulonephritis,No,Yes,No,No,No,Peritoneal Dialysis,0,Medicaid,3,2019,86,Transplanted (Living Donor),586,0,321.0,50.0,Living,,6.0,No,1241.0,FAC_025,1
+PT_00478,56,Male,White,B,24.8,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,36,Medicare,5,2020,10,Still Waiting,496,0,,,,,,,,FAC_018,1
+PT_00479,79,Female,White,O,25.3,Other,No,No,Yes,No,No,Hemodialysis,14,Medicare,3,2020,0,Still Waiting,308,0,,,,,,,,FAC_013,2
+PT_00480,68,Male,White,A,22.2,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,107,Medicare,11,2018,26,Transplanted (Living Donor),619,0,97.0,31.0,Living,,6.0,No,2500.0,FAC_027,1
+PT_00481,50,Male,Native American,O,35.8,Other,No,Yes,No,No,No,Hemodialysis,15,Private,11,2017,91,Removed from Waitlist,479,0,,,,,,,,FAC_005,2
+PT_00482,37,Female,Hispanic,B,26.9,Glomerulonephritis,Yes,No,No,No,No,Peritoneal Dialysis,104,Private,1,2018,2,Transplanted (Deceased Donor),173,0,89.0,42.0,DBD,47.0,21.5,Yes,454.0,FAC_027,3
+PT_00483,27,Female,White,B,30.6,Diabetes,Yes,Yes,No,No,Yes,Hemodialysis,33,Private,7,2019,99,Still Waiting,304,0,,,,,,,,FAC_002,2
+PT_00484,55,Male,Hispanic,A,25.1,Diabetes,Yes,Yes,No,No,No,Hemodialysis,6,Medicare,4,2020,0,Died on Waitlist,335,1,,,,,,,,FAC_011,2
+PT_00485,40,Female,White,A,17.6,Glomerulonephritis,No,Yes,No,No,No,Hemodialysis,18,Private,7,2021,99,Still Waiting,1273,0,,,,,,,,FAC_001,2
+PT_00486,30,Female,Black,O,30.1,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,116,Private,3,2021,4,Removed from Waitlist,1945,0,,,,,,,,FAC_013,1
+PT_00487,42,Male,White,A,17.0,Diabetes,Yes,Yes,No,No,No,Hemodialysis,46,Medicare,11,2022,11,Still Waiting,1340,0,,,,,,,,FAC_030,1
+PT_00488,35,Female,Black,B,28.1,Diabetes,Yes,Yes,Yes,Yes,Yes,Hemodialysis,2,Medicare,5,2017,82,Still Waiting,762,0,,,,,,,,FAC_005,1
+PT_00489,77,Female,White,A,20.3,Other,No,Yes,No,No,No,Hemodialysis,29,Medicare,5,2015,1,Transplanted (Deceased Donor),527,0,1863.0,72.0,DBD,68.0,14.3,No,484.0,FAC_018,0
+PT_00490,65,Female,Black,O,40.4,Hypertension,No,Yes,Yes,No,No,Peritoneal Dialysis,10,Private,2,2018,5,Transplanted (Deceased Donor),701,0,647.0,50.0,DCD,1.0,9.3,No,170.0,FAC_014,0
+PT_00491,51,Female,Black,A,34.0,Hypertension,No,Yes,No,No,No,Hemodialysis,0,Medicaid,11,2021,1,Transplanted (Living Donor),1679,0,551.0,41.0,Living,,6.0,No,110.0,FAC_013,0
+PT_00492,74,Female,Black,B,29.1,Hypertension,No,Yes,No,No,No,Peritoneal Dialysis,12,Private,10,2019,90,Transplanted (Living Donor),172,0,632.0,44.0,Living,,6.0,No,778.0,FAC_007,1
+PT_00493,53,Female,White,O,36.1,Diabetes,Yes,Yes,No,No,No,Hemodialysis,6,Medicare,2,2021,91,Transplanted (Deceased Donor),459,0,1388.0,26.0,DBD,33.0,21.1,Yes,407.0,FAC_008,1
+PT_00494,39,Female,White,O,23.4,Diabetes,Yes,No,No,No,No,Hemodialysis,41,Private,4,2019,7,Still Waiting,701,0,,,,,,,,FAC_018,2
+PT_00495,74,Female,White,A,31.8,Diabetes,Yes,Yes,No,No,No,Hemodialysis,9,Medicare,4,2022,21,Died on Waitlist,682,1,,,,,,,,FAC_007,1
+PT_00496,60,Female,White,B,29.7,Diabetes,Yes,Yes,No,No,No,Hemodialysis,42,Medicare,4,2022,95,Still Waiting,174,0,,,,,,,,FAC_020,3
+PT_00497,36,Female,White,O,30.1,Glomerulonephritis,No,Yes,Yes,No,No,Hemodialysis,0,Medicaid,6,2015,21,Still Waiting,530,0,,,,,,,,FAC_017,3
+PT_00498,49,Female,Asian,O,36.1,Hypertension,No,Yes,No,No,Yes,Hemodialysis,8,Medicare,2,2019,86,Died on Waitlist,953,1,,,,,,,,FAC_016,4
+PT_00499,38,Male,White,O,32.9,Polycystic Kidney,No,Yes,Yes,No,No,Hemodialysis,6,Private,6,2020,1,Still Waiting,386,0,,,,,,,,FAC_011,1
+PT_00500,31,Female,White,O,30.2,Polycystic Kidney,Yes,Yes,Yes,No,No,Hemodialysis,6,Medicare,7,2017,93,Transplanted (Living Donor),945,0,340.0,25.0,Living,,6.0,No,75.0,FAC_019,1

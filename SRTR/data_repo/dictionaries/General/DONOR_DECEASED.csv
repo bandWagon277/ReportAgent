@@ -1,0 +1,262 @@
+Variable,Type,Length,Format,Label
+DONOR_ID,num,8,,Encrypted Unique Donor ID (all donors) - foreign key
+DON_A1,num,8,ALOCUS,Donor/s HLA - A (1) antigen
+DON_A2,num,8,ALOCUS,Donor/s HLA - A (2) antigen
+DON_ABNORM_CONGEN,char,1,,Structural Abnormalities //Congenital:
+DON_ABNORM_LVH,char,1,,Structural Abnormalities //LVH:
+DON_ABNORM_VALVES,char,1,,Structural Abnormalities //Valves:
+DON_ABO,char,3,$ABO,Donor/s Blood Type
+DON_AGE,num,8,,Calculated Donor Age in Years at Organ Recovery or Referral Date
+DON_AGE_IN_MONTHS,num,8,,Donor/s Age in Months
+DON_ALLOC_ECD_CVA,num,3,,CVA cause of death
+DON_ALLOC_ECD_HYPERTEN,num,3,,history of hypertension
+DON_ALLOC_ECD_SERUM_CREAT,num,8,,most recent serum_creat
+DON_ALLOC_ECD_SERUM_CREAT_DT,num,8,MMDDYY,most recent serum_creat date
+DON_ALLOC_REMAIN_LI_SEG,char,1,,Allocate Remaining Liver Segment?
+DON_ANTI_CMV,char,2,$SRLSTT,Anti-CMV
+DON_ANTI_CONVULS,char,1,,Meds given Donor: Anticonvulsants
+DON_ANTI_HBC,char,2,$SRLSTT,Anti-HBC
+DON_ANTI_HCV,char,2,$SRLSTT,Anti-HCV
+DON_ANTI_HIV,char,2,$SRLSTT,Anti-HIV I/II:
+DON_ANTI_HTLV,char,2,$SRLSTT,Anti-HTLV I/II:
+DON_ANTI_HYPERTEN,char,1,,Meds given Donor: Antihypertensives
+DON_ARGININE,char,1,,Arginine Vasopressin:
+DON_AUTHORIZATION_METHOD,char,2,,Method of authorization used:
+DON_AUTH_NOT_OBTAINED_REASON,char,2,,Select the reason organ donation authorization was
+DON_B1,num,8,BLOCUS,Donor/s HLA - B (1) antigen
+DON_B2,num,8,BLOCUS,Donor/s HLA - B (2) antigen
+DON_BIOPSY_DGN,num,8,BPMYCR,Biopsy
+DON_BUN,num,8,,BUN
+DON_BW4,num,8,WKGRPHLA,Donor/s HLA - Bw4 locus
+DON_BW6,num,8,WKGRPHLA,Donor/s HLA - Bw6 locus
+DON_C1,num,8,CWHLA,Donor/s HLA - Cw (1) locus
+DON_C2,num,8,CWHLA,Donor/s HLA - Cw (2) locus
+DON_CAD_DON_COD,num,8,DONCOD,Donor/s Cause of Death
+DON_CANCER_FREE_INTERVAL,num,8,,Cancer Free Interval
+DON_CANCER_OTHER_OSTXT,char,50,,History of Cancer/Specify
+DON_CARDIAC_ARREST_AFTER_DEATH,char,1,,Cardiac Arr. Since Event that led to Decl of Death
+DON_CHAGAS_NAT,char,2,,Donor RNA Nat serology value for Chagas test
+DON_CHEST_XRAY,num,8,LUCHSTXR,Chest X-ray:
+DON_CITIZENSHIP,num,8,CITIZEN,Donor/s Citizenship
+DON_CI_FINAL,num,8,,Cardiac Index (final) //Cardiac Index:
+DON_CI_INIT,num,8,,Cardiac Index (initial) //Cardiac Index: (L/min/sq.m)
+DON_CLAMP_DT,num,8,MMDDYY,Clamp Date
+DON_CLAMP_TM,num,8,TIME,Clamp Time
+DON_CLAMP_TM_ZONE,num,8,TIMEZONE,Clamp Time Zone
+DON_CLINICAL_INFECT,char,1,,Clinical Infection
+DON_COD_DON_STROKE,num,3,,"Donor cause of death is stroke (1= yes, 0= no)"
+DON_COLD_ISCH_TM_ARRIV_KI,num,8,,Cold Ischemic Time upon arrival for Kidney in hours
+DON_CONSENT_ATTORNEY,num,3,,Consent Mechanism - Attorney in Fact
+DON_CONSENT_DON_CARD,num,3,,Consent Mechanism - Donor Card
+DON_CONSENT_DON_REGIS,num,3,,Consent Mechanism - Donor Registry
+DON_CONSENT_DRIVER_LICENSE,num,3,,Consent Mechanism - Driver/s License
+DON_CONSENT_PX_WRIT_DOC,char,1,,Patient Consented in Writing
+DON_CONSENT_TM,num,8,TIME,Time consent obtained for first organ:
+DON_CONSENT_WRIT_DOC_INTENT,char,1,,Did the patient have written documentation of their intent to be a donor:
+DON_CONT_ALCOHOL,char,1,,Alcohol Dependency Last 6 Months
+DON_CONT_CIGARETTE,char,1,,Donor/s Continued Use in Last 6 Months
+DON_CONT_COCAINE,char,1,,Cocaine Use Last 6 Months
+DON_CONT_IV_DRUG,char,1,,IV Drug Last 6 Months
+DON_CONT_OTHER_DRUG,char,1,,Other Drug Abuse Last 6 Months
+DON_CORONARY_ANGIO,num,8,CRNRYANG,Coronary Angiogram
+DON_CO_FINAL,num,8,,CO (final) (L/min) //CO:
+DON_CO_INIT,num,8,,CO (initial) (L/min) //CO: (L/min)
+DON_CREAT,num,8,,Serum Creatinine
+DON_CREG_DON_FLG,num,3,,Is this a CREG Donor?
+DON_CVP_FINAL,num,8,,CVP (final) //CVP:
+DON_CVP_INIT,num,8,,CVP (initial) //CVP: (mm/Hg)
+DON_DCD_ABDOM_AORTA_CANNUL_DT,num,8,MMDDYY,"If DCD, Date of abdominal aorta cannulation:"
+DON_DCD_ABDOM_AORTA_CANNUL_TM,num,8,TIME,"If DCD, Time of abdominal aorta cannulation:"
+DON_DCD_AGONAL_BEGIN_DT,num,8,MMDDYY,"If DCD, Date agonal phase begins"
+DON_DCD_AGONAL_BEGIN_TM,num,8,TIME,"If DCD, Time agonal phase begins"
+DON_DCD_PORTAL_VEIN_CANNUL_DT,num,8,MMDDYY,"If DCD, Date of portal vein cannulation:"
+DON_DCD_PORTAL_VEIN_CANNUL_TM,num,8,TIME,"If DCD, Time of portal vein cannulation:"
+DON_DCD_PROGRESS_TO_BRAIN_DEATH,char,1,,"If not DCD, Was this a consented DCD donor that progressed to brain death?"
+DON_DCD_PULM_ART_CANNUL_DT,num,8,MMDDYY,"If DCD, Date of pulmonary artery cannulation:"
+DON_DCD_PULM_ART_CANNUL_TM,num,8,TIME,"If DCD, Time of pulmonary artery cannulation:"
+DON_DCD_SUPPORT_WITHDRAW_DT,num,8,MMDDYY,"If DCD, Date of withdrawal of support"
+DON_DCD_SUPPORT_WITHDRAW_TM,num,8,TIME,"If DCD, Time of withdrawal of support"
+DON_DCD_THOR_AORTA_CANNUL_DT,num,8,MMDDYY,"If DCD, Date of thoracic aorta cannulation:"
+DON_DCD_THOR_AORTA_CANNUL_TM,num,8,TIME,"If DCD, Time of thoracic aorta cannulation:"
+DON_DCD_TOT_URINE_OUTPUT,num,8,,"If DCD, Total urine output during OR recovery phase"
+DON_DDAVP,char,1,,Meds given Donor: DDAVP
+DON_DEATH_CIRCUM,num,8,DTHCRCM,Cirumstances of Death
+DON_DEATH_MECH,num,8,DTHMCH,Mechanism of Death
+DON_DOBUTAMINE,char,1,,Meds given Donor: Dobutamine
+DON_DOPAMINE,char,1,,Meds given Donor: Dopamine
+DON_DP1,num,8,DPHLA,Donor/s HLA - DPw (1) locus
+DON_DP2,num,8,DPHLA,Donor/s HLA - DPw (2) locus
+DON_DQ1,num,8,DQHLA,Donor/s HLA - DQ (1) locus
+DON_DQ2,num,8,DQHLA,Donor/s HLA - DQ (2) locus
+DON_DR1,num,8,DRLOCUS,Donor/s HLA - DR (1) antigen
+DON_DR2,num,8,DRLOCUS,Donor/s HLA - DR (2) antigen
+DON_DR51,num,8,WKGRPHLA,Donor/s HLA - DR51 locus
+DON_DR52,num,8,WKGRPHLA,Donor/s HLA - DR52 locus
+DON_DR53,num,8,WKGRPHLA,Donor/s HLA - DR53 locus
+DON_EBNA,char,2,$SRLSTT,EBNA (Epstein-Barr nuclear antigen)
+DON_EBV_IGG,char,2,$SRLSTT,EBV (VCA) (lgG):
+DON_EBV_IGM,char,2,$SRLSTT,EBV (VCA) (lgM):
+DON_EJECT_FRACT,num,8,,LV Ejection Fraction %
+DON_EJECT_FRACT_METH,num,8,LVEJCMTH,Method
+DON_ETHNICITY_SRTR,char,10,$ETHSR,SRTR Donor Ethnicity
+DON_EXPAND_DON_FLG_OPTN,num,3,,Does donor meet criteria to be an Expanded Donor?
+DON_EXPAND_DON_KI,num,3,,"Meets expanded donor criteria for kidney (1= yes , 0= no)"
+DON_EXPRESS_FAMILY,char,1,,Did the patient express to family or others the intent to be a donor
+DON_EXTRACRANIAL_CANCER,char,1,,Extracranial
+DON_EXTRACRANIAL_CANCER_TYPE,char,20,,Type (for Extracranial):
+DON_FEEDBACK_DONE,num,3,,Feedback Completed for Donor?
+DON_FINAL_SERUM_CREAT,num,8,,Final Serum Creatinine
+DON_GENDER,char,1,,Donor/s Gender
+DON_HBC_STAT,num,8,SRLGYSTT,Hepatitis B Core Antibody Status
+DON_HBV_NAT,char,2,,Donor RNA Nat serology value for hbv test
+DON_HBV_SURF_ANTIBODY,char,2,$SRLSTT,HBsAb (Hepatitis B Surface Antibody)
+DON_HBV_SURF_ANTIGEN,char,2,$SRLSTT,HBsAg
+DON_HCV_NAT,char,2,,Donor RNA Nat serology value for hcv test
+DON_HCV_STAT,num,8,SRLGYSTT,HCV Antibody Status
+DON_HEAVY_ALCOHOL,char,1,,Heavy Alcohol Use (heavy= 2+ drinks/day):
+DON_HEMATOCRIT,num,8,,Hematocrit:
+DON_HEPARIN,char,1,,Heparin
+DON_HGT_CM,num,8,,Donor/s Height in centimeters
+DON_HIGH_CREAT,num,3,,"Donor serum creatinine > 1.5 (1= yes, 0= no)"
+DON_HIST_ALCOHOL,char,1,,Alcohol Dependency
+DON_HIST_CANCER,num,8,HSTSTST,History of Cancer
+DON_HIST_CIGARETTE_GT20_PKYR,char,1,,Cigarette Use > 20 Pack Years - Ever
+DON_HIST_COCAINE,char,1,,Cocaine Use
+DON_HIST_DIAB,num,8,HSTDBDR,History of Diabetes
+DON_HIST_HYPERTEN,num,8,HSTHYPDR,History of Hypertension
+DON_HIST_INSULIN_DEPND,num,8,INSDPDR,Insulin Dependent
+DON_HIST_IV_DRUG,char,1,,IV Drug Use - Pre-6/30/2004
+DON_HIST_OTHER_DRUG,char,1,,Other Drug Abuse
+DON_HIST_PREV_MI,char,1,,History of Previous MI
+DON_HIV_NAT,char,2,,Donor RNA Nat serology value for hiv test
+DON_HLA_TYP,char,1,,Was Donor HLA Typed
+DON_HLA_TYP_NOT_DONE,num,3,,HLA Typing not done for donor
+DON_HOME_STATE,char,2,$STATE,Donor/s Home State
+DON_HTLV_NAT,char,2,,Donor RNA Nat serology value for htlv test
+DON_HTN,num,3,,"Donor history of hypertension (1= yes, 0= no)"
+DON_HYPERTEN_DIET,char,1,,Diet
+DON_HYPERTEN_DIURETICS,char,1,,Diuretics
+DON_HYPERTEN_OTHER_MEDS,char,1,,Other Medication
+DON_INFECT_BLOOD,num,3,,Infection Source: Blood
+DON_INFECT_BLOOD_CONFIRM,char,1,,Infection Source: Blood/Confirmed by Culture
+DON_INFECT_LU,num,3,,Infection Source: Lung
+DON_INFECT_LU_CONFIRM,char,1,,Infection Source: Lung/Confirmed by Culture
+DON_INFECT_OTHER,num,3,,Infection Source: Other
+DON_INFECT_OTHER_CONFIRM,char,1,,Infection Source: Other/Confimed by Culture
+DON_INFECT_URINE,num,3,,Infection Source: Urine
+DON_INFECT_URINE_CONFIRM,char,1,,Infection Source: Urine/Confirmed by Culture
+DON_INOTROP_AGENT_GE3,char,1,,Three or More Inotropic Agents at Time of Incision
+DON_INOTROP_SUPPORT,char,1,,Inotropic Support
+DON_INR,num,8,,INR:
+DON_INSULIN,char,1,,Insulin:
+DON_INTRACRANIAL_CANCER,char,1,,Intracranial
+DON_INTRACRANIAL_CANCER_TYPE,char,23,,Type (for Intracranial):
+DON_KI_GLOMER_OBSERVED,num,8,,Glomeruli Observed on Kidney biopsy
+DON_KI_GLOMER_SCLER_PCT,num,8,,Percent Glomerular Sclerosis on Kidney biopsy
+DON_LEFT_LUNG_PERFUSION,char,1,,Left Lung Machine Perfusion Intended or Performed:
+DON_LEGALLY_BRAIN_DEAD,char,1,,Was the patient declared legally brain dead:
+DON_LEGALLY_DOCUMENT_DECISION,char,1,,Did patient legally document their decision to be
+DON_LF_KI_BIOPSY,char,1,,Kidney Biopsy (left)
+DON_LF_KI_GLOMER_SCLER_PCT,num,8,KGLMR,% Glomerulosclerosis (Left Kidney)
+DON_LF_KI_PUMP,char,1,,Pump (Left Kidney)
+DON_LF_KI_RESIST_PRIOR_SHIP,num,8,,Final Resistance Prior to Shipping (left) //Final Resistance Prior to Shipping:
+DON_LF_KI_TXFER_PUMP,char,1,,Transferred on pump (left)://Transferred on pump:
+DON_LF_LU_BRONCHO,num,8,ABNLBRNC,Left Lung Bronchoscopy:
+DON_LIPASE,num,8,,Serum Lipase
+DON_LI_BIOPSY,char,1,,Liver Biopsy
+DON_LI_BIOPSY_MACRO_FAT,num,8,,% Macro vesicular fat:
+DON_LI_BIOPSY_MICRO_FAT,num,8,,% Micro/intermediate vesicular fat:
+DON_LI_OTH_HISTOLOGY_GRANULOMAS,num,3,,Granulomas Histology performed
+DON_LI_OTH_HISTOLOGY_HEMOSIDERA,num,3,,Hemosidera Histology performed
+DON_LI_OTH_HISTOLOGY_OTHER,num,3,,Other Histology performed
+DON_MAP_FINAL,num,8,,MAP (final) //Map:
+DON_MAP_INIT,num,8,,MAP (initial) //Map: (mm/Hg)
+DON_MAX_CREAT,num,8,,Maximum Donor Creatinine
+DON_MED_EXAMINER,num,8,MDXMRPRT,Medical Examiner/Coroner
+DON_MEET_CDC_HIGH_RISK,char,1,,Does the Donor meet CDC guidelines for High Risk for an organ donor:
+DON_MEET_DOUBLE_KI_CRIT,num,3,,Donor meets double KI allocation criteria
+DON_NON_HR_BEAT,char,1,,Non-Heart Beating Donor
+DON_NON_HR_BEAT_CNTL,char,1,,Controlled
+DON_NON_HR_BEAT_CORE_COOL,char,1,,Core Cooling Used
+DON_OPO_CTR_ID,num,4,,DON_OPO_ Center ID
+DON_PA_DIAST_FINAL,num,8,,PA Diastolic (final) //PA Diastolic:
+DON_PA_DIAST_INIT,num,8,,PA Diastolic (initial) //PA Diastolic: (mm/Hg)
+DON_PA_SYST_FINAL,num,8,,PA Systolic (final) //PA Systolic:
+DON_PA_SYST_INIT,num,8,,PA Systolic (initial) //PA Systolic: (mm/Hg)
+DON_PCO2,num,8,,pCO2:
+DON_PCWP_FINAL,num,8,,PCWP (final) //PCWP:
+DON_PCWP_INIT,num,8,,PCWP (initial) //PCWP: (mm/Hg)
+DON_PEAK_SERUM_CREAT,num,8,,Peak Serum Creatinine
+DON_PH,num,8,,Blood PH:
+DON_PO2,num,8,,Lung pO2 on 100%
+DON_PO2_DONE,char,1,,Lung - Was pO2 done:
+DON_PO2_FIO2,num,8,,"Lung pO2 on Fio2 //If Yes, Lung pO2 on FiO2 of:"
+DON_PRERECOV_DIURETICS,char,1,,Pre-Recov Meds given Donor: Diuretics
+DON_PRERECOV_MEDS,char,1,,Prerecovery Medication
+DON_PRERECOV_STEROIDS,char,1,,Pre-Recov Meds given Donor: Steroids
+DON_PRERECOV_T3,char,1,,Pre-Recov Meds given Donor: T3
+DON_PRERECOV_T4,char,1,,Pre-Recov Meds given Donor: T4
+DON_PREV_GASTRO_DISEASE,char,1,,Previous Gastrointestinal Disease
+DON_PROTEIN_URINE,char,1,,Protein in Urine
+DON_PULM_CATH,char,1,,Was a pulmonary artery catheter placed:
+DON_RACE,num,8,RACE,Donor/s race
+DON_RACE_AMERICAN_INDIAN,num,3,,Race: American Indian or Alaskan Native
+DON_RACE_ASIAN,num,3,,Race: Asian
+DON_RACE_BLACK_AFRICAN_AMERICAN,num,3,,Race: Black or African American
+DON_RACE_HISPANIC_LATINO,num,3,,Race: Hispanic or Latino
+DON_RACE_NATIVE_HAWAIIAN,num,3,,Race: Native Hawaiian or Pacific Islander
+DON_RACE_SRTR,char,10,$RACEBSR,SRTR Donor Race
+DON_RACE_WHITE,num,3,,Race: White
+DON_RECOV_DT,num,8,MMDDYY,Recovery Date (donor to OR)
+DON_RECOV_OUT_US,char,1,,Recovered Outside the U.S.
+DON_REF_DT,num,8,MMDDYY,Referral Date
+DON_REF_FLG,char,1,,Referral Flag
+DON_RESUSCIT_DURATION,num,8,,Duration of Resuscitation
+DON_RIGHT_LUNG_PERFUSION,char,1,,Right Lung Machine Perfusion Intended or Performed
+DON_RPR_VDRL,char,2,$SRLSTT,RPR-VDRL
+DON_RT_KI_BIOPSY,char,1,,Kidney Biopsy (right)
+DON_RT_KI_GLOMER_SCLER_PCT,num,8,KGLMR,% Glomerulosclerosis (Right Kidney)
+DON_RT_KI_PUMP,char,1,,Pump (Right Kidney)
+DON_RT_KI_RESIST_PRIOR_SHIP,num,8,,Final Resistance Prior to Shipping (right) //Final Resistance Prior to Shipping:
+DON_RT_KI_TXFER_PUMP,char,1,,Transferred on pump (right)://Transferred on pump:
+DON_RT_LU_BRONCHO,num,8,ABNLBRNC,Right Lung Bronchoscopy:
+DON_SERUM_AMYLASE,num,8,,Serum Amylase
+DON_SGOT,num,8,,SGOT/AST
+DON_SGPT,num,8,,SGPT/ALT
+DON_SKIN_CANCER,char,1,,Skin
+DON_SKIN_CANCER_TYPE,char,13,,Type (for Skin):
+DON_SODIUM,num,8,,Serum Sodium //Last Serum Sodium Prior to Procurement:
+DON_STRONGYLOIDES,char,2,,strongyloides test result selection
+DON_SVR_FINAL,num,8,,SVR (final) //SVR:
+DON_SVR_INIT,num,8,,SVR (initial) //SVR: (dynes/sec/cm)^5)
+DON_TARGET_SOURCE1,num,8,TGTCLSRM,Target Source for Class I:
+DON_TARGET_SOURCE2,num,8,TGTCLSRM,Target Source for Class II:
+DON_TATTOOS,char,1,,Lifestyle Factors: Tattoos
+DON_TM_FOR_XMATCH,char,1,,Is there time for crossmatch?
+DON_TOT_BILI,num,8,,Total Bilirubin
+DON_TROPONIN_I,num,8,,Troponin I
+DON_TROPONIN_T,num,8,,Troponin T
+DON_TX,num,8,,"Max disposition for Donor, 5(recovered only) or 6(transplanted)"
+DON_TXFUS_TERMINAL_HOSP_NUM,num,8,TRANSFUS,Number of transfusions during this (terminal) hospitalization:
+DON_TY,char,3,,"Donor Type (C-deceased, L-living)"
+DON_TYP_METHCLASS1,num,8,HLATYMTM,Donor/s HLA - Typing Method Class I
+DON_TYP_METHCLASS1_DT,num,8,MMDDYY,Date Typing Complete Class I:
+DON_TYP_METHCLASS2,num,8,HLATYMTM,Donor/s HLA - Typing Method Class II
+DON_TYP_METHCLASS2_DT,num,8,MMDDYY,Date Typing Complete Class II:
+DON_USE_DOUBLE_KI,char,1,,"Use Double KI allocation, not Expanded Donor"
+DON_VASODIL,char,1,,Vasodilators
+DON_VESSELS_GT50_STENOSIS,num,8,,"If Abnormal, # of Vessels with > 50% Stenosis"
+DON_WALL_ABNORM_GLOB,char,1,,Wall Abnormalities //Global:
+DON_WALL_ABNORM_SEG,char,1,,Wall Abnormalities //Segmental:
+DON_WARM_ISCH_TM_MINS,num,8,,Estimated Warm Ischemic Time in minutes
+DON_WAS_AUTHORIZATION_OBTAINED,char,1,,Was authorization obtained for organ donation?
+DON_WEST_NILE_NAT,char,2,,Donor RNA Nat serology value for West Nile test
+DON_WGT_KG,num,8,,Donor/s Weight in kilograms
+HBA1C,num,8,,HbA1c:
+INO_MED_DOPAMINE,num,3,,Inotropic Medication:
+INO_MED_DOPUTAMINE,num,3,,Inotropic Medication:
+INO_MED_EPINEPHRINE,num,3,,Inotropic Medication:
+INO_MED_ISOPROTERENOL,num,3,,Inotropic Medication:
+INO_MED_LEVOPHED,num,3,,Inotropic Medication:
+INO_MED_NEOSYNEPHRINE,num,3,,Inotropic Medication:
+PERS_ID,num,8,,"Unique Person ID for patient. Based on matches in similarity of SSN, DOB, Names and Nicknames, Gender, etc."

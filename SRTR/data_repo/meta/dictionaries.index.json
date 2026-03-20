@@ -1,0 +1,1595 @@
+{
+  "files": [
+    {
+      "path": "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv",
+      "name": "DONOR_DECEASED.csv",
+      "category": "General",
+      "headers": [
+        "Variable",
+        "Type",
+        "Length",
+        "Format",
+        "Label"
+      ],
+      "variables": [
+        "DONOR_ID",
+        "DON_A1",
+        "DON_A2",
+        "DON_ABNORM_CONGEN",
+        "DON_ABNORM_LVH",
+        "DON_ABNORM_VALVES",
+        "DON_ABO",
+        "DON_AGE",
+        "DON_AGE_IN_MONTHS",
+        "DON_ALLOC_ECD_CVA",
+        "DON_ALLOC_ECD_HYPERTEN",
+        "DON_ALLOC_ECD_SERUM_CREAT",
+        "DON_ALLOC_ECD_SERUM_CREAT_DT",
+        "DON_ALLOC_REMAIN_LI_SEG",
+        "DON_ANTI_CMV",
+        "DON_ANTI_CONVULS",
+        "DON_ANTI_HBC",
+        "DON_ANTI_HCV",
+        "DON_ANTI_HIV",
+        "DON_ANTI_HTLV",
+        "DON_ANTI_HYPERTEN",
+        "DON_ARGININE",
+        "DON_AUTHORIZATION_METHOD",
+        "DON_AUTH_NOT_OBTAINED_REASON",
+        "DON_B1",
+        "DON_B2",
+        "DON_BIOPSY_DGN",
+        "DON_BUN",
+        "DON_BW4",
+        "DON_BW6",
+        "DON_C1",
+        "DON_C2",
+        "DON_CAD_DON_COD",
+        "DON_CANCER_FREE_INTERVAL",
+        "DON_CANCER_OTHER_OSTXT",
+        "DON_CARDIAC_ARREST_AFTER_DEATH",
+        "DON_CHAGAS_NAT",
+        "DON_CHEST_XRAY",
+        "DON_CITIZENSHIP",
+        "DON_CI_FINAL",
+        "DON_CI_INIT",
+        "DON_CLAMP_DT",
+        "DON_CLAMP_TM",
+        "DON_CLAMP_TM_ZONE",
+        "DON_CLINICAL_INFECT",
+        "DON_COD_DON_STROKE",
+        "DON_COLD_ISCH_TM_ARRIV_KI",
+        "DON_CONSENT_ATTORNEY",
+        "DON_CONSENT_DON_CARD",
+        "DON_CONSENT_DON_REGIS",
+        "DON_CONSENT_DRIVER_LICENSE",
+        "DON_CONSENT_PX_WRIT_DOC",
+        "DON_CONSENT_TM",
+        "DON_CONSENT_WRIT_DOC_INTENT",
+        "DON_CONT_ALCOHOL",
+        "DON_CONT_CIGARETTE",
+        "DON_CONT_COCAINE",
+        "DON_CONT_IV_DRUG",
+        "DON_CONT_OTHER_DRUG",
+        "DON_CORONARY_ANGIO",
+        "DON_CO_FINAL",
+        "DON_CO_INIT",
+        "DON_CREAT",
+        "DON_CREG_DON_FLG",
+        "DON_CVP_FINAL",
+        "DON_CVP_INIT",
+        "DON_DCD_ABDOM_AORTA_CANNUL_DT",
+        "DON_DCD_ABDOM_AORTA_CANNUL_TM",
+        "DON_DCD_AGONAL_BEGIN_DT",
+        "DON_DCD_AGONAL_BEGIN_TM",
+        "DON_DCD_PORTAL_VEIN_CANNUL_DT",
+        "DON_DCD_PORTAL_VEIN_CANNUL_TM",
+        "DON_DCD_PROGRESS_TO_BRAIN_DEATH",
+        "DON_DCD_PULM_ART_CANNUL_DT",
+        "DON_DCD_PULM_ART_CANNUL_TM",
+        "DON_DCD_SUPPORT_WITHDRAW_DT",
+        "DON_DCD_SUPPORT_WITHDRAW_TM",
+        "DON_DCD_THOR_AORTA_CANNUL_DT",
+        "DON_DCD_THOR_AORTA_CANNUL_TM",
+        "DON_DCD_TOT_URINE_OUTPUT",
+        "DON_DDAVP",
+        "DON_DEATH_CIRCUM",
+        "DON_DEATH_MECH",
+        "DON_DOBUTAMINE",
+        "DON_DOPAMINE",
+        "DON_DP1",
+        "DON_DP2",
+        "DON_DQ1",
+        "DON_DQ2",
+        "DON_DR1",
+        "DON_DR2",
+        "DON_DR51",
+        "DON_DR52",
+        "DON_DR53",
+        "DON_EBNA",
+        "DON_EBV_IGG",
+        "DON_EBV_IGM",
+        "DON_EJECT_FRACT",
+        "DON_EJECT_FRACT_METH",
+        "DON_ETHNICITY_SRTR"
+      ]
+    },
+    {
+      "path": "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv",
+      "name": "CAND_KIPA.csv",
+      "category": "Kidney_Pancreas",
+      "headers": [
+        "Variable",
+        "Type",
+        "Length",
+        "Format",
+        "Label"
+      ],
+      "variables": [
+        "CAN_ABO",
+        "CAN_ACADEMIC_LEVEL",
+        "CAN_ACADEMIC_PROGRESS",
+        "CAN_ACCEPT_HIV_ORG",
+        "CAN_ACPT_HBC_POS",
+        "CAN_ACPT_HCV_POS",
+        "CAN_ACPT_ORG_OTHER_TEAM",
+        "CAN_ACTIVATE_DT",
+        "CAN_AGE_AT_LISTING",
+        "CAN_AGE_DIAB",
+        "CAN_AGE_IN_MONTHS_AT_LISTING",
+        "CAN_ANASTOMOSIS",
+        "CAN_ANESTH_PRIOR_DEATH",
+        "CAN_ANGINA",
+        "CAN_ANGINA_CAD",
+        "CAN_AVN",
+        "CAN_BMI",
+        "CAN_CEREB_VASC",
+        "CAN_CITIZENSHIP",
+        "CAN_CMV_STAT",
+        "CAN_COGNITIVE_DEVELOP",
+        "CAN_CREAT_CLEAR",
+        "CAN_CREAT_CLEAR_DT",
+        "CAN_C_PEPTIDE",
+        "CAN_DEATH_DT",
+        "CAN_DGN",
+        "CAN_DGN2",
+        "CAN_DGN_OSTXT",
+        "CAN_DIAB",
+        "CAN_DIAB_TY",
+        "CAN_DIAL",
+        "CAN_DIAL_DT",
+        "CAN_DONATED_ORG",
+        "CAN_DRUG_TREAT_COPD",
+        "CAN_DRUG_TREAT_HYPERTEN",
+        "CAN_ECMO",
+        "CAN_EDUCATION",
+        "CAN_EMPL_STAT",
+        "CAN_ENDWLFU",
+        "CAN_ETHNICITY_SRTR",
+        "CAN_EXHAUST_PERIT_ACCESS",
+        "CAN_EXHAUST_VASC_ACCESS",
+        "CAN_FOLLOWS_OPO_ALLOC",
+        "CAN_FRAC_EXTREM",
+        "CAN_FRAC_EXTREM_NUM",
+        "CAN_FRAC_OTHER",
+        "CAN_FRAC_OTHER_NUM",
+        "CAN_FRAC_PASTYR",
+        "CAN_FRAC_SPINE",
+        "CAN_FRAC_SPINE_NUM",
+        "CAN_FUNCTN_STAT",
+        "CAN_GENDER",
+        "CAN_GFR",
+        "CAN_GFR_DT",
+        "CAN_GROWTH_HORMONE",
+        "CAN_HGT_CM",
+        "CAN_HGT_WGT_DT",
+        "CAN_IABP",
+        "CAN_INIT_ACT_STAT_CD",
+        "CAN_INIT_ACT_STAT_DT",
+        "CAN_INIT_ALLOC_PRA",
+        "CAN_INIT_CUR_PRA",
+        "CAN_INIT_INACT_STAT_DT",
+        "CAN_INIT_ISOLATED_ORG_KI",
+        "CAN_INIT_ISOLATED_ORG_PA",
+        "CAN_INIT_SRTR_PEAK_PRA",
+        "CAN_INIT_STAT",
+        "CAN_IV_INOTROP",
+        "CAN_LAST_ACT_STAT_DT",
+        "CAN_LAST_INACT_STAT_DT",
+        "CAN_LAST_STAT",
+        "CAN_LATEST_SRTR_PEAK_PRA",
+        "CAN_LIFE_SUPPORT",
+        "CAN_LIFE_SUPPORT_OTHER",
+        "CAN_LISTING_CTR_CD",
+        "CAN_LISTING_CTR_TY",
+        "CAN_LISTING_DT",
+        "CAN_MALIG",
+        "CAN_MALIG_TY",
+        "CAN_MALIG_TY_BREAST",
+        "CAN_MALIG_TY_CNS_TUMOR",
+        "CAN_MALIG_TY_GENITOURINARY",
+        "CAN_MALIG_TY_HEPBLAST",
+        "CAN_MALIG_TY_HEPCARCINOMA",
+        "CAN_MALIG_TY_LEUK_LYMPH",
+        "CAN_MALIG_TY_LIVER",
+        "CAN_MALIG_TY_LU",
+        "CAN_MALIG_TY_OTHER",
+        "CAN_MALIG_TY_SKIN_MEL",
+        "CAN_MALIG_TY_SKIN_NON_MEL",
+        "CAN_MALIG_TY_THROAT",
+        "CAN_MALIG_TY_THYROID",
+        "CAN_MALIG_TY_UNK",
+        "CAN_MAX_AGE",
+        "CAN_MAX_COLD_TM",
+        "CAN_MAX_EXPAND_MM_A",
+        "CAN_MAX_EXPAND_MM_AB",
+        "CAN_MAX_EXPAND_MM_ABDR",
+        "CAN_MAX_EXPAND_MM_ADR",
+        "CAN_MAX_EXPAND_MM_B"
+      ]
+    }
+  ],
+  "variables": {
+    "DONOR_ID": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv",
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "DON_A1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_A2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ABNORM_CONGEN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ABNORM_LVH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ABNORM_VALVES": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ABO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_AGE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_AGE_IN_MONTHS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ALLOC_ECD_CVA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ALLOC_ECD_HYPERTEN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ALLOC_ECD_SERUM_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ALLOC_ECD_SERUM_CREAT_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ALLOC_REMAIN_LI_SEG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ANTI_CMV": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ANTI_CONVULS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ANTI_HBC": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ANTI_HCV": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ANTI_HIV": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ANTI_HTLV": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ANTI_HYPERTEN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ARGININE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_AUTHORIZATION_METHOD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_AUTH_NOT_OBTAINED_REASON": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_B1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_B2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_BIOPSY_DGN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_BUN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_BW4": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_BW6": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_C1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_C2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CAD_DON_COD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CANCER_FREE_INTERVAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CANCER_OTHER_OSTXT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CARDIAC_ARREST_AFTER_DEATH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CHAGAS_NAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CHEST_XRAY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CITIZENSHIP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CI_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CI_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CLAMP_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CLAMP_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CLAMP_TM_ZONE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CLINICAL_INFECT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_COD_DON_STROKE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_COLD_ISCH_TM_ARRIV_KI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONSENT_ATTORNEY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONSENT_DON_CARD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONSENT_DON_REGIS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONSENT_DRIVER_LICENSE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONSENT_PX_WRIT_DOC": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONSENT_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONSENT_WRIT_DOC_INTENT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONT_ALCOHOL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONT_CIGARETTE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONT_COCAINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONT_IV_DRUG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CONT_OTHER_DRUG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CORONARY_ANGIO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CO_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CO_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CREG_DON_FLG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CVP_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_CVP_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_ABDOM_AORTA_CANNUL_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_ABDOM_AORTA_CANNUL_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_AGONAL_BEGIN_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_AGONAL_BEGIN_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_PORTAL_VEIN_CANNUL_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_PORTAL_VEIN_CANNUL_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_PROGRESS_TO_BRAIN_DEATH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_PULM_ART_CANNUL_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_PULM_ART_CANNUL_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_SUPPORT_WITHDRAW_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_SUPPORT_WITHDRAW_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_THOR_AORTA_CANNUL_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_THOR_AORTA_CANNUL_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DCD_TOT_URINE_OUTPUT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DDAVP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DEATH_CIRCUM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DEATH_MECH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DOBUTAMINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DOPAMINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DP1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DP2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DQ1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DQ2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DR1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DR2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DR51": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DR52": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_DR53": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EBNA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EBV_IGG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EBV_IGM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EJECT_FRACT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EJECT_FRACT_METH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_ETHNICITY_SRTR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EXPAND_DON_FLG_OPTN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EXPAND_DON_KI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EXPRESS_FAMILY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EXTRACRANIAL_CANCER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_EXTRACRANIAL_CANCER_TYPE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_FEEDBACK_DONE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_FINAL_SERUM_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_GENDER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HBC_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HBV_NAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HBV_SURF_ANTIBODY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HBV_SURF_ANTIGEN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HCV_NAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HCV_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HEAVY_ALCOHOL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HEMATOCRIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HEPARIN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HGT_CM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIGH_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_ALCOHOL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_CANCER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_CIGARETTE_GT20_PKYR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_COCAINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_DIAB": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_HYPERTEN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_INSULIN_DEPND": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_IV_DRUG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_OTHER_DRUG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIST_PREV_MI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HIV_NAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HLA_TYP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HLA_TYP_NOT_DONE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HOME_STATE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HTLV_NAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HTN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HYPERTEN_DIET": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HYPERTEN_DIURETICS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_HYPERTEN_OTHER_MEDS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_BLOOD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_BLOOD_CONFIRM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_LU": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_LU_CONFIRM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_OTHER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_OTHER_CONFIRM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_URINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INFECT_URINE_CONFIRM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INOTROP_AGENT_GE3": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INOTROP_SUPPORT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INSULIN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INTRACRANIAL_CANCER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_INTRACRANIAL_CANCER_TYPE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_KI_GLOMER_OBSERVED": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_KI_GLOMER_SCLER_PCT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LEFT_LUNG_PERFUSION": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LEGALLY_BRAIN_DEAD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LEGALLY_DOCUMENT_DECISION": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LF_KI_BIOPSY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LF_KI_GLOMER_SCLER_PCT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LF_KI_PUMP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LF_KI_RESIST_PRIOR_SHIP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LF_KI_TXFER_PUMP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LF_LU_BRONCHO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LIPASE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LI_BIOPSY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LI_BIOPSY_MACRO_FAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LI_BIOPSY_MICRO_FAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LI_OTH_HISTOLOGY_GRANULOMAS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LI_OTH_HISTOLOGY_HEMOSIDERA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_LI_OTH_HISTOLOGY_OTHER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_MAP_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_MAP_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_MAX_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_MED_EXAMINER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_MEET_CDC_HIGH_RISK": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_MEET_DOUBLE_KI_CRIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_NON_HR_BEAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_NON_HR_BEAT_CNTL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_NON_HR_BEAT_CORE_COOL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_OPO_CTR_ID": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PA_DIAST_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PA_DIAST_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PA_SYST_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PA_SYST_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PCO2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PCWP_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PCWP_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PEAK_SERUM_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PO2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PO2_DONE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PO2_FIO2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PRERECOV_DIURETICS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PRERECOV_MEDS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PRERECOV_STEROIDS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PRERECOV_T3": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PRERECOV_T4": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PREV_GASTRO_DISEASE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PROTEIN_URINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_PULM_CATH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE_AMERICAN_INDIAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE_ASIAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE_BLACK_AFRICAN_AMERICAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE_HISPANIC_LATINO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE_NATIVE_HAWAIIAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE_SRTR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RACE_WHITE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RECOV_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RECOV_OUT_US": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_REF_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_REF_FLG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RESUSCIT_DURATION": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RIGHT_LUNG_PERFUSION": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RPR_VDRL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RT_KI_BIOPSY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RT_KI_GLOMER_SCLER_PCT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RT_KI_PUMP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RT_KI_RESIST_PRIOR_SHIP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RT_KI_TXFER_PUMP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_RT_LU_BRONCHO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SERUM_AMYLASE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SGOT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SGPT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SKIN_CANCER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SKIN_CANCER_TYPE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SODIUM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_STRONGYLOIDES": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SVR_FINAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_SVR_INIT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TARGET_SOURCE1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TARGET_SOURCE2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TATTOOS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TM_FOR_XMATCH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TOT_BILI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TROPONIN_I": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TROPONIN_T": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TX": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TXFUS_TERMINAL_HOSP_NUM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv",
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "DON_TYP_METHCLASS1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TYP_METHCLASS1_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TYP_METHCLASS2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_TYP_METHCLASS2_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_USE_DOUBLE_KI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_VASODIL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_VESSELS_GT50_STENOSIS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_WALL_ABNORM_GLOB": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_WALL_ABNORM_SEG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_WARM_ISCH_TM_MINS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_WAS_AUTHORIZATION_OBTAINED": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_WEST_NILE_NAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "DON_WGT_KG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "HBA1C": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "INO_MED_DOPAMINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "INO_MED_DOPUTAMINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "INO_MED_EPINEPHRINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "INO_MED_ISOPROTERENOL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "INO_MED_LEVOPHED": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "INO_MED_NEOSYNEPHRINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv"
+    ],
+    "PERS_ID": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/General/DONOR_DECEASED.csv",
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ABO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ACADEMIC_LEVEL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ACADEMIC_PROGRESS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ACCEPT_HIV_ORG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ACPT_HBC_POS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ACPT_HCV_POS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ACPT_ORG_OTHER_TEAM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ACTIVATE_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_AGE_AT_LISTING": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_AGE_DIAB": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_AGE_IN_MONTHS_AT_LISTING": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ANASTOMOSIS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ANESTH_PRIOR_DEATH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ANGINA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ANGINA_CAD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_AVN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_BMI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_CEREB_VASC": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_CITIZENSHIP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_CMV_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_COGNITIVE_DEVELOP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_CREAT_CLEAR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_CREAT_CLEAR_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_C_PEPTIDE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DEATH_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DGN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DGN2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DGN_OSTXT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DIAB": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DIAB_TY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DIAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DIAL_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DONATED_ORG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DRUG_TREAT_COPD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_DRUG_TREAT_HYPERTEN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ECMO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_EDUCATION": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_EMPL_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ENDWLFU": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ETHNICITY_SRTR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_EXHAUST_PERIT_ACCESS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_EXHAUST_VASC_ACCESS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FOLLOWS_OPO_ALLOC": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FRAC_EXTREM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FRAC_EXTREM_NUM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FRAC_OTHER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FRAC_OTHER_NUM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FRAC_PASTYR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FRAC_SPINE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FRAC_SPINE_NUM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_FUNCTN_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_GENDER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_GFR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_GFR_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_GROWTH_HORMONE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_HGT_CM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_HGT_WGT_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_IABP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_ACT_STAT_CD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_ACT_STAT_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_ALLOC_PRA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_CUR_PRA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_INACT_STAT_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_ISOLATED_ORG_KI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_ISOLATED_ORG_PA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_SRTR_PEAK_PRA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_INIT_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_IV_INOTROP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LAST_ACT_STAT_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LAST_INACT_STAT_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LAST_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LATEST_SRTR_PEAK_PRA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LIFE_SUPPORT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LIFE_SUPPORT_OTHER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LISTING_CTR_CD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LISTING_CTR_TY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_LISTING_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_BREAST": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_CNS_TUMOR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_GENITOURINARY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_HEPBLAST": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_HEPCARCINOMA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_LEUK_LYMPH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_LIVER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_LU": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_OTHER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_SKIN_MEL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_SKIN_NON_MEL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_THROAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_THYROID": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MALIG_TY_UNK": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_AGE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_COLD_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_EXPAND_MM_A": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_EXPAND_MM_AB": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_EXPAND_MM_ABDR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_EXPAND_MM_ADR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_EXPAND_MM_B": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_EXPAND_MM_BDR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_EXPAND_MM_DR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MILE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MM_A": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MM_AB": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MM_ABDR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MM_ADR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MM_B": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MM_BDR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_MM_DR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_PCT_SCLER_GE10": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_PCT_SCLER_LT10": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_WARM_TM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MAX_WGT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MED_COND": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MIN_AGE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MIN_FINAL_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MIN_PEAK_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MIN_WGT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MM_ACPT_CD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MOST_RECENT_CREAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MOST_RECENT_HGT_CM": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MOST_RECENT_WGT_KG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_MOTOR_DEVELOP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_NEW_PREV_PI_TX": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ON_DIAL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_ON_EXPAND_DON_LIST": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PAIRED_LIVE_DONOR_ID": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PEPTIC_ULCER": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PERIPH_VASC": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PERM_STATE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PGE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PHYSC_CAPACITY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PRELIM_XMATCH_REQUEST": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_BONE_MARROW_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_BONE_MARROW_TX": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_HL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_HR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_IN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_KI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_KI_TX_FUNCTN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_KP": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_LI": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_LU": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_PA": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_TX": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PREV_TXFUS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PRIMARY_PAY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_PULM_EMBOL": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE_AMERICAN_INDIAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE_ASIAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE_BLACK_AFRICAN_AMERICAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE_HISPANIC_LATINO": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE_NATIVE_HAWAIIAN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE_SRTR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_RACE_WHITE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_REM_CD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_REM_COD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_REM_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_SECONDARY_PAY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_SOURCE": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_STAT_EXTEND_FLG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_TIEBREAKER_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_TOT_ALBUMIN": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_TRR_EXISTS": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_TX_COUNTRY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_VAD_TAH": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_VENTILATOR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WGT_KG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WLKIPA_A1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WLKIPA_A2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WLKIPA_B1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WLKIPA_B2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WLKIPA_DR1": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WLKIPA_DR2": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WORK_INCOME": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WORK_NO_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_WORK_YES_STAT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "CAN_YEAR_ENTRY_US": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "DONCRIT_ACPT_DCD": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "DONCRIT_ACPT_DCD_IMPORT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "ORG_AR": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "PERS_NEXTTX": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "PERS_NEXTTX_TRR_ID": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "PERS_OPTN_DEATH_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "PERS_SSA_DEATH_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "PX_ID": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "REC_TX_DT": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "REC_TX_PROCEDURE_TY": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ],
+    "WL_ORG": [
+      "C:/Users/18120/Desktop/OPENAIproj/SRTR/data_repo/dictionaries/Kidney_Pancreas/CAND_KIPA.csv"
+    ]
+  },
+  "build_time": "1761276542.0357232",
+  "total_variables": 452
+}

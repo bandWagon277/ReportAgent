@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transplant QA Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn.secondary {
+      background: #6c757d;
+    }
+
+    .btn.secondary:hover {
+      box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+    }
+
+    .status {
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .status.muted {
+      background: #f8f9fa;
+      color: #6c757d;
+    }
+
+    .status.ok {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status.warn {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .status.err {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #495057;
+      margin: 20px 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #e9ecef;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #495057;
+      margin-bottom: 8px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .item {
+      padding: 8px 12px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .mono {
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    }
+
+    .muted {
+      color: #6c757d;
+      font-style: italic;
+    }
+
+    .kvs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .kvs > div {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+    }
+
+    .k {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .v {
+      color: #212529;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .code {
+      background: #282c34;
+      color: #abb2bf;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e9ecef;
+      margin: 20px 0;
+    }
+
+    .artifacts {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .artifacts .item {
+      padding: 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .artifacts a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .artifacts a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #dee2e6;
+    }
+
+    th {
+      background: #e9ecef;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .error-details {
+      margin-top: 8px;
+      padding: 12px;
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #856404;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+    .process-info-block {
+      background-color: #f0f7ff; /* 浅蓝色背景 */
+      border-left: 5px solid #4a90e2;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .process-info-block .k {
+      font-weight: 700;
+      color: #4a90e2;
+      margin-right: 10px;
+    }
+    .process-info-block .path-list {
+      margin-top: 5px;
+      padding-left: 20px;
+      list-style: none;
+    }
+    .process-info-block .path-list li {
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 2px 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Transplant QA Portal</h1>
+    
+    <div class="card stack">
+      <div class="row">
+        <input 
+          id="prompt" 
+          class="input" 
+          placeholder="Enter your question, e.g., What is DONOR_ID? or Explain the meaning of eGFR."
+        />
+        <button id="askBtn" class="btn">Submit Query</button>
+      </div>
+      <div id="status" class="status muted">Ready</div>
+    </div>
+
+    <div class="card stack" id="resultCard" style="display:none;">
+      <div id="resultsBlock"></div>
+      <div class="section-title"> Initial Agent · Path Suggestions</div>
+      <div id="paths" class="grid-2">
+        <div>
+          <div class="pill">concepts</div>
+          <div id="paths-concepts" class="list"></div>
+        </div>
+        <div>
+          <div class="pill">dictionaries</div>
+          <div id="paths-dicts" class="list"></div>
+        </div>
+        <div>
+          <div class="pill">data</div>
+          <div id="paths-data" class="list"></div>
+        </div>
+        <div>
+          <div class="pill">docs</div>
+          <div id="paths-docs" class="list"></div>
+        </div>
+      </div>
+      <div id="intentLine" class="muted mono" style="margin-top: 12px;"></div>
+      
+      <div class="divider"></div>
+
+      <div class="section-title"> Agent A · Answer</div>
+      <div id="answer" class="kvs"></div>
+
+      <div id="codeBlock" style="display:none;">
+        <div class="section-title" style="margin-top: 24px;"> Agent A · Generated Code</div>
+        <div class="row" style="align-items:center; justify-content:space-between; margin-bottom: 12px;">
+          <span id="runnerTag" class="pill mono">runner: -</span>
+          <div style="display: flex; gap: 8px;">
+            <button id="copyBtn" class="btn secondary">Copy Code</button>
+            <button id="runBtn" class="btn">Run Code</button>
+          </div>
+        </div>
+        <pre id="code" class="code mono"></pre>
+      </div>
+
+      <div id="execBlock" style="display:none;">
+        <div class="section-title" style="margin-top: 24px;"> Agent B · Execution Results</div>
+        <div id="execStatus" class="status muted">Waiting to execute...</div>
+        <div id="artifacts" class="artifacts"></div>
+        <div class="section-title"> Execution Logs</div>
+        <pre id="logs" class="code mono"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    const state = {
+      lastResponse: null,
+      answer: null,
+      code: null,
+      runner: null,
+      workdir: null,
+      isLoading: false
+    };
+
+    $("askBtn").addEventListener("click", onAsk);
+    $("copyBtn").addEventListener("click", onCopy);
+    $("runBtn").addEventListener("click", onRun);
+    
+    $("prompt").addEventListener("keypress", (e) => {
+      if (e.key === "Enter" && !state.isLoading) {
+        onAsk();
+      }
+    });
+
+    async function onAsk() {
+      const prompt = $("prompt").value.trim();
+      if (!prompt) return setStatus("Please enter a question.", "warn");
+
+      if (state.isLoading) return;
+
+      // 保留你原来的 UI 初始化逻辑
+      resetUI();
+      state.isLoading = true;
+      $("askBtn").disabled = true;
+      $("askBtn").innerHTML = 'Querying<span class="loading"></span>';
+      setStatus("Requesting Initial Agent / Agent A…", "muted");
+
+      try {
+        const res = await fetch("/api/query", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt })
+        });
+
+        const data = await res.json();
+
+        // 不管成功失败，都先把结果区域展示出来
+        $("resultCard").style.display = "block";
+
+        if (!res.ok || data.error) {
+          // 后端 HTTP 错误 或 data.error 字段，有就都当作错误处理
+          const msg = data.error || `HTTP ${res.status}`;
+          console.error(msg);
+          setStatus("❌ Request failed", "err");
+
+          // 这里改成往 resultsBlock 里写错误卡片
+          const resultsBlock = $("resultsBlock");
+          resultsBlock.innerHTML = `
+            <div class="card error-message">
+              <strong>Error:</strong><br>
+              ${msg}
+            </div>
+          `;
+          return; // 直接结束，不再往下走 displayResponse
+        }
+
+        // 记录一下最后一次响应，方便调试或复用
+        state.lastResponse = data;
+
+        // ✅ 核心改动：使用统一渲染函数，而不是自己手写 summary/detail 等
+        const resultsBlock = $("resultsBlock");
+        resultsBlock.innerHTML = "";   // 清空旧内容
+        displayResponse(data);         // 你前面写好的统一渲染函数
+
+        // 如果你的后端仍然会返回 code、runner、workdir，这里可以继续保留代码展示区
+        const code = data.code;
+        if (code) {
+          state.code = code;
+          state.runner = data.runner || null;
+          state.workdir = (data.inputs && data.inputs.workdir) || null;
+
+          $("codeBlock").style.display = "block";
+          $("runnerTag").textContent = `runner: ${state.runner || "-"}`;
+          $("code").textContent = code;
+        } else {
+          $("codeBlock").style.display = "none";
+        }
+
+        setStatus("✅ Query completed", "ok");
+
+      } catch (e) {
+        console.error(e);
+        setStatus("❌ Request failed", "err");
+
+        $("resultCard").style.display = "block";
+        const resultsBlock = $("resultsBlock");
+        resultsBlock.innerHTML = `
+          <div class="card error-details">
+            <strong>Error:</strong><br>
+            ${e.message}
+            <br><br>
+            <strong>Possible Reasons:</strong><br>
+            • Backend service not running<br>
+            • OpenAI API configuration issue<br>
+            • Incorrect data path<br>
+            • Dictionary index not generated
+          </div>
+        `;
+      } finally {
+        state.isLoading = false;
+        $("askBtn").disabled = false;
+        $("askBtn").textContent = "Submit Query";
+      }
+    }
+
+
+    async function onRun() {
+      if (!state.code || !state.runner || !state.workdir) {
+        return setStatus("No executable code or missing runner/workdir", "warn");
+      }
+      
+      $("execBlock").style.display = "block";
+      $("execStatus").textContent = "Running…";
+      $("execStatus").className = "status muted";
+      $("logs").textContent = "";
+      $("artifacts").innerHTML = "";
+      $("runBtn").disabled = true;
+      $("runBtn").innerHTML = 'Running<span class="loading"></span>';
+
+      try {
+        const res = await fetch("/api/execute", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            runner: state.runner,
+            code: state.code,
+            workdir: state.workdir
+          })
+        });
+        
+        const data = await res.json();
+        
+        if (!res.ok) {
+          throw new Error(data.error || `HTTP ${res.status}`);
+        }
+
+        const status = data.status || "unknown";
+        $("execStatus").textContent = status === "ok" ? "✅ Execution succeeded" : `Status: ${status}`;
+        $("execStatus").className = `status ${status === "ok" ? "ok" : "warn"}`;
+        $("logs").textContent = data.logs || "No logs";
+
+        renderArtifacts(data.artifacts || []);
+        setStatus("✅ Execution completed", "ok");
+      } catch (e) {
+        console.error(e);
+        $("execStatus").textContent = "❌ Execution failed";
+        $("execStatus").className = "status err";
+        $("logs").textContent = `Error: ${e.message}`;
+        setStatus("❌ Execution failed", "err");
+      } finally {
+        $("runBtn").disabled = false;
+        $("runBtn").textContent = "Run Code";
+      }
+    }
+
+    function onCopy() {
+      const code = $("code").textContent;
+      navigator.clipboard.writeText(code).then(
+        () => {
+          setStatus("✅ Code copied", "ok");
+          $("copyBtn").textContent = "Copied!";
+          setTimeout(() => {
+            $("copyBtn").textContent = "Copy Code";
+          }, 2000);
+        },
+        () => setStatus("❌ Copy failed", "err")
+      );
+    }
+
+    function setStatus(text, level) {
+      const el = $("status");
+      el.textContent = text;
+      el.className = `status ${level || "muted"}`;
+    }
+
+    function resetUI() {
+      $("resultCard").style.display = "none";
+      $("paths-concepts").innerHTML = "";
+      $("paths-dicts").innerHTML = "";
+      $("paths-data").innerHTML = "";
+      $("paths-docs").innerHTML = "";
+      $("answer").innerHTML = "";
+      $("codeBlock").style.display = "none";
+      $("execBlock").style.display = "none";
+      $("artifacts").innerHTML = "";
+      $("logs").textContent = "";
+      state.code = null;
+      state.runner = null;
+      state.workdir = null;
+    }
+
+    function renderPaths(containerId, arr) {
+      const box = $(containerId);
+      box.innerHTML = "";
+      
+      if (!arr || arr.length === 0) {
+        const div = document.createElement("div");
+        div.className = "muted";
+        div.textContent = "None";
+        box.appendChild(div);
+        return;
+      }
+      
+      arr.forEach(p => {
+        const div = document.createElement("div");
+        div.className = "item mono";
+        div.textContent = p;
+        div.title = p;
+        box.appendChild(div);
+      });
+    }
+
+    function addKV(containerId, k, v) {
+      const box = $(containerId);
+      const wrap = document.createElement("div");
+      const kk = document.createElement("div");
+      kk.className = "k";
+      kk.textContent = k;
+      const vv = document.createElement("div");
+      vv.className = "v";
+      vv.textContent = v;
+      wrap.appendChild(kk);
+      wrap.appendChild(vv);
+      box.appendChild(wrap);
+    }
+
+    function renderArtifacts(arts) {
+      const box = $("artifacts");
+      box.innerHTML = "";
+      
+      if (!arts.length) {
+        const d = document.createElement("div");
+        d.className = "muted";
+        d.textContent = "No artifacts";
+        box.appendChild(d);
+        return;
+      }
+
+      for (const a of arts) {
+        const item = document.createElement("div");
+        item.className = "item";
+
+        const title = document.createElement("div");
+        title.innerHTML = `<span class="pill mono">${a.type || "file"}</span>`;
+        item.appendChild(title);
+
+        if (a.path) {
+          const p = document.createElement("div");
+          p.style.marginTop = "6px";
+          const link = document.createElement("a");
+          link.href = a.path;
+          link.textContent = a.path;
+          link.target = "_blank";
+          p.appendChild(link);
+          item.appendChild(p);
+
+          if (a.type === "table" && a.path.endsWith(".csv")) {
+            const pre = document.createElement("div");
+            pre.style.marginTop = "8px";
+            pre.className = "muted";
+            pre.textContent = "Preview (first 50 rows):";
+            item.appendChild(pre);
+
+            const tbl = document.createElement("div");
+            item.appendChild(tbl);
+            previewCSV(a.path, tbl, 50);
+          }
+
+          if ([".png",".jpg",".jpeg",".gif",".svg"].some(ext => a.path.toLowerCase().endsWith(ext))) {
+            const img = document.createElement("img");
+            img.src = a.path;
+            img.alt = "artifact image";
+            img.style.maxWidth = "100%";
+            img.style.marginTop = "8px";
+            item.appendChild(img);
+          }
+        }
+
+        box.appendChild(item);
+      }
+    }
+
+    // gpt_interface.html (替换 displayResponse 函数)
+    function displayResponse(data) {
+        const resultsBlock = $("resultsBlock");
+        resultsBlock.innerHTML = ''; // 清空旧内容
+
+        // --- 1. 显示处理信息 (Process Info) ---
+        const processInfo = data.process_info; 
+        
+        if (processInfo && processInfo.type) {
+            let pathHtml = '';
+            if (processInfo.paths && processInfo.paths.length > 0) {
+                const pathsToDisplay = processInfo.paths.slice(0, 5);
+                
+                // 确保路径显示清晰，避免 DOM 报错
+                pathHtml = `<div style="margin-top: 5px;"><span style="font-weight: bold;">访问路径:</span><ul style="list-style: none; padding-left: 0;">`;
+                
+                pathsToDisplay.forEach(p => {
+                    // 仅显示路径的最后几级
+                    const shortPath = p.replace(/.*data_repo[/\\]/, "data_repo/").replace(/^Internal[/\\]/, "Internal/");
+                    pathHtml += `<li style="font-family: monospace; font-size: 12px; color: #555; padding: 2px 0;">${shortPath}</li>`;
+                });
+                if (processInfo.paths.length > 5) {
+                    pathHtml += `<li style="font-family: monospace; font-size: 12px; color: #555; padding: 2px 0;">... (${processInfo.paths.length - 5} 更多路径)</li>`;
+                }
+                pathHtml += `</ul></div>`;
+            }
+            
+            const processHtml = `
+                <div class="card process-info-block" style="border-left: 5px solid #4a90e2;">
+                    <p style="font-weight: bold; color: #4a90e2;">信息类型：${processInfo.type}</p>
+                    ${pathHtml}
+                </div>
+            `;
+            resultsBlock.insertAdjacentHTML('beforeend', processHtml); 
+        }
+        
+        // --- 2. 显示 Summary/Detail ---
+        
+        if (data.summary) {
+            const summaryHtml = `<div class="card"><div class="section-title" style="font-weight: bold; color: #333;">Conclusion</div><p>${data.summary}</p></div>`;
+            resultsBlock.insertAdjacentHTML('beforeend', summaryHtml);
+        }
+        
+        // 使用 <pre> 标签包裹 detail，保持 LLM 生成的格式
+        if (data.detail) {
+            const detailHtml = `<div class="card"><div class="section-title" style="font-weight: bold; color: #333;">Detail information</div><pre style="white-space: pre-wrap; background: #f8f8f8; padding: 10px; border-radius: 6px;">${data.detail}</pre></div>`;
+            resultsBlock.insertAdjacentHTML('beforeend', detailHtml);
+        }
+        
+        // --- 3. 显示 Sources/Artifacts ---
+        // 假设 renderArtifacts 函数存在，用于处理 data.sources
+        if (data.sources && data.sources.length > 0 && typeof renderArtifacts === 'function') {
+            const artifactsTitle = document.createElement("div");
+            artifactsTitle.className = "section-title";
+            artifactsTitle.textContent = "来源文档/工件 (Sources/Artifacts)";
+            resultsBlock.appendChild(artifactsTitle);
+            renderArtifacts(data.sources, resultsBlock);
+        }
+    }
+
+
+    async function previewCSV(url, mount, maxRows=50) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) return;
+        const text = await res.text();
+        const rows = text.split(/\r?\n/).filter(Boolean).slice(0, maxRows);
+        const table = document.createElement("table");
+        
+        const makeRow = (cells, tag="td") => {
+          const tr = document.createElement("tr");
+          cells.forEach(c => {
+            const td = document.createElement(tag);
+            td.textContent = c;
+            tr.appendChild(td);
+          });
+          return tr;
+        };
+        
+        if (rows.length) {
+          const header = rows[0].split(",");
+          table.appendChild(makeRow(header, "th"));
+          for (let i=1; i<rows.length; i++) {
+            table.appendChild(makeRow(rows[i].split(","), "td"));
+          }
+        }
+        mount.appendChild(table);
+      } catch (e) {
+        console.warn("preview csv failed", e);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT CSV Data Analysis Tool</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        
+        .section h2 {
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        input[type="file"], 
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        
+        input[type="file"]:focus, 
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+        
+        .btn-success:hover {
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        }
+        
+        .btn-warning:hover {
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+        
+        .output-area {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            min-height: 50px;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #333;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .preview-section {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .preview-info {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .preview-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .preview-table th,
+        .preview-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+        
+        .preview-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .preview-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .workflow-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .workflow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .workflow-step.active {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .workflow-step.completed {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .workflow-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ddd;
+            font-size: 20px;
+        }
+        
+        .workflow-step.completed:not(:last-child)::after {
+            color: #4CAF50;
+        }
+        
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border-left: 4px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 GPT CSV Data Analysis Tool</h1>
+        <p class="subtitle">Use AI to automatically generate data analysis code, process your CSV data, and preview results in real-time</p>
+        
+        <!-- Workflow Indicator -->
+        <div class="workflow-indicator">
+            <div class="workflow-step" id="step1">1. Upload CSV / Enter Requirements</div>
+            <div class="workflow-step" id="step2">2. AI Generate Code</div>
+            <div class="workflow-step" id="step3">3. Preview Results</div>
+            <div class="workflow-step" id="step4">4. Download Data</div>
+        </div>
+        
+        <!-- CSV文件上传区域 -->
+        <div class="section">
+            <h2><span class="section-icon">📁</span>Upload CSV File</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="csv-file">Select your CSV file:</label>
+                    <input type="file" id="csv-file" name="csv_file" accept=".csv">
+                </div>
+                <button type="button" class="btn" onclick="uploadCsv()">📤 Upload CSV File</button>
+            </form>
+            
+            <div id="loading-upload" class="loading">
+                <div class="spinner"></div>
+                <p>Uploading file...</p>
+            </div>
+            
+            <div id="output" class="output-area"></div>
+        </div>
+
+        <!-- GPT提示区域 -->
+        <div class="section">
+            <h2><span class="section-icon">💭</span>AI Analysis Requirements</h2>
+            <div class="form-group">
+                <label for="prompt">Describe your data analysis requirements:</label>
+                <textarea id="prompt" rows="4" placeholder="Example: Please add a new row contain all mode in each column for data."></textarea>
+            </div>
+            <button class="btn" onclick="submitPrompt()">🚀 Generate Analysis Code</button>
+            
+            <div id="loading-gpt" class="loading">
+                <div class="spinner"></div>
+                <p>Generating Analysis Code...</p>
+            </div>
+            
+            <div id="gpt-output" class="output-area"></div>
+        </div>
+
+        <!--Running Test Sample -->
+        <div class="section">
+            <h2><span class="section-icon">⚡</span>Run Analysis</h2>
+            <form id="execution" enctype="multipart/form-data">
+                <button type="button" class="btn btn-warning" onclick="executeCode()" id="execute-btn" disabled>
+                    🔍 Run Analysis and Preview Results
+                </button>
+            </form>
+            
+            <div id="loading-execute" class="loading">
+                <div class="spinner"></div>
+                <p>Running Analysis of code...</p>
+            </div>
+            
+            <div id="execute-output" class="output-area"></div>
+        </div>
+
+        <!-- Preview Results -->
+        <div id="preview-section" class="preview-section">
+            <div class="preview-header">
+                <div>
+                    <h3>📊 Analysis Results Preview</h3>
+                    <div id="preview-info" class="preview-info"></div>
+                </div>
+                <button id="download-btn" class="btn btn-success" onclick="downloadResult()" disabled>
+                    💾 Download Full Results
+                </button>
+            </div>
+            <div id="preview-content"></div>
+        </div>
+
+        <!-- Message -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        let currentResultId = null;
+        let uploadedFilePath = null;
+        // Track the current file type returned from preview (csv, image, pdf)
+        let currentFileType = null;
+
+        // Update workflow step
+        function updateWorkflowStep(stepNumber, status = 'active') {
+            // Repeat every step
+            document.querySelectorAll('.workflow-step').forEach(step => {
+                step.classList.remove('active', 'completed');
+            });
+            
+            // Mark finished step
+            for (let i = 1; i < stepNumber; i++) {
+                document.getElementById(`step${i}`).classList.add('completed');
+            }
+            
+            // Mark current step
+            if (stepNumber <= 4) {
+                document.getElementById(`step${stepNumber}`).classList.add(status);
+            }
+        }
+
+        // Upload CSV File
+        function uploadCsv() {
+            const fileInput = document.getElementById('csv-file');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showMessage('Please select a CSV file', 'error');
+                return;
+            }
+            
+            const formData = new FormData(document.getElementById('upload-form'));
+            
+            showLoading('upload', true);
+            hideMessage();
+            updateWorkflowStep(1);
+            
+            fetch('/upload_csv/', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.file_path) {
+                    uploadedFilePath = data.file_path;
+                    sessionStorage.setItem('file_path', data.file_path);
+                    document.getElementById('output').innerHTML = `
+                        <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px;">
+                            ✅ CSV file uploaded successfully!<br>
+                            <small>File path: ${data.file_path}</small>
+                        </div>
+                    `;
+                    document.getElementById('execute-btn').disabled = false;
+                    showMessage('CSV file uploaded successfully! Now you can enter analysis requirements or directly run the default analysis.', 'success');
+                    updateWorkflowStep(1, 'completed');
+                } else {
+                    document.getElementById('output').innerHTML = '<div style="color: #721c24;">❌ CSV file upload failed</div>';
+                    showMessage('CSV file upload failed', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error uploading CSV:', error);
+                document.getElementById('output').innerHTML = '<div style="color: #721c24;">❌ An error occurred during upload</div>';
+                showMessage('An error occurred during upload: ' + error.message, 'error');
+            })
+            .finally(() => {
+                showLoading('upload', false);
+            });
+        }
+
+        // Subimt GPT prompt
+        function submitPrompt(retries = 3, body = null) {
+            const prompt = body ? body : document.getElementById('prompt').value;
+            
+            if (!prompt.trim()) {
+                showMessage('Please enter analysis requirements', 'error');
+                return;
+            }
+
+            showLoading('gpt', true);
+            hideMessage();
+            updateWorkflowStep(2);
+
+            fetch('/gpt-interface/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({prompt: prompt}),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    if (retries > 0) {
+                        console.warn(`API call failed with status ${response.status}. Retrying... (${retries} retries left)`);
+                        return submitPrompt(retries - 1, prompt);
+                    } else {
+                        throw new Error(`API调用失败，状态码: ${response.status}，重试次数已用完`);
+                    }
+                }
+                
+                // Check response type
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    return response.json();
+                } else {
+                    return response.text().then(text => ({ generated_text: text }));
+                }
+            })
+            .then(data => {
+                if (data.success && data.result_id) {
+                    // New preview mode
+                    currentResultId = data.result_id;
+                    document.getElementById('gpt-output').innerHTML = `
+                        <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+                            ✅ AI code generated successfully!
+                        </div>
+                        <pre>${data.generated_text}</pre>
+                    `;
+                    showPreview(data.result_id);
+                    document.getElementById('execute-btn').disabled = false;
+                    showMessage('AI analysis code generated successfully! You can preview results or rerun the analysis.', 'success');
+                    updateWorkflowStep(3);
+                } else if (data.generated_text) {
+                    // Compatible with old text response mode
+                    document.getElementById('gpt-output').innerHTML = `
+                        <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+                            ✅ AI code generated successfully!
+                        </div>
+                        <pre>${data.generated_text}</pre>
+                    `;
+                    document.getElementById('execute-btn').disabled = false;
+                    showMessage('AI analysis code generated successfully! You can now run the analysis.', 'success');
+                    updateWorkflowStep(2, 'completed');
+                } else {
+                    throw new Error(data.error || 'Failed to generate code');
+                }
+            })
+
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('gpt-output').innerHTML = `<div style="color: #721c24;">❌ ${error.message}</div>`;
+                showMessage('GPT API call failed: ' + error.message, 'error');
+            })
+            .finally(() => {
+                showLoading('gpt', false);
+            });
+        }
+
+        // Excute Code
+        function executeCode() {
+            const filePath = uploadedFilePath || sessionStorage.getItem('file_path');
+            
+            if (!filePath) {
+                showMessage('Please first Upload CSV File', 'error');
+                return;
+            }
+            
+            showLoading('execute', true);
+            hideMessage();
+            updateWorkflowStep(3);
+            
+            fetch('/process-csv/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({file_path: filePath})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success && data.result_id) {
+                    // New Preview mode
+                    currentResultId = data.result_id;
+                    document.getElementById('execute-output').innerHTML = `
+                        <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px;">
+                            ✅ Code executed successfully! Results generated and ready for preview.
+                        </div>
+                    `;
+                    showPreview(data.result_id);
+                    showMessage('Code executed successfully!You can Preview Results or Download it.', 'success');
+                } else if (data.result_path) {
+                    // Compatible with old systems
+                    document.getElementById('execute-output').innerHTML = `
+                        <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+                            ✅ Code executed successfully!
+                        </div>
+                        <pre>${data.result_path}</pre>
+                    `;
+                    sessionStorage.setItem('result_path', data.result_path);
+                    showMessage('Code executed successfully!', 'success');
+                    updateWorkflowStep(4);
+                } else {
+                    throw new Error(data.error || 'Execution failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error executing:', error);
+                document.getElementById('execute-output').innerHTML = `<div style="color: #721c24;">❌ ${error.message}</div>`;
+                showMessage('代码Execution failed: ' + error.message, 'error');
+            })
+            .finally(() => {
+                showLoading('execute', false);
+            });
+        }
+
+        // Show Preview
+        async function showPreview(resultId) {
+            try {
+                const response = await fetch(`/preview_result/?result_id=${resultId}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Determine file type and update global state
+                    currentFileType = data.file_type || 'csv';
+
+                    // Prepare preview information lines
+                    const infoLines = [];
+                    if (data.total_rows) infoLines.push(`Total rows: ${data.total_rows}`);
+                    if (data.total_columns) infoLines.push(`Total columns: ${data.total_columns}`);
+                    if (data.file_size) infoLines.push(`File size: ${formatBytes(data.file_size)}`);
+
+                    // Build preview content based on file type
+                    let contentHtml = '';
+                    if (currentFileType === 'csv') {
+                        // Show tabular data for CSV
+                        if (data.sample_data && data.columns) {
+                            contentHtml = '<table class="preview-table">';
+                            // Table head
+                            contentHtml += '<thead><tr>';
+                            data.columns.forEach(col => {
+                                contentHtml += `<th>${col}</th>`;
+                            });
+                            contentHtml += '</tr></thead>';
+                            // Table body
+                            contentHtml += '<tbody>';
+                            data.sample_data.slice(0, 10).forEach(row => {
+                                contentHtml += '<tr>';
+                                data.columns.forEach(col => {
+                                    const cellValue = row[col] !== undefined ? row[col] : '';
+                                    contentHtml += `<td>${cellValue}</td>`;
+                                });
+                                contentHtml += '</tr>';
+                            });
+                            contentHtml += '</tbody></table>';
+                            if (data.total_rows > 10) {
+                                contentHtml += `<p style="margin-top: 10px; color: #666; font-size: 14px; text-align: center;">Showing first 10 rows, total ${data.total_rows} rows of data</p>`;
+                            }
+                        } else if (data.raw_preview) {
+                            contentHtml = `<pre style="background: #f8f9fa; padding: 15px; border-radius: 5px; overflow: auto; max-height: 400px;">${data.raw_preview}</pre>`;
+                        }
+                    } else if (currentFileType === 'image') {
+                        // Display image preview
+                        if (data.preview_image) {
+                            contentHtml = `<img src="${data.preview_image}" alt="Preview Image" style="max-width:100%; border-radius:8px;" />`;
+                        } else {
+                            contentHtml = `<p style="color: #666;">Image generated. Unable to render preview.</p>`;
+                        }
+                    } else if (currentFileType === 'pdf') {
+                        // Display PDF info
+                        contentHtml = `<p style="color: #666;">PDF report generated. Use the download button to view the full report.</p>`;
+                    }
+
+                    // Render info and content
+                    document.getElementById('preview-info').innerHTML = infoLines.join(' | ');
+                    document.getElementById('preview-content').innerHTML = contentHtml;
+                    document.getElementById('preview-section').style.display = 'block';
+                    document.getElementById('download-btn').disabled = false;
+                    updateWorkflowStep(4);
+                } else {
+                    showMessage('Preview failed: ' + (data.error || 'Unknown error'), 'error');
+                }
+            } catch (error) {
+                showMessage('Preview request failed: ' + error.message, 'error');
+            }
+        }
+
+        // Download Result
+        function downloadResult() {
+            if (!currentResultId) {
+                showMessage('No result available for download', 'error');
+                return;
+            }
+            
+            try {
+                const link = document.createElement('a');
+                link.href = `/download_result/?result_id=${currentResultId}`;
+                // Determine filename based on current file type
+                let filename;
+                if (currentFileType === 'image') {
+                    filename = `generated_image_${currentResultId.substring(0, 8)}.png`;
+                } else if (currentFileType === 'pdf') {
+                    filename = `report_${currentResultId.substring(0, 8)}.pdf`;
+                } else {
+                    // default to csv
+                    filename = `processed_data_${currentResultId.substring(0, 8)}.csv`;
+                }
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                showMessage('File download started', 'success');
+            } catch (error) {
+                showMessage('Download failed: ' + error.message, 'error');
+            }
+        }
+
+        // Show/hide loading state
+        function showLoading(type, show) {
+            document.getElementById(`loading-${type}`).style.display = show ? 'block' : 'none';
+        }
+
+        // Show
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Hide
+        function hideMessage() {
+            document.getElementById('message').style.display = 'none';
+        }
+
+        // File size
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Initialization after page loading is complete
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check previously saved File path
+            const savedFilePath = sessionStorage.getItem('file_path');
+            if (savedFilePath) {
+                uploadedFilePath = savedFilePath;
+                document.getElementById('execute-btn').disabled = false;
+                document.getElementById('output').innerHTML = `
+                    <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px;">
+                        ✅ Previously uploaded file detected<br>
+                        <small>File path: ${savedFilePath}</small>
+                    </div>
+                `;
+            }
+            
+            updateWorkflowStep(1);
+        });
+    </script>
+</body>
+</html>

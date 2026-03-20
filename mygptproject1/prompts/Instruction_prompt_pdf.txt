@@ -1,0 +1,142 @@
+Role & Goal:
+Generating a Dialysis Facility Report (DFR)-style report.
+Your goal is to take the uploaded CSV dataset, validate it, and then produce a structured report that follows the style and structure of the sample DFR.
+
+Report Sections:
+Your report should contain the following sections:
+1. Title Page
+- Report title: “Dialysis Facility Report – Fiscal Year XXXX”
+- Facility name, state, network, CCN (if available in data)
+- Date of generation
+
+2. Purpose of the Report
+- Brief description of why this report is generated
+- Mention usage for quality improvement, benchmarking, monitoring
+
+3. Overview of Dataset
+- Patient characteristics:
+  - Age distribution (histogram, boxplot)
+  - Sex proportion (pie chart)
+  - Race/ethnicity distribution (bar chart)
+  - Dialysis modality (HD vs PD, bar chart)
+  - Primary cause of ESRD (frequency table)
+- Key descriptive statistics (counts, means, percentages)
+
+4. Facility Highlights
+- Bullet points of key measures
+  - % nursing_home_flag = 1 (nursing home treatment rate)
+  - Payer distribution (Medicare, Medicaid, Private)
+  - % of patients on PD
+  - Median age, gender balance
+
+5. Mortality Analysis
+- Use death_date:
+  - Total deaths, mortality rate = deaths / total patients
+  - Yearly mortality trends (line or bar chart)
+  - Standardized Mortality Ratio (SMR) = observed / expected (use cohort mean as expected)
+- Interpret significance
+
+6. Hospitalization & Readmission
+- Use hospitalization_date and hospitalization_diagnosis:
+  - Yearly hospitalization counts (bar chart)
+  - Top causes of hospitalization (bar chart)
+  - Readmission rates: if same patient has multiple hospitalizations within 30 days, compute %
+
+7. Infection & Complications
+- PD_infection_flag: proportion with infection (bar chart)
+- Vascular access type = Catheter: discuss higher infection risk
+
+8. Transplantation & Waitlist
+- transplant_date: number of transplants, yearly trend
+- waitlist_date: number of patients on waitlist, % of total patients
+- Chart waitlist % over time
+
+9. Other Clinical Measures
+- Vaccination: influenza_vaccine_date → % vaccinated
+- Anemia management: % hemoglobin < 10 g/dL
+- Dialysis adequacy: % KtV < 1.2
+- Mineral metabolism: % serum_phosphorus > 5.5 mg/dL
+- Vascular access: distribution of fistula, graft, catheter (bar chart)
+
+10. COVID-19 Impact (Optional)
+- If data missing: explicitly state “Not available in this dataset”
+
+11. Conclusion
+- Summarize facility performance
+- Highlight strengths and weaknesses
+- Suggest next steps
+
+Coding Format:
+# Runtime Environment (Important)
+- The runtime environment provides the following variables (you don't need to create them):
+- `df`: A `pandas.DataFrame`. In validation mode ( validation_mode=True ), this `df` contains only the first few rows for quick validation; in formal mode ( validation_mode=False ), `df` contains the full data set.
+- `csv_path`: The actual uploaded CSV path; use this path if you need to reread the data ( `pd.read_csv`), but **prefer using the injected `df` directly**.
+- `image_path`: Optional. If present, this image can be used in the report (such as a cover or illustration).
+- `validation_mode`: A Boolean value. True indicates validation mode (only lightweight checks are performed, no final results are generated); False indicates production mode (a final PDF must be generated for the full data set).
+- The environment **provides** common libraries: `pandas`, `matplotlib`, `reportlab`, etc. No internet connection is required.
+# Dual-Mode Conventions (Must Follow)
+- When `VALIDATION_MODE == True` (validation mode):
+- Only lightweight checks are performed on the provided `df` subset (e.g., column existence, type availability, and simple statistics).
+- Do not generate a final product: Do not assign a value to `pdf_data`.
+- Ensure the code runs smoothly in preparation for production mode.
+- When `VALIDATION_MODE == False` (production mode):
+- Perform calculations and visualizations on the full `df` and generate the final PDF.
+- The final PDF binary bytes must be assigned to the variable `pdf_data` (e.g., constructed in memory using `BytesIO()`).
+- Requires setting: `used_row_count = len(df)` for backend sanity checking.
+- **Do not** embed any CSV text in your code.
+- **Do not** connect to the internet or call external APIs.
+- If filtering/sampling is required, do it only in validation mode; **production mode must compute on the full df**.
+- Implement defensive coding for potentially missing/unusual columns (existence checks, try/except, and appropriate fallback strategies), and document how to handle them in the narrative. - Check data types before generating charts (for example, convert date columns to datetime).
+- Control the number and size of charts and tables to avoid PDF oversize or memory overflow.
+- Uses df/csv_path from the runtime. NO sample CSV literals.
+   - Uses VALIDATION_MODE: on True do only light checks and DO NOT set pdf_data; on False compute on FULL df and set pdf_data (bytes).
+   - Sets all variables below:
+     * pdf_data: bytes
+     * narrative_text: str
+     * used_row_count: int (=len(df))
+     * sections_implemented: list[str]
+     * requirements_coverage: dict[str,bool]  # keys exactly as listed in "WHAT YOU MUST IMPLEMENT"
+     * fig_count: int
+     * table_count: int
+   - No placeholders. No “Replace this …”. Close all figures, use in-memory BytesIO for images.
+
+
+Report Formatting:
+- Use `reportlab` (the environment is provided). `SimpleDocTemplate`, `Paragraph`, `Spacer`, `Table`, `TableStyle`, `RLImage`, etc.).
+- All charts are drawn using `matplotlib` and inserted into the PDF in memory (do not write to temporary disk files).
+- **Finally** assign the PDF's byte stream to the variable `pdf_data` (e.g., `pdf_buffer.getvalue()`) for easy reading by the backend.
+- Demographics: age distribution; sex/race/ethnicity proportions.
+- Modality mix: HD vs PD.
+- Mortality: annual mortality rate using `death_date` (any non-empty means death), show yearly trend line and rate table.
+- Hospitalization: annual hospitalization rate using `hospitalization_date`; top-5 `hospitalization_diagnosis`.
+- Infection: PD infection rate using `PD_infection_flag` (0/1).
+- Anemia: hemoglobin bands (<10, 10-12, >12) shares.
+- Adequacy: Kt/V bands (<1.2, 1.2-1.6, >1.6) shares.
+- Vascular access: distribution of `vascular_access_type` (Fistula/Graft/Catheter).
+- Vaccination: influenza coverage (`influenza_vaccine_date` non-empty).
+- Trends by year derived from `treatment_date` (parse to datetime then .dt.year).
+- Every chart (matplotlib figure) must be followed by a short explanatory paragraph (1–3 sentences). 
+- The paragraph should describe the main insights from the chart (e.g., overall distribution, trends, group differences). 
+- If relevant, connect the findings to clinical or facility-level implications (e.g., higher hospitalization rate → potential quality issue). 
+- Always place the explanatory paragraph immediately after inserting the chart into the PDF story.
+
+- Optional: assign the text interpretation to the variable `narrative_text` (a string) so that the frontend can display the summary in the preview area.
+
+# Finally, please make sure:
+- At the end of the code, ensure:
+- `used_row_count = len(df)`
+- In formal mode, `pdf_data` exists and is `bytes`
+- The final PDF binary data must be assigned to the **pdf_data** variable.
+- **CRITICAL: Use only ASCII characters in text content** to avoid Unicode encoding errors on Windows systems. Replace bullet points with "-" instead of "•".
+- **Do NOT** use line-break + indent to continue expressions; use parentheses `(...)` or a backslash `\` for line continuation.
+- **When using seaborn palettes, ALWAYS set `hue`** (e.g., `hue='Category', palette='Set2', legend=False`). If not using `hue`, **do not pass `palette`**.
+- **Avoid Windows file locks**: Add charts to the PDF via **in-memory `BytesIO`** buffers (as shown) rather than `NamedTemporaryFile`.
+- Ensure you **close** matplotlib figures with `plt.close()` and **seek(0)** on buffers before embedding.
+- Cast columns to correct dtypes (dates → `datetime`, numeric → `to_numeric`) to avoid "categorical units" warnings.
+- All standardized ratios include risk adjustment and confidence intervals as required.
+- Suppression rules and statistical significance testing are implemented.
+- The report follows clinical quality improvement standards with professional formatting.
+- **Encoding Safety**: All text content should use standard ASCII characters to prevent encoding issues.
+
+
+

@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Data Processing Platform</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        
+        .section h2 {
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        input[type="file"], 
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        
+        input[type="file"]:focus, 
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .output-type-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .output-option {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            background: white;
+        }
+        
+        .output-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .output-option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .output-option .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .output-option .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .output-option .description {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+        
+        .btn-success:hover {
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        }
+        
+        .btn-warning:hover {
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+        
+        .output-area {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            min-height: 50px;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #333;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .preview-section {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .preview-info {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .preview-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .preview-table th,
+        .preview-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+        
+        .preview-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .preview-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .image-preview {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 10px 0;
+        }
+        
+        .message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .workflow-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .workflow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .workflow-step.active {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .workflow-step.completed {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .workflow-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ddd;
+            font-size: 20px;
+        }
+        
+        .workflow-step.completed:not(:last-child)::after {
+            color: #4CAF50;
+        }
+        
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border-left: 4px solid #667eea;
+        }
+        
+        .prompt-examples {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .prompt-examples h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .example-item {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .example-item:hover {
+            background: #e9ecef;
+        }
+        
+        .example-item strong {
+            color: #667eea;
+        }
+    </style>
+</head>
+html<body>
+
+
+    <div style="background: #667eea; padding: 15px; text-align: center;">
+        <a href="/gpt/" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">
+            📊 Data Analysis
+        </a>
+        <a href="/synthetic-data/" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">
+            🎲 Synthetic Data
+        </a>
+    </div>
+
+
+    <div class="container">
+        <h1>🚀 Intelligent Data Processing Platform</h1>
+        <p class="subtitle">AI-powered data analysis with flexible output formats: CSV processing, visualization, and comprehensive reports</p>
+        
+        <!-- Workflow Indicator -->
+        <div class="workflow-indicator">
+        <div class="workflow-step" id="step1">1. Upload File & Choose Output</div>
+        <div class="workflow-step" id="step2">2. AI Generate / Analyze</div>
+        <div class="workflow-step" id="step3">3. Preview Results</div>
+        <div class="workflow-step" id="step4">4. Download Output</div>
+        </div>
+
+        
+        <!-- File Upload Area -->
+        <div class="section">
+        <h2><span class="section-icon">📁</span>Upload Files</h2>
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="form-group">
+            <label for="csv-file">Select your CSV or text file:</label>
+            <input
+                type="file"
+                id="csv-file"
+                name="csv_file"
+                accept=".csv,.txt,.md,.rst,.tex,.py,.r,.ipynb,.json,.yaml,.yml,.html,.htm,.css,.js,.ts,.tsx,.sql,.ini,.cfg,.toml,.bat,.sh"
+            >
+            </div>
+            <div class="form-group" id="image-upload-group" style="display: none;">
+            <label for="image-file">Select your image file (optional for reports):</label>
+            <input type="file" id="image-file" name="image_file" accept=".jpg,.jpeg,.png,.gif,.bmp,.webp">
+            </div>
+            <button type="button" class="btn" onclick="uploadFiles()">📤 Upload Files</button>
+        </form>
+
+        <div id="loading-upload" class="loading">
+            <div class="spinner"></div>
+            <p>Uploading files...</p>
+        </div>
+
+        <div id="output" class="output-area"></div>
+        </div>
+
+
+        <!-- Output Type Selection -->
+        <div class="section">
+        <h2><span class="section-icon">🎯</span>Choose Output Type</h2>
+        <div class="output-type-selector">
+            <div class="output-option selected" data-type="CSV" onclick="selectOutputType(this, 'CSV')">
+            <span class="icon">📊</span>
+            <div class="title">CSV Processing</div>
+            <div class="description">Data transformation and analysis with CSV output</div>
+            </div>
+            <div class="output-option" data-type="IMAGE" onclick="selectOutputType(this, 'IMAGE')">
+            <span class="icon">📈</span>
+            <div class="title">Data Visualization</div>
+            <div class="description">Generate charts and graphs from your data</div>
+            </div>
+            <div class="output-option" data-type="PDF" onclick="selectOutputType(this, 'PDF')">
+            <span class="icon">📋</span>
+            <div class="title">Analysis Report</div>
+            <div class="description">Comprehensive PDF report with CSV data and image analysis</div>
+            </div>
+            <!-- NEW: TEXT -->
+            <div class="output-option" data-type="TEXT" onclick="selectOutputType(this, 'TEXT')">
+            <span class="icon">📝</span>
+            <div class="title">General Text</div>
+            <div class="description">Analyze or review uploaded/pasted text/code</div>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- AI Analysis Requirements -->
+        <div class="section">
+        <h2><span class="section-icon">💭</span>AI Analysis Requirements</h2>
+        <div class="form-group">
+            <label for="prompt">Describe your analysis requirements:</label>
+            <textarea id="prompt" rows="4" placeholder="Example: Create a bar chart showing sales trends by month, or Generate a comprehensive analysis report of customer demographics..."></textarea>
+        </div>
+
+        <!-- NEW: Paste text/code directly (TEXT mode) -->
+        <div class="form-group" id="raw-text-group" style="display:none;">
+            <label for="raw-text">Paste your text/code (TEXT mode):</label>
+            <textarea id="raw-text" rows="6" placeholder="(Optional) Paste raw text or code here if you don't want to upload a file."></textarea>
+            <div style="font-size:12px;color:#666;margin-top:6px;">
+            Tip: In TEXT mode, you can either upload a text file above or paste text/code here.
+            </div>
+        </div>
+
+        <div class="prompt-examples" id="prompt-examples">
+            <h4>Example prompts for <span id="current-type">CSV Processing</span>:</h4>
+            <div id="example-container"><!-- populated by JS --></div>
+        </div>
+
+        <button class="btn" onclick="submitPrompt()">🚀 Generate Analysis / Code</button>
+
+        <div id="loading-gpt" class="loading">
+            <div class="spinner"></div>
+            <p>AI is generating analysis...</p>
+        </div>
+
+        <div id="gpt-output" class="output-area"></div>
+        </div>
+
+
+        <!-- Execute Analysis -->
+        <div class="section">
+            <h2><span class="section-icon">⚡</span>Run Analysis</h2>
+            <form id="execution" enctype="multipart/form-data">
+                <button type="button" class="btn btn-warning" onclick="executeCode()" id="execute-btn" disabled>
+                    🔍 Run Analysis and Generate Output
+                </button>
+            </form>
+            
+            <div id="loading-execute" class="loading">
+                <div class="spinner"></div>
+                <p>Processing data and generating output...</p>
+            </div>
+            
+            <div id="execute-output" class="output-area"></div>
+        </div>
+
+        <!-- Preview Results -->
+        <div id="preview-section" class="preview-section">
+            <div class="preview-header">
+                <div>
+                    <h3 id="preview-title">📊 Analysis Results Preview</h3>
+                    <div id="preview-info" class="preview-info"></div>
+                </div>
+                <button id="download-btn" class="btn btn-success" onclick="downloadResult()" disabled>
+                    💾 Download Results
+                </button>
+            </div>
+            <div id="preview-content"></div>
+        </div>
+
+        <!-- Message -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        let currentResultId = null;
+        let uploadedFilePath = null;
+        let uploadedImagePath = null;
+        let selectedOutputType = 'CSV';
+
+        // 放在已有全局变量附近   
+        let agentAState = {
+            code: null,
+            code_path: null,
+            isDirty: false,
+            version: null
+        };
+
+        // === NEW: file-type helpers ===
+        const TEXT_EXTS = new Set([
+        '.txt','.md','.rst','.tex',
+        '.py','.r','.ipynb','.json','.yaml','.yml',
+        '.html','.htm','.css','.js','.ts','.tsx',
+        '.sql','.ini','.cfg','.toml','.bat','.sh'
+        ]);
+        function extOf(name) {
+        const i = (name || '').lastIndexOf('.');
+        return i >= 0 ? name.slice(i).toLowerCase() : '';
+        }
+
+        // === NEW: text analysis state ===
+        let textAnalysisState = {
+        result: null,
+        result_type: null, // 'markdown' | 'code'
+        language: null,
+        code: null
+        };
+
+
+        
+        // Example prompts for different output types
+        const promptExamples = {
+            CSV: [
+                { text: "Add a new row with all values 1 into data", type: "Data Processing" },
+                { text: "Group data by category and calculate averages", type: "Aggregation" },
+                { text: "Remove duplicate entries and sort by date", type: "Cleaning" },
+                { text: "Create new calculated columns based on existing data", type: "Transformation" }
+            ],
+            IMAGE: [
+                { text: "Create a bar chart showing distribution by category", type: "Bar Chart" },
+                { text: "Generate a line plot for time series trends", type: "Line Chart" },
+                { text: "Make a scatter plot to show correlations", type: "Scatter Plot" },
+                { text: "Create a heatmap for correlation matrix", type: "Heatmap" }
+            ],
+            PDF: [
+                { text: "Generate comprehensive analysis report with CSV data and image insights", type: "Full Analysis" },
+                { text: "Create executive summary combining data trends and visual elements", type: "Summary" },
+                { text: "Produce detailed statistical report with image-enhanced analysis", type: "Statistics" },
+                { text: "Generate multi-source analysis report with data and image correlation", type: "Multi-source" }
+            ]
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePromptExamples();
+            updateWorkflowStep(1);
+            
+            // Check for previously saved file paths
+            const savedFilePath = sessionStorage.getItem('file_path');
+            const savedImagePath = sessionStorage.getItem('image_path');
+            if (savedFilePath) {
+                uploadedFilePath = savedFilePath;
+                uploadedImagePath = savedImagePath; // May be null, that's OK
+                document.getElementById('execute-btn').disabled = false;
+                
+                let savedMessage = `✅ Previously uploaded CSV file detected<br><small>File path: ${savedFilePath}</small>`;
+                if (savedImagePath) {
+                    savedMessage += `<br><small>Image path: ${savedImagePath}</small>`;
+                }
+                
+                document.getElementById('output').innerHTML = `
+                    <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px;">
+                        ${savedMessage}
+                    </div>
+                `;
+            }
+        });
+
+        // Select output type
+        function selectOutputType(element, type) {
+            // Remove selection from all options
+            document.querySelectorAll('.output-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selection to clicked option
+            element.classList.add('selected');
+            selectedOutputType = type;
+            
+            // Show/hide image upload based on output type
+            const imageUploadGroup = document.getElementById('image-upload-group');
+            if (type === 'PDF') {
+                imageUploadGroup.style.display = 'block';
+            } else {
+                imageUploadGroup.style.display = 'none';
+            }
+
+            const rawTextGroup = document.getElementById('raw-text-group');
+            if (rawTextGroup) rawTextGroup.style.display = (type === 'TEXT') ? 'block' : 'none';
+            
+            // Update prompt examples
+            updatePromptExamples();
+            
+            // Update preview title icon
+            const icons = { CSV: '📊', IMAGE: '📈', PDF: '📋', TEXT: '📝' };
+            document.getElementById('preview-title').innerHTML = `${icons[type] || '📊'} Analysis Results Preview`;
+        }
+
+        // Update prompt examples based on selected output type
+        function updatePromptExamples() {
+            const currentTypeSpan = document.getElementById('current-type');
+            const exampleContainer = document.getElementById('example-container');
+            // === MOD: 增加 TEXT 名称
+            const typeNames = { CSV: 'CSV Processing', IMAGE: 'Data Visualization', PDF: 'Analysis Report', TEXT: 'General Text' };
+
+            currentTypeSpan.textContent = typeNames[selectedOutputType] || 'CSV Processing';
+            exampleContainer.innerHTML = '';
+
+            // === MOD: 给 TEXT 准备简单示例（若已有 promptExamples，可补充一个 TEXT 键）
+            if (!promptExamples.TEXT) {
+                promptExamples.TEXT = [
+                { type: 'Summarize', text: 'Summarize the main points of this passage and list three key conclusions.' },
+                { type: 'Review', text: 'Please review the code I provided and point out potential errors and suggestions for improvement.' },
+                { type: 'Rewrite', text: 'Rewrite the following technical description into an explanation for a non-specialist reader.' }
+                ];
+            }
+            
+            promptExamples[selectedOutputType].forEach(example => {
+                const exampleDiv = document.createElement('div');
+                exampleDiv.className = 'example-item';
+                exampleDiv.innerHTML = `<strong>${example.type}:</strong> ${example.text}`;
+                exampleDiv.onclick = () => {
+                    document.getElementById('prompt').value = example.text;
+                };
+                exampleContainer.appendChild(exampleDiv);
+            });
+        }
+
+        // Update workflow step
+        function updateWorkflowStep(stepNumber, status = 'active') {
+            document.querySelectorAll('.workflow-step').forEach(step => {
+                step.classList.remove('active', 'completed');
+            });
+            
+            for (let i = 1; i < stepNumber; i++) {
+                document.getElementById(`step${i}`).classList.add('completed');
+            }
+            
+            if (stepNumber <= 4) {
+                document.getElementById(`step${stepNumber}`).classList.add(status);
+            }
+        }
+
+        // Upload Files
+     
+       function uploadFiles() {
+        try {
+            console.log('[uploadFiles] start');
+            const inputEl = document.getElementById('csv-file');
+            const imageEl = document.getElementById('image-file');
+            const inputFile = inputEl && inputEl.files ? inputEl.files[0] : null;
+            const imageFile = imageEl && imageEl.files ? imageEl.files[0] : null;
+
+            if (!inputFile) {
+            showMessage?.('Please select a file (CSV or supported text)', 'error');
+            console.warn('[uploadFiles] no file selected');
+            return;
+            }
+
+            const ext = extOf(inputFile.name);
+            console.log('[uploadFiles] filename:', inputFile.name, 'ext:', ext);
+
+            // ---------- 文本分支 ----------
+            if (typeof TEXT_EXTS !== 'undefined' && TEXT_EXTS.has(ext)) {
+            console.log('[uploadFiles] detected TEXT file → /upload_and_analyze_text/');
+            // 自动切到 TEXT
+            window.selectedOutputType = 'TEXT';
+            updatePromptExamples?.();
+            const pt = document.getElementById('preview-title');
+            if (pt) pt.innerHTML = '📝 Analysis Results Preview';
+            const rawTextGroup = document.getElementById('raw-text-group');
+            if (rawTextGroup) rawTextGroup.style.display = 'block';
+
+            const userPrompt = (document.getElementById('prompt')?.value || '').trim();
+
+            const fd = new FormData();
+            fd.append('file', inputFile);     // 关键：服务端视图使用 request.FILES.get('file')
+            fd.append('prompt', userPrompt);  // 允许为空串
+
+            // 显示loading但防空
+            (function safeShowLoading() {
+                const el = document.getElementById('loading-upload');
+                if (el && el.style) el.style.display = 'block';
+            })();
+            hideMessage?.();
+            updateWorkflowStep?.(1);
+
+            // 使用 AbortController 防止“无响应”体验
+            const ctrl = new AbortController();
+            const t = setTimeout(() => {
+                ctrl.abort();
+                console.warn('[uploadFiles] /upload_and_analyze_text/ timeout aborted');
+            }, 15000);
+
+            fetch('/upload_and_analyze_text/', { method: 'POST', body: fd, signal: ctrl.signal })
+                .then(async r => {
+                clearTimeout(t);
+                console.log('[uploadFiles] /upload_and_analyze_text/ status', r.status);
+                let data = {};
+                try { data = await r.json(); } catch(e) { console.warn('text resp not json'); }
+                console.log('[uploadFiles] text resp =', data);
+
+                if (r.ok && data && data.file_type === 'text' && data.result) {
+                    renderTextAnalysis?.(data);
+                    const canRun = (data.result_type === 'code') &&
+                                (data.language || '').toLowerCase() === 'python' &&
+                                !!data.code;
+                    const execBtn = document.getElementById('execute-btn');
+                    if (execBtn) execBtn.disabled = !canRun;
+
+                    // 清空 CSV 状态
+                    window.uploadedFilePath = null;
+                    sessionStorage.removeItem('file_path');
+
+                    showMessage?.(canRun
+                    ? 'Text analyzed. You can try "Run on sample data" or upload a CSV.'
+                    : 'Text analyzed successfully.', 'success');
+                    updateWorkflowStep?.(1, 'completed');
+                } else {
+                    // 兜底：把错误信息展示出来
+                    const msg = data?.error || `Text analysis failed (HTTP ${r.status})`;
+                    console.error('[uploadFiles] text error:', msg);
+                    showMessage?.(msg, 'error');
+                }
+                })
+                .catch(err => {
+                clearTimeout(t);
+                console.error('[uploadFiles] fetch error (text):', err);
+                showMessage?.('Text upload/analyze failed: ' + err.message, 'error');
+                })
+                .finally(() => {
+                const el = document.getElementById('loading-upload');
+                if (el && el.style) el.style.display = 'none';
+                });
+
+            return; // 文本分支结束
+            }
+
+            // ---------- CSV/IMAGE/PDF 分支（原逻辑） ----------
+            if (ext !== '.csv') {
+            showMessage?.('Please select a CSV (or a supported text file)', 'error');
+            console.warn('[uploadFiles] not csv nor known text, ext=', ext);
+            return;
+            }
+
+            if (window.selectedOutputType === 'PDF' && imageFile) {
+            const validImageTypes = ['image/jpeg','image/jpg','image/png','image/gif','image/bmp','image/webp'];
+            if (!validImageTypes.includes(imageFile.type)) {
+                showMessage?.('Please select a valid image file (JPG, PNG, GIF, BMP, WebP)', 'error');
+                console.warn('[uploadFiles] invalid image type', imageFile.type);
+                return;
+            }
+            }
+
+            const formData = new FormData();
+            formData.append('csv_file', inputFile);
+            if (imageFile) formData.append('image_file', imageFile);
+
+            const lu = document.getElementById('loading-upload');
+            if (lu && lu.style) lu.style.display = 'block';
+            hideMessage?.();
+            updateWorkflowStep?.(1);
+
+            fetch('/upload_files/', { method: 'POST', body: formData })
+            .then(r => {
+                console.log('[uploadFiles] /upload_files/ status', r.status);
+                return r.json();
+            })
+            .then(data => {
+                console.log('[uploadFiles] csv resp =', data);
+                if (data.csv_path) {
+                window.uploadedFilePath = data.csv_path;
+                sessionStorage.setItem('file_path', data.csv_path);
+                if (data.image_path) {
+                    window.uploadedImagePath = data.image_path;
+                    sessionStorage.setItem('image_path', data.image_path);
+                }
+                document.getElementById('output').innerHTML = `
+                    <div style="color:#155724;background:#d4edda;padding:10px;border-radius:5px;">
+                    ✅ CSV file uploaded successfully!<br>
+                    <small>CSV path: ${data.csv_path}</small>
+                    ${data.image_path ? `<br><small>Image path: ${data.image_path}</small>` : ''}
+                    </div>`;
+                const execBtn = document.getElementById('execute-btn');
+                if (execBtn) execBtn.disabled = false;
+                showMessage?.('Files uploaded successfully! Now choose your output type and enter analysis requirements.', 'success');
+                updateWorkflowStep?.(1, 'completed');
+                } else {
+                document.getElementById('output').innerHTML = '<div style="color:#721c24;">❌ File upload failed</div>';
+                showMessage?.('File upload failed', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('[uploadFiles] csv error:', error);
+                document.getElementById('output').innerHTML = '<div style="color:#721c24;">❌ An error occurred during upload</div>';
+                showMessage?.('An error occurred during upload: ' + error.message, 'error');
+            })
+            .finally(() => {
+                const el = document.getElementById('loading-upload');
+                if (el && el.style) el.style.display = 'none';
+            });
+
+        } catch (outerErr) {
+            console.error('[uploadFiles] outer error:', outerErr);
+            showMessage?.('Unexpected error: ' + outerErr.message, 'error');
+        }
+        }
+
+        // Submit GPT prompt
+        function submitPrompt(retries = 3) {
+            const prompt = document.getElementById('prompt').value;
+            if (!prompt.trim()) {
+                showMessage('Please enter analysis requirements', 'error');
+                return;
+            }
+            // === TEXT 模式：改走 /process_text/，不要再 hit /gpt-interface/ ===
+        if (selectedOutputType === 'TEXT') {
+            const rawText = (document.getElementById('raw-text')?.value || '').trim();
+            if (!rawText) {
+            showMessage('TEXT mode: please paste some text (or upload a text file and use Upload Files)', 'error');
+            return;
+            }
+
+            showLoading('gpt', true);
+            hideMessage();
+            updateWorkflowStep(2);
+
+            fetch('/process_text/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: rawText, prompt })
+            })
+            .then(r => r.json())
+            .then(data => {
+            if (!data || !data.result) throw new Error(data.error || 'Process text failed');
+            renderTextAnalysis(data);
+            const canRun = (data.result_type === 'code') && (data.language || '').toLowerCase() === 'python' && data.code;
+            document.getElementById('execute-btn').disabled = !canRun;
+            updateWorkflowStep(2, 'completed');
+            showMessage('Text analyzed successfully.', 'success');
+            })
+            .catch(err => {
+            document.getElementById('gpt-output').innerHTML = `<div style="color:#721c24;">❌ ${err.message}</div>`;
+            showMessage('API call failed: ' + err.message, 'error');
+            })
+            .finally(() => showLoading('gpt', false));
+
+            return; // 重要：阻止继续走 /gpt-interface/
+  
+
+            showLoading('gpt', true);
+            hideMessage();
+            updateWorkflowStep(2);
+
+            // 为PDF分支准备特殊的请求参数
+            let requestBody = {
+                prompt: prompt,
+                output_type: selectedOutputType,
+                csv_path: uploadedFilePath,
+                image_path: uploadedImagePath
+            };
+
+            // 如果是PDF，添加标识让后端知道这是第一步（只生成Agent A代码）
+            if (selectedOutputType === 'PDF') {
+                requestBody.pdf_phase = 'generate_code_only';
+            }
+
+            fetch('/gpt-interface/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(requestBody),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    if (retries > 0) {
+                        console.warn(`API call failed with status ${response.status}. Retrying... (${retries} retries left)`);
+                        return submitPrompt(retries - 1);
+                    } else {
+                        throw new Error(`API call failed, status: ${response.status}, retries exhausted`);
+                    }
+                }
+                const ct = response.headers.get('content-type') || '';
+                if (ct.includes('application/json')) {
+                    return response.json();
+                }
+                return response.text().then(text => ({ generated_text: text }));
+            })
+            .then(data => {
+                console.log('Received data:', data);
+                
+                // PDF分支：处理Agent A代码生成并渲染编辑器
+                if (selectedOutputType === 'PDF') {
+                    if (data.success && data.agentA_code) {
+                        // 存储Agent A的代码
+                        agentAState.code = data.agentA_code;
+                        agentAState.code_path = data.agentA_code_path || null;
+                        agentAState.isDirty = false;
+                        agentAState.version = data.version || null;
+
+                        // 渲染代码编辑器而不是简单的 <pre>
+                        document.getElementById('gpt-output').innerHTML = `
+                            <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:15px;">
+                                ✅ Agent A code generated successfully! You can review and edit the code below, then click "Run Analysis" to generate the PDF report.
+                            </div>
+                            ${renderAgentAEditor(agentAState.code)}
+                        `;
+
+                        // 绑定编辑器事件
+                        const editor = document.getElementById('agentA-editor');
+                        if (editor) {
+                            editor.addEventListener('input', function() {
+                                agentAState.isDirty = true;
+                                updateAgentAEditorState();
+                            });
+                            
+                            // 添加 Ctrl+S 保存快捷键
+                            editor.addEventListener('keydown', function(e) {
+                                if (e.ctrlKey && e.key === 's') {
+                                    e.preventDefault();
+                                    if (agentAState.isDirty) {
+                                        saveAgentACode();
+                                    }
+                                }
+                            });
+                        }
+
+                        // 更新状态显示
+                        updateAgentAEditorState();
+
+                        // 启用执行按钮
+                        document.getElementById('execute-btn').disabled = false;
+                        updateWorkflowStep(2, 'completed');
+                        showMessage('Agent A code generated successfully! Review the code and click "Run Analysis" to create the PDF report.', 'success');
+                        return;
+
+                    } else if (data.agentA_code_path) {
+                        // 如果只返回了代码路径，尝试获取代码内容显示
+                        agentAState.code = data.agentA_code || null;
+                        agentAState.code_path = data.agentA_code_path;
+                        agentAState.isDirty = false;
+                        agentAState.version = data.version || null;
+
+                        if (agentAState.code) {
+                            // 如果有代码内容，显示编辑器
+                            document.getElementById('gpt-output').innerHTML = `
+                                <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:15px;">
+                                    ✅ Agent A code generated and saved. You can review and edit the code below.
+                                </div>
+                                ${renderAgentAEditor(agentAState.code)}
+                            `;
+
+                            // 绑定编辑器事件（同上）
+                            const editor = document.getElementById('agentA-editor');
+                            if (editor) {
+                                editor.addEventListener('input', function() {
+                                    agentAState.isDirty = true;
+                                    updateAgentAEditorState();
+                                });
+                                
+                                editor.addEventListener('keydown', function(e) {
+                                    if (e.ctrlKey && e.key === 's') {
+                                        e.preventDefault();
+                                        if (agentAState.isDirty) {
+                                            saveAgentACode();
+                                        }
+                                    }
+                                });
+                            }
+
+                            updateAgentAEditorState();
+                        } else {
+                            // 如果没有代码内容，显示简化版本
+                            document.getElementById('gpt-output').innerHTML = `
+                                <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:10px;">
+                                    ✅ Agent A code generated and saved. Click "Run Analysis" to execute and generate the PDF report.
+                                </div>
+                                <div style="font-size:13px; color:#555;">Agent A code saved at: <code>${escapeHtml(agentAState.code_path)}</code></div>
+                            `;
+                        }
+
+                        document.getElementById('execute-btn').disabled = false;
+                        updateWorkflowStep(2, 'completed');
+                        showMessage('Agent A code generated successfully! Click "Run Analysis" to execute and create the PDF report.', 'success');
+                        return;
+
+                    } else {
+                        throw new Error(data.error || 'Failed to generate Agent A code');
+                    }
+                }
+                // CSV/IMAGE分支保持不变
+                if (data.success && data.result_id) {
+                    currentResultId = data.result_id;
+                    document.getElementById('gpt-output').innerHTML = `
+                        <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:10px;">
+                            ✅ AI code generated successfully for ${selectedOutputType} output!
+                        </div>
+                        <pre>${data.generated_text || ''}</pre>
+                    `;
+                    showPreview(data.result_id, selectedOutputType);
+                    document.getElementById('execute-btn').disabled = false;
+                    showMessage(`AI analysis code generated successfully for ${selectedOutputType}! You can preview results or rerun the analysis.`, 'success');
+                    updateWorkflowStep(3);
+                } else if (data.generated_text) {
+                    document.getElementById('gpt-output').innerHTML = `
+                        <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:10px;">
+                            ✅ AI code generated successfully for ${selectedOutputType} output!
+                        </div>
+                        <pre>${data.generated_text}</pre>
+                    `;
+                    document.getElementById('execute-btn').disabled = false;
+                    showMessage(`AI analysis code generated successfully for ${selectedOutputType}! You can now run the analysis.`, 'success');
+                    updateWorkflowStep(2, 'completed');
+                } else {
+                    throw new Error(data.error || 'Failed to generate code');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('gpt-output').innerHTML = `<div style="color:#721c24;">❌ ${error.message}</div>`;
+                showMessage('API call failed: ' + error.message, 'error');
+            })
+            .finally(() => {
+                showLoading('gpt', false);
+            });
+        }}
+
+        async function executePdfPipeline(payload) {
+            // 容错：必须要有 csv 路径与 A 阶段产物（代码或路径）
+            if (!payload || !payload.csv_path || (!payload.agentA_code && !payload.agentA_code_path)) {
+                showMessage('PDF stage-2 input missing. Please re-run "Generate Analysis Code".', 'error');
+                return;
+            }
+
+            try {
+                showLoading('gpt', true);            // 复用 loading 动画
+                updateWorkflowStep(2, 'completed');  // 第二步完成，进入组版
+                updateWorkflowStep(3);
+
+                const resp = await fetch('/execute_pdf_pipeline/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    csv_path: payload.csv_path,
+                    image_path: payload.image_path || null,
+                    user_prompt: payload.user_prompt || '',
+                    agentA_code: payload.agentA_code || null,
+                    agentA_code_path: payload.agentA_code_path || null
+                })
+                });
+
+                if (!resp.ok) {
+                throw new Error(`Stage-2 API failed, status: ${resp.status}`);
+                }
+
+                const data = await resp.json();
+
+                if (data.success && data.result_id) {
+                currentResultId = data.result_id;
+
+                let html = `
+                    <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:10px;">
+                    ✅ PDF assembled successfully (Agent B).
+                    </div>`;
+
+                if (data.narrative_excerpt) {
+                    html += `
+                    <div style="margin-top:10px; padding:10px; background:#f8f9fa; border-left:4px solid #667eea; border-radius:5px;">
+                        <strong>Report Preview:</strong><br>${escapeHtml(data.narrative_excerpt)}
+                    </div>`;
+                }
+
+                document.getElementById('gpt-output').innerHTML += html;
+                showPreview(currentResultId, 'pdf');
+                document.getElementById('download-btn').disabled = false;
+                document.getElementById('execute-btn').disabled = true;  // PDF 完成，无需再点执行
+                updateWorkflowStep(4);
+                showMessage('PDF report is ready. You can preview and download it now.', 'success');
+                } else {
+                throw new Error(data.error || 'PDF stage-2 failed');
+                }
+            } catch (err) {
+                console.error('executePdfPipeline error:', err);
+                showMessage('PDF stage-2 failed: ' + err.message, 'error');
+            } finally {
+                showLoading('gpt', false);
+            }
+            }
+        
+
+        // 保存 Agent A 代码函数
+        async function saveAgentACode() {
+            const editor = document.getElementById('agentA-editor');
+            const code = editor.value;
+            
+            try {
+                showLoading('save', true);
+                
+                const response = await fetch('/save_agent_a_code/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCsrfToken() // 确保您有这个函数
+                    },
+                    body: JSON.stringify({
+                        code: code
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    agentAState.code = code;
+                    agentAState.isDirty = false;
+                    agentAState.version = data.version;
+                    agentAState.code_path = data.code_path;
+                    
+                    updateAgentAEditorState();
+                    showMessage('Code successfully saved. Vesion:' + data.version, 'success');
+                } else {
+                    showMessage('Fail to save：' + (data.error || 'Unknown error'), 'error');
+                }
+            } catch (error) {
+                console.error('Save error:', error);
+                showMessage('Fail to save：' + error.message, 'error');
+            } finally {
+                showLoading('save', false);
+            }
+        }
+
+        // 还原 Agent A 代码
+        function revertAgentACode() {
+            document.getElementById('agentA-editor').value = agentAState.code || '';
+            agentAState.isDirty = false;
+            updateAgentAEditorState();
+        }
+
+        // 更新编辑器状态显示
+        function updateAgentAEditorState() {
+            const saveBtn = document.getElementById('save-agentA-btn');
+            const revertBtn = document.getElementById('revert-agentA-btn');
+            const statusDiv = document.getElementById('agentA-status');
+            
+            if (saveBtn) {
+                saveBtn.disabled = !agentAState.isDirty;
+                saveBtn.textContent = agentAState.isDirty ? 'Save Changes*' : 'Saved';
+            }
+            
+            if (revertBtn) {
+                revertBtn.disabled = !agentAState.isDirty;
+            }
+            
+            if (statusDiv) {
+                statusDiv.innerHTML = `
+                    <small style="color: ${agentAState.isDirty ? '#ffc107' : '#28a745'};">
+                        ${agentAState.isDirty ? '● Not Saved' : '● Saved'}
+                        ${agentAState.version ? ` | Version: ${agentAState.version}` : ''}
+                    </small>
+                `;
+            }
+        }
+
+        // 渲染 Agent A 代码编辑器
+        function renderAgentAEditor(code) {
+            return `
+                <div class="agent-code-editor" style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; background: #f8f9fa;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <h5 style="margin: 0; color: #495057;">Agent A generate code</h5>
+                        <div id="agentA-status"></div>
+                    </div>
+                    
+                    <textarea 
+                        id="agentA-editor" 
+                        style="width: 100%; height: 400px; font-family: 'Consolas', 'Monaco', 'Courier New', monospace; font-size: 14px; border: 1px solid #ced4da; border-radius: 4px; padding: 10px;"
+                        placeholder="The code generated by Agent A will appear here..."
+                    >${escapeHtml(code)}</textarea>
+                    
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <button 
+                                id="save-agentA-btn" 
+                                onclick="saveAgentACode()"
+                                style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; margin-right: 8px;"
+                                disabled
+                            >
+                                Save Changes
+                            </button>
+                            <button 
+                                id="revert-agentA-btn" 
+                                onclick="revertAgentACode()"
+                                style="padding: 8px 16px; background: #6c757d; color: white; border: none; border-radius: 4px;"
+                                disabled
+                            >
+                                Recover
+                            </button>
+                        </div>
+                        <div>
+                            <button 
+                                onclick="downloadAgentACode()"
+                                style="padding: 8px 16px; background: #17a2b8; color: white; border: none; border-radius: 4px; margin-right: 8px;"
+                            >
+                                Download Code
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 10px; padding: 8px; background: #e9ecef; border-radius: 4px; font-size: 12px; color: #6c757d;">
+                        <i>Tip: After modifying the code, you need to save it first, then click "Run Analysis" to execute it. The Ctrl+S shortcut save function is supported.</i>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 下载代码函数
+        function downloadAgentACode() {
+            const editor = document.getElementById('agentA-editor');
+            const code = editor ? editor.value : agentAState.code;
+            
+            const blob = new Blob([code], { type: 'text/python' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `agentA_code_${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.py`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        // 修改 executeCode 函数中的PDF分支
+        function executeCode() {
+            const filePath = uploadedFilePath || sessionStorage.getItem('file_path');
+            if (!filePath) {
+                showMessage('Please first upload a CSV file', 'error');
+                return;
+            }
+
+            // PDF分支：已经在生成阶段完成，无需再次执行
+            // PDF 分支：只有用户点击 Run Analysis 才触发 Agent B
+           if (selectedOutputType === 'PDF') {
+                // 检查是否有Agent A的代码
+                if (!agentAState || (!agentAState.code && !agentAState.code_path)) {
+                    showMessage('Please click "Generate Analysis Code" first to get Agent A code.', 'error');
+                    return;
+                }
+
+                showLoading('execute', true);
+                hideMessage();
+                updateWorkflowStep(3);
+
+                fetch('/execute_pdf_pipeline/', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        csv_path: filePath,
+                        image_path: uploadedImagePath || null,
+                        user_prompt: document.getElementById('prompt').value || '',
+                        agentA_code: agentAState.code || null,
+                        agentA_code_path: agentAState.code_path || null
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && data.result_id) {
+                        currentResultId = data.result_id;
+
+                        const html = `
+                            <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px;">
+                                ✅ Agent A code executed and PDF report assembled successfully!
+                            </div>
+                            ${data.narrative_excerpt ? `
+                                <div style="margin-top:10px; padding:10px; background:#f8f9fa; border-left:4px solid #667eea; border-radius:5px;">
+                                    <strong>Report Preview:</strong><br>${escapeHtml(data.narrative_excerpt)}
+                                </div>` : ''}
+                        `;
+                        document.getElementById('execute-output').innerHTML = html;
+
+                        // 预览 & 下载
+                        showPreview(currentResultId, 'pdf');
+                        document.getElementById('download-btn').disabled = false;
+
+                        // PDF完成后，禁用执行按钮
+                        document.getElementById('execute-btn').disabled = true;
+
+                        updateWorkflowStep(4);
+                        showMessage('PDF report is ready. You can preview and download it now.', 'success');
+                    } else {
+                        throw new Error(data.error || 'Execution failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error executing:', error);
+                    document.getElementById('execute-output').innerHTML = `<div style="color:#721c24;">❌ ${error.message}</div>`;
+                    showMessage('Code execution failed: ' + error.message, 'error');
+                })
+                .finally(() => {
+                    showLoading('execute', false);
+                });
+
+                return; // 重要：避免执行下面的CSV/IMAGE分支
+            }
+
+            // CSV/IMAGE分支保持原有逻辑不变
+            showLoading('execute', true);
+            hideMessage();
+            updateWorkflowStep(3);
+
+            const normalizedType = normalizeOutputType(selectedOutputType);
+
+            fetch('/process-csv/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    file_path: filePath,
+                    image_path: uploadedImagePath,
+                    output_type: normalizedType.toLowerCase()
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success && data.result_id) {
+                    currentResultId = data.result_id;
+                    const outputTypeNames = { csv: 'CSV data', image: 'visualization', pdf: 'report' };
+                    const usedType = normalizeOutputType(data.output_type || normalizedType);
+                    document.getElementById('execute-output').innerHTML = `
+                        <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px;">
+                            ✅ Code executed successfully! ${outputTypeNames[usedType] || 'Output'} generated and ready for preview.
+                        </div>
+                    `;
+                    showPreview(data.result_id, usedType);
+                    showMessage(`Code executed successfully! Your ${outputTypeNames[usedType] || 'output'} is ready for preview and download.`, 'success');
+                } else if (data.result_path) {
+                    document.getElementById('execute-output').innerHTML = `
+                        <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:10px;">
+                            ✅ Code executed successfully!
+                        </div>
+                        <pre>${data.result_path}</pre>
+                    `;
+                    sessionStorage.setItem('result_path', data.result_path);
+                    showMessage('Code executed successfully!', 'success');
+                    updateWorkflowStep(4);
+                } else {
+                    throw new Error(data.error || 'Execution failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error executing:', error);
+                document.getElementById('execute-output').innerHTML = `<div style="color:#721c24;">❌ ${error.message}</div>`;
+                showMessage('Code execution failed: ' + error.message, 'error');
+            })
+            .finally(() => {
+                showLoading('execute', false);
+            });
+        }
+
+        function normalizeOutputType(t) {
+            const map = { pdf: 'pdf', report: 'pdf' };
+            const key = (t || 'csv').toString().toLowerCase().trim();
+            return map[key] || key;
+        }
+        
+
+      // Show Preview based on output type
+        async function showPreview(resultId, outputType = 'csv') {
+            outputType = normalizeOutputType(outputType); 
+            try {
+                const url = `/preview_result/?result_id=${encodeURIComponent(resultId)}&output_type=${encodeURIComponent(outputType)}`;
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (!data || !data.success) {
+                throw new Error(data?.error || 'Unknown error');
+                }
+
+                let contentHtml = '';
+                const infoLines = [];
+
+                // 通用信息（如果后端有提供）
+                if (typeof data.file_size === 'number') {
+                infoLines.push(`File size: ${formatBytes(data.file_size)}`);
+                }
+                if (typeof data.generated_at === 'string') {
+                infoLines.push(`Generated at: ${data.generated_at}`);
+                }
+
+                // 分类型处理
+                if (outputType === 'csv') {
+                // CSV 预览
+                if (typeof data.total_rows === 'number') infoLines.push(`Total rows: ${data.total_rows}`);
+                if (typeof data.total_columns === 'number') infoLines.push(`Total columns: ${data.total_columns}`);
+
+                if (Array.isArray(data.columns) && Array.isArray(data.sample_data)) {
+                    contentHtml = '<table class="preview-table">';
+                    // 表头
+                    contentHtml += '<thead><tr>';
+                    data.columns.forEach(col => {
+                    contentHtml += `<th>${escapeHtml(col)}</th>`;
+                    });
+                    contentHtml += '</tr></thead><tbody>';
+
+                    // 数据行（最多 10 行）
+                    data.sample_data.slice(0, 10).forEach(row => {
+                    contentHtml += '<tr>';
+                    data.columns.forEach(col => {
+                        const val = row[col];
+                        contentHtml += `<td>${escapeHtml(val !== undefined ? val : '')}</td>`;
+                    });
+                    contentHtml += '</tr>';
+                    });
+                    contentHtml += '</tbody></table>';
+
+                    if (data.total_rows > 10) {
+                    contentHtml += `
+                        <p style="margin-top: 10px; color: #666; font-size: 14px; text-align: center;">
+                        Showing first 10 rows, total ${data.total_rows} rows of data
+                        </p>`;
+                    }
+                } else if (typeof data.raw_preview === 'string') {
+                    // 兜底：纯文本预览
+                    contentHtml = `
+                    <pre style="background:#f8f9fa; padding:15px; border-radius:5px; overflow:auto; max-height:400px;">
+            ${escapeHtml(data.raw_preview)}
+                    </pre>`;
+                } else {
+                    contentHtml = `<div class="message error">No CSV preview available.</div>`;
+                }
+
+                } else if (outputType === 'image') {
+                // Image 预览：优先 base64，其次 URL
+                infoLines.push('Type: Generated Visualization');
+
+                if (data.image_data) {
+                    // base64 PNG/JPEG
+                    const mime = data.image_mime || 'image/png';
+                    contentHtml = `
+                    <img src="data:${mime};base64,${data.image_data}" 
+                        class="image-preview" 
+                        alt="Generated Visualization" 
+                        style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);" />`;
+                } else if (data.image_url) {
+                    contentHtml = `
+                    <img src="${escapeHtml(data.image_url)}" 
+                        class="image-preview" 
+                        alt="Generated Visualization" 
+                        style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);" />`;
+                } else {
+                    contentHtml = `<div class="message error">No image data available.</div>`;
+                }
+
+                } else if (outputType === 'pdf') {
+                // PDF 预览：支持 pdf_url / pdf_data(base64) / page_images(缩略图)
+                infoLines.push('Type: PDF Document');
+
+                // 1) 如果有页面缩略图数组（后端可选提供），先展示缩略图网格
+                if (Array.isArray(data.page_images) && data.page_images.length > 0) {
+                    contentHtml += `<div class="pdf-thumbs-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:12px;">`;
+                    data.page_images.forEach((b64, idx) => {
+                    contentHtml += `
+                        <figure style="margin:0;">
+                        <img src="data:image/png;base64,${b64}" 
+                            alt="Page ${idx + 1}" 
+                            style="width:100%; height:auto; border:1px solid #eee; border-radius:6px;" />
+                        <figcaption style="text-align:center; color:#666; font-size:12px; margin-top:4px;">Page ${idx + 1}</figcaption>
+                        </figure>`;
+                    });
+                    contentHtml += `</div>`;
+                }
+
+                // 2) 内嵌 PDF 浏览器（优先 url，其次 base64）
+                if (data.pdf_url) {
+                    contentHtml += `
+                    <div style="margin-top:16px;">
+                        <iframe src="${escapeHtml(data.pdf_url)}#toolbar=1&navpanes=0&scrollbar=1&view=fitH" 
+                                class="pdf-embed" 
+                                title="PDF Preview" 
+                                style="width:100%; height:70vh; border:1px solid #e0e0e0; border-radius:8px;"></iframe>
+                        <div style="margin-top:8px; text-align:right;">
+                        <a href="${escapeHtml(data.pdf_url)}" target="_blank" rel="noopener noreferrer">Open PDF in new tab</a>
+                        </div>
+                    </div>`;
+                } else if (data.pdf_data) {
+                    contentHtml += `
+                    <div style="margin-top:16px;">
+                        <iframe src="data:application/pdf;base64,${data.pdf_data}#toolbar=1&navpanes=0&scrollbar=1&view=fitH" 
+                                class="pdf-embed" 
+                                title="PDF Preview" 
+                                style="width:100%; height:70vh; border:1px solid #e0e0e0; border-radius:8px;"></iframe>
+                    </div>`;
+                }
+
+                if (!contentHtml) {
+                    contentHtml = `<div class="message error">No PDF preview available.</div>`;
+                }
+
+                } else {
+                // 未知类型：兜底
+                contentHtml = `<div class="message error">Unsupported output type: ${escapeHtml(outputType)}.</div>`;
+                }
+
+                // 渲染信息与内容
+                document.getElementById('preview-info').innerHTML = infoLines.join(' | ');
+                document.getElementById('preview-content').innerHTML = contentHtml;
+                document.getElementById('preview-section').style.display = 'block';
+
+                // 可下载：只有当后端支持当前类型下载才可用
+                const downloadBtn = document.getElementById('download-btn');
+                if (downloadBtn) {
+                downloadBtn.disabled = false; // 如需按类型判断，可改成：downloadBtn.disabled = !data.downloadable;
+                }
+
+                updateWorkflowStep(4);
+
+            } catch (error) {
+                showMessage('Preview request failed: ' + error.message, 'error');
+            }
+        }
+        
+        function escapeHtml(value) {
+            const str = value === null || value === undefined ? '' : String(value);
+            return str.replace(/[&<>"'`]/g, ch => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;',
+                '"': '&quot;', "'": '&#39;', '`': '&#96;'
+            })[ch]);
+        }
+
+        // Download Result
+        function downloadResult() {
+            if (!currentResultId) {
+                showMessage('No result available for download', 'error');
+                return;
+            }
+            try {
+                const link = document.createElement('a');
+                const typeKey = (selectedOutputType || 'CSV').toUpperCase();
+                link.href = `/download_result/?result_id=${encodeURIComponent(currentResultId)}&output_type=${encodeURIComponent(typeKey)}`;
+
+                // set proper filename extension
+                let ext = 'csv';
+                if (typeKey === 'IMAGE') ext = 'png';
+                if (typeKey === 'PDF')   ext = 'pdf';
+                link.download = `processed_data_${currentResultId.substring(0, 8)}.${ext}`;
+
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                showMessage('File download started', 'success');
+            } catch (error) {
+                showMessage('Download failed: ' + error.message, 'error');
+            }
+        }
+
+        // === NEW: 渲染文本分析结果（含代码块时提供按钮）===
+        function renderTextAnalysis(data) {
+        const container = document.getElementById('gpt-output');
+        const isCode = data.result_type === 'code';
+        const lang = (data.language || '').toLowerCase();
+
+        let html = `
+            <div style="color:#155724;background:#d4edda;padding:10px;border-radius:5px;margin-bottom:10px;">
+            ✅ Text analyzed successfully.
+            </div>
+            <div class="markdown-body" style="white-space:pre-wrap;">${data.result}</div>
+        `;
+
+        if (isCode && lang === 'python' && data.code) {
+            html += `
+            <div style="margin-top:12px;padding:10px;border:1px solid #eee;border-radius:6px;background:#fafafa;">
+                <div style="font-weight:600;margin-bottom:6px;">Detected Python code block</div>
+                <pre style="overflow:auto;max-height:300px;">${escapeHtml(data.code)}</pre>
+                <div style="display:flex;gap:8px;margin-top:8px;">
+                <button id="btn-run-sample" class="btn">Run on sample data</button>
+                <button id="btn-run-uploaded" class="btn" ${uploadedFilePath ? '' : 'disabled'}>Run on uploaded data</button>
+                </div>
+                <div id="text-exec-output" style="margin-top:10px;"></div>
+            </div>
+            `;
+        }
+        container.innerHTML = html;
+
+        // 按钮事件
+        const btnSample = document.getElementById('btn-run-sample');
+        if (btnSample) btnSample.onclick = () => onRunSample(data.code);
+
+        const btnUploaded = document.getElementById('btn-run-uploaded');
+        if (btnUploaded) btnUploaded.onclick = () => onRunUploaded(data.code);
+        }
+
+        // === NEW: 在样例数据上运行（后端 /execute_code_on_sample/）===
+        async function onRunSample(code) {
+        try {
+            showLoading('execute', true);
+            updateWorkflowStep(3);
+            const r = await fetch('/execute_code_on_sample/', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({ code, language: 'python' })
+            });
+            const data = await r.json();
+            if (!data.ok) throw new Error(data.error || 'Execution failed');
+            document.getElementById('text-exec-output').innerHTML = `
+            <div style="color:#155724;background:#d4edda;padding:8px;border-radius:5px;margin-bottom:8px;">
+                ✅ Code executed on sample data.
+            </div>
+            <pre style="max-height:350px;overflow:auto;">${escapeHtml(JSON.stringify(data.exec_result, null, 2))}</pre>
+            `;
+            showMessage('Code executed on sample data.', 'success');
+            updateWorkflowStep(4);
+        } catch (e) {
+            document.getElementById('text-exec-output').innerHTML = `<div class="message error">❌ ${escapeHtml(e.message)}</div>`;
+            showMessage('Run on sample failed: ' + e.message, 'error');
+        } finally {
+            showLoading('execute', false);
+        }
+        }
+
+        // === NEW: 在上传数据上运行（复用你的 CSV 执行接口）===
+        async function onRunUploaded(code) {
+        const filePath = uploadedFilePath || sessionStorage.getItem('file_path');
+        if (!filePath) {
+            showMessage('Please upload a CSV first', 'error');
+            return;
+        }
+        try {
+            showLoading('execute', true);
+            updateWorkflowStep(3);
+            const r = await fetch('/process-csv/', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                file_path: filePath,
+                image_path: uploadedImagePath,
+                output_type: 'csv', // 文本中的代码通常是表格/图，按csv逻辑走执行器
+                inline_code: code   // === 可选：如后端支持直接传代码，也可先保存后传 code_path
+            })
+            });
+            const data = await r.json();
+            if (!(data && (data.success || data.result_id))) {
+            throw new Error(data.error || 'Execution failed');
+            }
+            document.getElementById('text-exec-output').innerHTML = `
+            <div style="color:#155724;background:#d4edda;padding:8px;border-radius:5px;margin-bottom:8px;">
+                ✅ Code executed on uploaded data.
+            </div>
+            `;
+            // 如果你的 showPreview 能显示 resultId，就用它预览结果
+            if (data.result_id) {
+            currentResultId = data.result_id;
+            await showPreview(currentResultId, 'csv');
+            }
+            showMessage('Code executed on uploaded data.', 'success');
+            updateWorkflowStep(4);
+        } catch (e) {
+            document.getElementById('text-exec-output').innerHTML = `<div class="message error">❌ ${escapeHtml(e.message)}</div>`;
+            showMessage('Run on uploaded failed: ' + e.message, 'error');
+        } finally {
+            showLoading('execute', false);
+        }
+        }
+
+
+        // Show/hide loading state
+        function showLoading(type, show) {
+            document.getElementById(`loading-${type}`).style.display = show ? 'block' : 'none';
+        }
+
+        // Show message
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Hide message
+        function hideMessage() {
+            document.getElementById('message').style.display = 'none';
+        }
+
+        // Format file size
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Initialization after page loading is complete
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check previously saved File path
+            const savedFilePath = sessionStorage.getItem('file_path');
+            if (savedFilePath) {
+                uploadedFilePath = savedFilePath;
+                document.getElementById('execute-btn').disabled = false;
+                document.getElementById('output').innerHTML = `
+                    <div style="color: #155724; background: #d4edda; padding: 10px; border-radius: 5px;">
+                        ✅ Previously uploaded file detected<br>
+                        <small>File path: ${savedFilePath}</small>
+                    </div>
+                `;
+            }
+            
+            updateWorkflowStep(1);
+        });
+    </script>
+</body>
+</html>

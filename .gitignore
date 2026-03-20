@@ -1,0 +1,70 @@
+# Virtual environment
+myenv/
+
+# Django framework source clone (not needed)
+django/
+
+# Archive (superseded projects)
+archive/
+
+# API keys and secrets
+OpenAIkey.txt
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+*.log
+file.log
+
+# Media / generated artifacts
+media/
+
+# User uploads and downloads (runtime data)
+mygptproject1/uploads/
+mygptproject1/downloads/
+mygptproject1/test/
+SRTR/storage/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Byte-compiled / optimized
+*.pyc
+
+# Distribution
+*.egg-info/
+dist/
+build/
+
+# Misc temp files at project root
+mygptproject1/code.py
+mygptproject1/code.sas
+mygptproject1/data.csv
+mygptproject1/dialysis_data.csv
+mygptproject1/dialysis_report.pdf
+mygptproject1/example_org.csv
+mygptproject1/image_code.py
+mygptproject1/pdf_code.py
+mygptproject1/processed_data.csv
+mygptproject1/sample_data.csv
+mygptproject1/test.py
+mygptproject1/output.txt
+mygptproject1/result.txt
+mygptproject1/result_FSd6MTW.txt
