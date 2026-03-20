@@ -11,7 +11,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # --- 媒体文件（用户上传、代码生成的文件） ---
-MEDIA_ROOT = os.environ.get("MEDIA_ROOT", os.path.join(BASE_DIR.parent, "media"))
+MEDIA_ROOT = os.environ.get("MEDIA_ROOT", os.path.join(BASE_DIR, "media"))
 MEDIA_URL = "/media/"
 
 # --- 安全/调试 ---
@@ -21,6 +21,12 @@ SECRET_KEY = os.environ.get(
 )
 DEBUG = os.environ.get("DJANGO_DEBUG", "True").lower() in ("true", "1", "yes")
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+
+# CSRF trusted origins (needed for Render and other PaaS)
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip() for origin in
+    os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",") if origin.strip()
+]
 
 # --- Apps ---
 INSTALLED_APPS = [
@@ -35,6 +41,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,9 +92,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# --- Static files ---
+# --- Static files (served by WhiteNoise on PaaS) ---
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # --- Logging ---
 LOGGING = {

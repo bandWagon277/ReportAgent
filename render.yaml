@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: reportagent
+    runtime: python
+    buildCommand: pip install -r requirements.txt && cd mygptproject1 && python manage.py collectstatic --noinput && python manage.py migrate --noinput
+    startCommand: cd mygptproject1 && gunicorn mygptproject.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://*.onrender.com"
+      - key: OPENAI_API_KEY
+        sync: false  # you must set this manually in Render dashboard
+      - key: PYTHON_VERSION
+        value: "3.11.11"
