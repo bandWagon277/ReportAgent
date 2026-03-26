@@ -13,6 +13,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --- 媒体文件（用户上传、代码生成的文件） ---
 MEDIA_ROOT = os.environ.get("MEDIA_ROOT", os.path.join(BASE_DIR, "media"))
 MEDIA_URL = "/media/"
+# Ensure media and uploads directories exist (needed on PaaS with ephemeral filesystem)
+os.makedirs(os.path.join(MEDIA_ROOT, "uploads"), exist_ok=True)
 
 # --- 安全/调试 ---
 SECRET_KEY = os.environ.get(
@@ -96,6 +98,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
