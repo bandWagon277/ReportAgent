@@ -18,9 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
+from django.http import JsonResponse
 from gptapp import views
 
+def health_check(request):
+    return JsonResponse({"status": "ok"})
+
 urlpatterns = [
+    path('', health_check, name='health_check'),
     path('gpt-interface/', views.render_gpt_interface, name='gpt_interface'),
     #path('execute_python_code/', views.execute_python_code, name='execute_python_code'),
     path('process-csv/', views.process_csv, name='process_csv'),

@@ -820,10 +820,10 @@ html<body>
             .then(data => {
                 console.log('[uploadFiles] csv resp =', data);
                 if (data.csv_path) {
-                window.uploadedFilePath = data.csv_path;
+                uploadedFilePath = data.csv_path;
                 sessionStorage.setItem('file_path', data.csv_path);
                 if (data.image_path) {
-                    window.uploadedImagePath = data.image_path;
+                    uploadedImagePath = data.image_path;
                     sessionStorage.setItem('image_path', data.image_path);
                 }
                 document.getElementById('output').innerHTML = `
@@ -897,7 +897,7 @@ html<body>
             .finally(() => showLoading('gpt', false));
 
             return; // 重要：阻止继续走 /gpt-interface/
-  
+        }
 
             showLoading('gpt', true);
             hideMessage();
@@ -1073,7 +1073,7 @@ html<body>
             .finally(() => {
                 showLoading('gpt', false);
             });
-        }}
+        }
 
         async function executePdfPipeline(payload) {
             // 容错：必须要有 csv 路径与 A 阶段产物（代码或路径）
