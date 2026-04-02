@@ -379,10 +379,232 @@
         .example-item strong {
             color: #667eea;
         }
+
+        /* Feedback widget */
+        .feedback-widget {
+            margin-top: 15px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .feedback-widget .fb-label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .feedback-widget .fb-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .feedback-widget .fb-btn {
+            padding: 8px 18px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        .feedback-widget .fb-btn:hover {
+            transform: scale(1.1);
+        }
+        .feedback-widget .fb-btn.selected-positive {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        .feedback-widget .fb-btn.selected-negative {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+        .feedback-widget .fb-comment {
+            margin-top: 10px;
+            display: none;
+        }
+        .feedback-widget .fb-comment textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 13px;
+            resize: vertical;
+            min-height: 60px;
+        }
+        .feedback-widget .fb-submit {
+            margin-top: 8px;
+            padding: 6px 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .feedback-widget .fb-submit:hover {
+            background: #5a6fd6;
+        }
+        .feedback-widget .fb-thanks {
+            color: #28a745;
+            font-weight: bold;
+            display: none;
+        }
+
+        /* User Agreement Modal */
+        .agreement-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .agreement-modal {
+            background: white;
+            border-radius: 15px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .agreement-modal .modal-header {
+            padding: 25px 30px 15px;
+            border-bottom: 2px solid #eee;
+            text-align: center;
+        }
+        .agreement-modal .modal-header h2 {
+            margin: 0 0 5px;
+            color: #333;
+            font-size: 1.6em;
+        }
+        .agreement-modal .modal-header p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95em;
+        }
+        .agreement-modal .modal-body {
+            padding: 20px 30px;
+            overflow-y: auto;
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #444;
+        }
+        .agreement-modal .modal-body h3 {
+            color: #333;
+            margin: 18px 0 8px;
+            font-size: 1.1em;
+        }
+        .agreement-modal .modal-body ul {
+            padding-left: 20px;
+        }
+        .agreement-modal .modal-body ul li {
+            margin-bottom: 6px;
+        }
+        .agreement-modal .modal-footer {
+            padding: 15px 30px 20px;
+            border-top: 2px solid #eee;
+            text-align: center;
+        }
+        .agreement-modal .modal-footer label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            margin-bottom: 12px;
+            font-weight: normal;
+        }
+        .agreement-modal .modal-footer input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .agreement-modal .btn-agree {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: all 0.3s;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .agreement-modal .btn-agree.enabled {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .agreement-modal .btn-agree.enabled:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
     </style>
 </head>
-html<body>
+<body>
 
+    <!-- User Agreement Modal -->
+    <div class="agreement-overlay" id="agreement-overlay" style="display:none;">
+        <div class="agreement-modal">
+            <div class="modal-header">
+                <h2>User Agreement</h2>
+                <p>Please review and accept before using the platform</p>
+            </div>
+            <div class="modal-body">
+                <h3>1. Service Description</h3>
+                <p>This Intelligent Data Processing Platform ("Platform") provides AI-powered data analysis services including CSV processing, data visualization, PDF report generation, and text analysis. The Platform uses large language models (LLMs) to generate Python code that is executed on your uploaded data.</p>
+
+                <h3>2. Data Handling</h3>
+                <ul>
+                    <li>Uploaded files are stored temporarily on the server for processing and are not retained after your session ends.</li>
+                    <li>Your data may be sent to third-party AI providers (e.g., OpenAI) as part of the analysis pipeline. Please do not upload data containing sensitive personal information (PII), protected health information (PHI), or confidential business data unless you have appropriate authorization.</li>
+                    <li>Generated outputs (CSV files, images, PDF reports) are stored temporarily and may be deleted at any time.</li>
+                </ul>
+
+                <h3>3. AI-Generated Content</h3>
+                <ul>
+                    <li>All analysis results, code, and reports are generated by AI models and should be reviewed for accuracy before use in any decision-making process.</li>
+                    <li>The Platform does not guarantee the correctness, completeness, or reliability of AI-generated outputs.</li>
+                    <li>Users are responsible for validating results, especially for medical, scientific, or regulatory applications.</li>
+                </ul>
+
+                <h3>4. User Responsibilities</h3>
+                <ul>
+                    <li>You agree not to upload malicious files or attempt to exploit the code execution environment.</li>
+                    <li>You agree not to use this service for any unlawful purpose.</li>
+                    <li>You are responsible for ensuring you have the right to upload and process any data you submit.</li>
+                </ul>
+
+                <h3>5. Feedback Collection</h3>
+                <ul>
+                    <li>The Platform collects optional user feedback (thumbs up/down ratings and comments) to improve AI response quality.</li>
+                    <li>Feedback data includes your query text, the output type, a summary of the AI response, and your rating/comment.</li>
+                    <li>This data is used solely to improve future AI prompts and is not shared with third parties.</li>
+                </ul>
+
+                <h3>6. Limitation of Liability</h3>
+                <p>This Platform is provided "as is" without warranties of any kind. The developers are not liable for any damages arising from the use of AI-generated outputs, data loss during processing, or service interruptions.</p>
+
+                <h3>7. Changes to This Agreement</h3>
+                <p>We may update this agreement at any time. Continued use of the Platform constitutes acceptance of the updated terms.</p>
+            </div>
+            <div class="modal-footer">
+                <label>
+                    <input type="checkbox" id="agree-checkbox" onchange="toggleAgreeButton()">
+                    I have read and agree to the terms above
+                </label>
+                <br>
+                <button class="btn-agree" id="agree-btn" onclick="acceptAgreement()">Continue to Platform</button>
+            </div>
+        </div>
+    </div>
 
     <div style="background: #667eea; padding: 15px; text-align: center;">
         <a href="/gpt/" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">
@@ -534,6 +756,29 @@ html<body>
     </div>
 
     <script>
+        // ==================== User Agreement ====================
+        function checkAgreement() {
+            if (!sessionStorage.getItem('user_agreement_accepted')) {
+                document.getElementById('agreement-overlay').style.display = 'flex';
+            }
+        }
+        function toggleAgreeButton() {
+            const btn = document.getElementById('agree-btn');
+            if (document.getElementById('agree-checkbox').checked) {
+                btn.classList.add('enabled');
+            } else {
+                btn.classList.remove('enabled');
+            }
+        }
+        function acceptAgreement() {
+            if (!document.getElementById('agree-checkbox').checked) return;
+            sessionStorage.setItem('user_agreement_accepted', 'true');
+            document.getElementById('agreement-overlay').style.display = 'none';
+        }
+        // Show agreement on page load if not yet accepted
+        document.addEventListener('DOMContentLoaded', checkAgreement);
+        // ==================== End User Agreement ====================
+
         let currentResultId = null;
         let uploadedFilePath = null;
         let uploadedImagePath = null;
@@ -857,6 +1102,78 @@ html<body>
         }
         }
 
+        // ==================== Feedback System ====================
+        let lastQueryContext = { query_text: '', output_type: '', response_summary: '' };
+
+        function buildFeedbackWidgetHTML() {
+            return `
+            <div class="feedback-widget" id="feedback-widget">
+                <div class="fb-label">Was this result helpful?</div>
+                <div class="fb-buttons">
+                    <button class="fb-btn" onclick="rateFeedback('positive', this)" title="Helpful">&#128077;</button>
+                    <button class="fb-btn" onclick="rateFeedback('negative', this)" title="Not helpful">&#128078;</button>
+                </div>
+                <div class="fb-comment" id="fb-comment-box">
+                    <textarea id="fb-comment-text" placeholder="(Optional) Tell us what could be improved..."></textarea>
+                    <button class="fb-submit" onclick="submitFeedback()">Submit Feedback</button>
+                </div>
+                <div class="fb-thanks" id="fb-thanks">Thank you for your feedback!</div>
+            </div>`;
+        }
+
+        function rateFeedback(rating, btnEl) {
+            // Store the selected rating
+            window._feedbackRating = rating;
+
+            // Update button styles
+            const widget = document.getElementById('feedback-widget');
+            widget.querySelectorAll('.fb-btn').forEach(b => {
+                b.classList.remove('selected-positive', 'selected-negative');
+            });
+            btnEl.classList.add(rating === 'positive' ? 'selected-positive' : 'selected-negative');
+
+            // Show comment box
+            document.getElementById('fb-comment-box').style.display = 'block';
+        }
+
+        function submitFeedback() {
+            const rating = window._feedbackRating;
+            if (!rating) return;
+
+            const comment = (document.getElementById('fb-comment-text')?.value || '').trim();
+
+            const payload = {
+                query_text: lastQueryContext.query_text,
+                output_type: lastQueryContext.output_type,
+                response_summary: lastQueryContext.response_summary,
+                rating: rating,
+                comment: comment,
+            };
+
+            fetch('/api/feedback/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('fb-comment-box').style.display = 'none';
+                    document.querySelectorAll('.fb-btn').forEach(b => b.disabled = true);
+                    document.getElementById('fb-thanks').style.display = 'block';
+                }
+            })
+            .catch(err => console.error('Feedback submit error:', err));
+        }
+
+        function appendFeedbackWidget(containerSelector) {
+            const container = document.querySelector(containerSelector) || document.getElementById('gpt-output');
+            if (container) {
+                container.insertAdjacentHTML('beforeend', buildFeedbackWidgetHTML());
+            }
+        }
+        // ==================== End Feedback System ====================
+
         // Submit GPT prompt
         function submitPrompt(retries = 3) {
             const prompt = document.getElementById('prompt').value;
@@ -889,6 +1206,9 @@ html<body>
             document.getElementById('execute-btn').disabled = !canRun;
             updateWorkflowStep(2, 'completed');
             showMessage('Text analyzed successfully.', 'success');
+            // Feedback
+            lastQueryContext = { query_text: prompt, output_type: 'TEXT', response_summary: (data.result || '').substring(0, 500) };
+            appendFeedbackWidget('#gpt-output');
             })
             .catch(err => {
             document.getElementById('gpt-output').innerHTML = `<div style="color:#721c24;">❌ ${err.message}</div>`;
@@ -982,6 +1302,9 @@ html<body>
                         document.getElementById('execute-btn').disabled = false;
                         updateWorkflowStep(2, 'completed');
                         showMessage('Agent A code generated successfully! Review the code and click "Run Analysis" to create the PDF report.', 'success');
+                        // Feedback
+                        lastQueryContext = { query_text: prompt, output_type: 'PDF', response_summary: (data.agentA_code || '').substring(0, 500) };
+                        appendFeedbackWidget('#gpt-output');
                         return;
 
                     } else if (data.agentA_code_path) {
@@ -1032,6 +1355,9 @@ html<body>
                         document.getElementById('execute-btn').disabled = false;
                         updateWorkflowStep(2, 'completed');
                         showMessage('Agent A code generated successfully! Click "Run Analysis" to execute and create the PDF report.', 'success');
+                        // Feedback
+                        lastQueryContext = { query_text: prompt, output_type: 'PDF', response_summary: (agentAState.code || 'Code generated').substring(0, 500) };
+                        appendFeedbackWidget('#gpt-output');
                         return;
 
                     } else {
@@ -1051,6 +1377,9 @@ html<body>
                     document.getElementById('execute-btn').disabled = false;
                     showMessage(`AI analysis code generated successfully for ${selectedOutputType}! You can preview results or rerun the analysis.`, 'success');
                     updateWorkflowStep(3);
+                    // Feedback
+                    lastQueryContext = { query_text: prompt, output_type: selectedOutputType, response_summary: (data.generated_text || '').substring(0, 500) };
+                    appendFeedbackWidget('#gpt-output');
                 } else if (data.generated_text) {
                     document.getElementById('gpt-output').innerHTML = `
                         <div style="color:#155724; background:#d4edda; padding:10px; border-radius:5px; margin-bottom:10px;">
@@ -1061,6 +1390,9 @@ html<body>
                     document.getElementById('execute-btn').disabled = false;
                     showMessage(`AI analysis code generated successfully for ${selectedOutputType}! You can now run the analysis.`, 'success');
                     updateWorkflowStep(2, 'completed');
+                    // Feedback
+                    lastQueryContext = { query_text: prompt, output_type: selectedOutputType, response_summary: (data.generated_text || '').substring(0, 500) };
+                    appendFeedbackWidget('#gpt-output');
                 } else {
                     throw new Error(data.error || 'Failed to generate code');
                 }

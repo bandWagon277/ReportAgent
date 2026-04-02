@@ -16,6 +16,8 @@ from .gpt_backend_utils import (
     preview_csv_result, preview_image_result, preview_pdf_result, precompile_or_error,
     # 杂项
     sanitize_python, save_to_file, to_json_safe,
+    # Feedback-driven prompt enrichment
+    build_feedback_context,
     # 文本pipline
     #detect_file_kind, is_text_extension, read_uploaded_text,analyze_general_text,
     #给定测试数据集
@@ -176,6 +178,9 @@ def render_gpt_interface(request):
                 return JsonResponse({'error': f'Error reading CSV file: {str(e)}'}, status=500)
 
             if output_type in ('CSV', 'IMAGE'):
+                # Retrieve feedback-driven context
+                feedback_context = build_feedback_context(output_type)
+
                 system_msg = (
                     "You are a senior data analyst and Python author. "
                     "Generate robust Python code that respects the contract described by the user message."
@@ -187,6 +192,7 @@ def render_gpt_interface(request):
                     f"{user_prompt}\n\n"
                     "### Data Context from CSV\n"
                     f"{data_summary}\n"
+                    f"{feedback_context}"
                     "### Implementation Notes\n"
                     "- The runtime environment already provides df/csv_path/image_path/VALIDATION_MODE.\n"
                     "- Follow the output contract and encoding requirements in the hint file.\n"

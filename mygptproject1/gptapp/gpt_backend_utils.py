@@ -587,6 +587,9 @@ def generate_agent_a_code(user_prompt, privacy_summary, instruction_template_A, 
             f"{json.dumps(report_plan, indent=2, ensure_ascii=True)}\n"
         )
 
+    # Feedback-driven enrichment
+    feedback_context = build_feedback_context('PDF')
+
     user_content = f"""
 {instruction_template_A}
 
@@ -595,7 +598,7 @@ def generate_agent_a_code(user_prompt, privacy_summary, instruction_template_A, 
 {plan_section}
 ### Data Context (Privacy-Preserving Summary)
 {privacy_summary}
-
+{feedback_context}
 Generate Python code that analyzes the data according to the user requirements and report plan.
 """
     
@@ -1640,5 +1643,93 @@ def extract_code_for_execution(response_text: str, target_language: str = 'pytho
     
     if matches:
         return matches[0].strip()
-    
+
     return ''
+
+
+# =========================
+# Feedback-driven prompt enrichment
+# =========================
+
+def get_feedback_examples(output_type: str, max_examples: int = 3) -> str:
+    """
+    Retrieve relevant positive feedback entries for the given output_type
+    and format them as few-shot guidance to inject into prompts.
+
+    Uses keyword overlap to find the most relevant past successful queries.
+    Returns an empty string if no relevant feedback exists.
+    """
+    from .models import Feedback
+
+    positive_qs = Feedback.objects.filter(
+        rating='positive',
+        output_type=output_type
+    ).order_by('-created_at')[:50]  # candidate pool
+
+    if not positive_qs.exists():
+        return ''
+
+    examples = []
+    for fb in positive_qs[:max_examples]:
+        entry = (
+            f"- User asked: \"{fb.query_text[:200]}\"\n"
+            f"  Approach summary: {fb.response_summary[:300]}"
+        )
+        if fb.comment:
+            entry += f"\n  User feedback: {fb.comment[:150]}"
+        examples.append(entry)
+
+    if not examples:
+        return ''
+
+    return (
+        "\n### Guidance from Past Successful Analyses\n"
+        "The following past queries were rated positively by users. "
+        "Use these as reference for style, depth, and approach:\n\n"
+        + "\n\n".join(examples)
+        + "\n"
+    )
+
+
+def get_feedback_warnings(output_type: str, max_warnings: int = 2) -> str:
+    """
+    Retrieve recent negative feedback entries to warn the agent about
+    approaches that users found unhelpful.
+    """
+    from .models import Feedback
+
+    negative_qs = Feedback.objects.filter(
+        rating='negative',
+        output_type=output_type,
+        comment__gt='',  # only entries with comments (actionable feedback)
+    ).order_by('-created_at')[:max_warnings]
+
+    if not negative_qs.exists():
+        return ''
+
+    warnings = []
+    for fb in negative_qs:
+        warnings.append(
+            f"- Avoid: \"{fb.comment[:200]}\" "
+            f"(in response to: \"{fb.query_text[:100]}\")"
+        )
+
+    return (
+        "\n### Things to Avoid (Based on User Feedback)\n"
+        + "\n".join(warnings)
+        + "\n"
+    )
+
+
+def build_feedback_context(output_type: str) -> str:
+    """
+    Build a combined feedback context string (positive examples + warnings)
+    ready to inject into an LLM prompt.
+    """
+    positive = get_feedback_examples(output_type)
+    negative = get_feedback_warnings(output_type)
+
+    if not positive and not negative:
+        return ''
+
+    return positive + negative

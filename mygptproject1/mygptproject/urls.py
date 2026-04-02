@@ -40,6 +40,7 @@ urlpatterns = [
 ]
 
 from gptapp import synthetic_data_views
+from gptapp import feedback_views
 
 # 在 urlpatterns 列表中添加
 urlpatterns += [
@@ -47,4 +48,11 @@ urlpatterns += [
     path('api/analyze-synthetic/', synthetic_data_views.analyze_synthetic_data_request),
     path('api/generate-synthetic/', synthetic_data_views.generate_synthetic_data),
     path('api/download-synthetic/', synthetic_data_views.download_synthetic_data),
+]
+
+# Feedback API
+urlpatterns += [
+    path('api/feedback/', feedback_views.submit_feedback, name='submit_feedback'),
+    path('api/feedback/history/', feedback_views.feedback_history, name='feedback_history'),
+    path('api/feedback/stats/', feedback_views.feedback_stats, name='feedback_stats'),
 ]
