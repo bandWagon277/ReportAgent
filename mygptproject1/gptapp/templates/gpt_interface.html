@@ -5,35 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligent Data Processing Platform</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            padding: 20px;
         }
-        
+
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
             background: white;
-            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
-        
-        h1 {
-            color: #333;
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
             text-align: center;
-            margin-bottom: 10px;
+        }
+
+        .header h1 {
             font-size: 2.5em;
+            margin-bottom: 10px;
         }
-        
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
+
+        .header p {
             font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .header nav {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .header nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .content {
+            padding: 30px;
         }
         
         .section {
@@ -94,48 +126,59 @@
             font-family: inherit;
         }
         
-        .output-type-selector {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+        .tab-bar {
+            display: flex;
+            border-bottom: 3px solid #667eea;
+            margin-bottom: 25px;
         }
-        
-        .output-option {
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
+
+        .tab {
+            flex: 1;
+            padding: 15px 20px;
             text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #666;
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            margin-right: 4px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .tab:last-child {
+            margin-right: 0;
+        }
+
+        .tab:hover {
+            background: #eef0ff;
+            color: #667eea;
+        }
+
+        .tab.active {
             background: white;
-        }
-        
-        .output-option:hover {
+            color: #667eea;
             border-color: #667eea;
-            background: #f8f9ff;
+            border-bottom: 3px solid white;
+            margin-bottom: -3px;
         }
-        
-        .output-option.selected {
-            border-color: #667eea;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .output-option .icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+
+        .tab .tab-icon {
             display: block;
-        }
-        
-        .output-option .title {
-            font-weight: bold;
+            font-size: 1.5em;
             margin-bottom: 5px;
         }
-        
-        .output-option .description {
-            font-size: 0.9em;
-            opacity: 0.8;
+
+        .tab-description {
+            padding: 15px 20px;
+            background: #f0f4ff;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            color: #555;
+            border-left: 4px solid #667eea;
         }
         
         .btn {
@@ -606,26 +649,44 @@
         </div>
     </div>
 
-    <div style="background: #667eea; padding: 15px; text-align: center;">
-        <a href="/gpt/" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">
-            📊 Data Analysis
-        </a>
-        <a href="/synthetic-data/" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">
-            🎲 Synthetic Data
-        </a>
-    </div>
-
-
     <div class="container">
-        <h1>🚀 Intelligent Data Processing Platform</h1>
-        <p class="subtitle">AI-powered data analysis with flexible output formats: CSV processing, visualization, and comprehensive reports</p>
-        
+        <div class="header">
+            <h1>Intelligent Data Processing Platform</h1>
+            <p>AI-powered data analysis with flexible output formats</p>
+            <nav>
+                <a href="/gpt-interface/">Data Processing</a>
+                <a href="/synthetic/">Synthetic Data</a>
+            </nav>
+        </div>
+
+        <div class="content">
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+            <div class="tab active" onclick="switchTab('CSV', this)">
+                <span class="tab-icon">📊</span>
+                Data Analysis
+            </div>
+            <div class="tab" onclick="switchTab('IMAGE', this)">
+                <span class="tab-icon">📈</span>
+                Visualization
+            </div>
+            <div class="tab" onclick="switchTab('PDF', this)">
+                <span class="tab-icon">📋</span>
+                Report
+            </div>
+        </div>
+
+        <div class="tab-description" id="tab-description">
+            Data transformation and analysis — upload CSV data, describe your requirements, and get processed results.
+        </div>
+
         <!-- Workflow Indicator -->
         <div class="workflow-indicator">
-        <div class="workflow-step" id="step1">1. Upload File & Choose Output</div>
-        <div class="workflow-step" id="step2">2. AI Generate / Analyze</div>
-        <div class="workflow-step" id="step3">3. Preview Results</div>
-        <div class="workflow-step" id="step4">4. Download Output</div>
+        <div class="workflow-step" id="step1">1. Upload Data</div>
+        <div class="workflow-step" id="step2">2. AI Generate</div>
+        <div class="workflow-step" id="step3">3. Preview</div>
+        <div class="workflow-step" id="step4">4. Download</div>
         </div>
 
         
@@ -657,34 +718,6 @@
         <div id="output" class="output-area"></div>
         </div>
 
-
-        <!-- Output Type Selection -->
-        <div class="section">
-        <h2><span class="section-icon">🎯</span>Choose Output Type</h2>
-        <div class="output-type-selector">
-            <div class="output-option selected" data-type="CSV" onclick="selectOutputType(this, 'CSV')">
-            <span class="icon">📊</span>
-            <div class="title">CSV Processing</div>
-            <div class="description">Data transformation and analysis with CSV output</div>
-            </div>
-            <div class="output-option" data-type="IMAGE" onclick="selectOutputType(this, 'IMAGE')">
-            <span class="icon">📈</span>
-            <div class="title">Data Visualization</div>
-            <div class="description">Generate charts and graphs from your data</div>
-            </div>
-            <div class="output-option" data-type="PDF" onclick="selectOutputType(this, 'PDF')">
-            <span class="icon">📋</span>
-            <div class="title">Analysis Report</div>
-            <div class="description">Comprehensive PDF report with CSV data and image analysis</div>
-            </div>
-            <!-- NEW: TEXT -->
-            <div class="output-option" data-type="TEXT" onclick="selectOutputType(this, 'TEXT')">
-            <span class="icon">📝</span>
-            <div class="title">General Text</div>
-            <div class="description">Analyze or review uploaded/pasted text/code</div>
-            </div>
-        </div>
-        </div>
 
 
         <!-- AI Analysis Requirements -->
@@ -753,7 +786,8 @@
 
         <!-- Message -->
         <div id="message" class="message"></div>
-    </div>
+        </div><!-- /content -->
+    </div><!-- /container -->
 
     <script>
         // ==================== User Agreement ====================
@@ -862,34 +896,49 @@
             }
         });
 
-        // Select output type
-        function selectOutputType(element, type) {
-            // Remove selection from all options
-            document.querySelectorAll('.output-option').forEach(opt => {
-                opt.classList.remove('selected');
-            });
-            
-            // Add selection to clicked option
-            element.classList.add('selected');
+        // Switch between tabs
+        function switchTab(type, tabEl) {
+            // Update tab visuals
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            if (tabEl) {
+                tabEl.classList.add('active');
+            } else {
+                // Find the matching tab by type
+                const tabMap = { CSV: 'Data Analysis', IMAGE: 'Visualization', PDF: 'Report' };
+                document.querySelectorAll('.tab').forEach(t => {
+                    if (t.textContent.trim().includes(tabMap[type] || '')) t.classList.add('active');
+                });
+            }
+
             selectedOutputType = type;
-            
+
+            // Update tab description
+            const descriptions = {
+                CSV: 'Data transformation and analysis \u2014 upload CSV data, describe your requirements, and get processed results.',
+                IMAGE: 'Generate charts and visualizations \u2014 create bar charts, line plots, scatter plots, heatmaps, and more from your data.',
+                PDF: 'Comprehensive analysis reports \u2014 generate professional PDF reports with figures, tables, and statistical insights.'
+            };
+            const descEl = document.getElementById('tab-description');
+            if (descEl) descEl.textContent = descriptions[type] || '';
+
             // Show/hide image upload based on output type
             const imageUploadGroup = document.getElementById('image-upload-group');
-            if (type === 'PDF') {
-                imageUploadGroup.style.display = 'block';
-            } else {
-                imageUploadGroup.style.display = 'none';
-            }
+            if (imageUploadGroup) imageUploadGroup.style.display = (type === 'PDF') ? 'block' : 'none';
 
             const rawTextGroup = document.getElementById('raw-text-group');
             if (rawTextGroup) rawTextGroup.style.display = (type === 'TEXT') ? 'block' : 'none';
-            
+
             // Update prompt examples
             updatePromptExamples();
-            
+
             // Update preview title icon
             const icons = { CSV: '📊', IMAGE: '📈', PDF: '📋', TEXT: '📝' };
             document.getElementById('preview-title').innerHTML = `${icons[type] || '📊'} Analysis Results Preview`;
+        }
+
+        // Backward compatibility
+        function selectOutputType(element, type) {
+            switchTab(type);
         }
 
         // Update prompt examples based on selected output type

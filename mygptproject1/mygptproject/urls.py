@@ -56,3 +56,9 @@ urlpatterns += [
     path('api/feedback/history/', feedback_views.feedback_history, name='feedback_history'),
     path('api/feedback/stats/', feedback_views.feedback_stats, name='feedback_stats'),
 ]
+
+# Agent APIs (Data Profiler, Knowledge Base)
+urlpatterns += [
+    path('api/data-profile/', views.get_data_profile, name='data_profile'),
+    path('api/rebuild-knowledge-base/', views.rebuild_knowledge_base, name='rebuild_kb'),
+]

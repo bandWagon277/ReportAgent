@@ -23,6 +23,8 @@ from .gpt_backend_utils import (
     #给定测试数据集
     #get_sample_csv_path,run_python_code_on_csv,
 )
+# Paper-inspired agents (LAMBDA, DARE, Survey)
+from .agents import DataProfiler, InspectorAgent, KnowledgeBase
 import json
 import logging
 import os
@@ -130,6 +132,16 @@ def render_gpt_interface(request):
                     logger.error(f"Error generating privacy summary: {e}")
                     return JsonResponse({'error': f'Error summarizing CSV file: {str(e)}'}, status=500)
 
+                # Data Profiler: enrich privacy_summary with distribution info
+                try:
+                    dp = DataProfiler.profile(csv_path)
+                    if "error" not in dp:
+                        privacy_summary["data_profile"] = dp.get(
+                            "statistical_characteristics", {}
+                        )
+                except Exception as dp_err:
+                    logger.warning(f"DataProfiler for PDF failed: {dp_err}")
+
                 tmpl_A, tmpl_B = get_pdf_dual_prompts()
 
                 # 1) 先生成 Agent A 代码（可选：一并返回给前端）
@@ -178,12 +190,29 @@ def render_gpt_interface(request):
                 return JsonResponse({'error': f'Error reading CSV file: {str(e)}'}, status=500)
 
             if output_type in ('CSV', 'IMAGE'):
+                # --- Data Profiler (DARE-inspired): rich dataset context ---
+                try:
+                    data_profile_text = DataProfiler.profile_to_prompt(csv_path)
+                except Exception as dp_err:
+                    logger.warning(f"DataProfiler failed, falling back: {dp_err}")
+                    data_profile_text = ""
+
+                # --- Knowledge Base (LAMBDA KIM): few-shot from feedback ---
+                kim_context = ""
+                try:
+                    kb = KnowledgeBase()
+                    kim_context = kb.retrieve_as_prompt(
+                        user_prompt, api_key, output_type=output_type, top_k=3
+                    )
+                except Exception as kb_err:
+                    logger.warning(f"KnowledgeBase retrieval failed: {kb_err}")
+
                 # Retrieve feedback-driven context
                 feedback_context = build_feedback_context(output_type)
 
                 system_msg = (
                     "You are a senior data analyst and Python author. "
-                    "Generate robust Python code that respects the contract described by the user message."
+                    "Generate robust Python code that respects the contract described by the user message. "
                     "No placeholders. No fabricated data. Use VALIDATION_MODE exactly as specified. No internet."
                 )
                 user_content = (
@@ -191,9 +220,11 @@ def render_gpt_interface(request):
                     "### User Requirements\n"
                     f"{user_prompt}\n\n"
                     "### Data Context from CSV\n"
-                    f"{data_summary}\n"
-                    f"{feedback_context}"
-                    "### Implementation Notes\n"
+                    f"{data_summary}\n\n"
+                    + (f"{data_profile_text}\n\n" if data_profile_text else "")
+                    + f"{feedback_context}"
+                    + (f"{kim_context}\n" if kim_context else "")
+                    + "### Implementation Notes\n"
                     "- The runtime environment already provides df/csv_path/image_path/VALIDATION_MODE.\n"
                     "- Follow the output contract and encoding requirements in the hint file.\n"
                 )
@@ -352,17 +383,31 @@ def process_pdf_output(generated_text: str | None,
         logger.error(f"Agent A call failed: {e}")
         return JsonResponse({'error': f'Agent A error: {str(e)}'}, status=500)
 
-    # Execute Agent A code to get enhanced artifacts with data_summary
-    artifacts = execute_python_code(
-        csv_file_path=csv_path,
-        py_file_path=codeA_path,
-        output_type='analysis',   
+    # Execute Agent A code with Inspector self-correction loop (LAMBDA-inspired)
+    try:
+        data_context_for_inspector = json.dumps(
+            privacy_summary or {}, ensure_ascii=True, default=str
+        )[:3000]
+    except Exception:
+        data_context_for_inspector = ""
+
+    artifacts, final_code_A, attempts = InspectorAgent.execute_with_retry(
+        code=code_A,
         csv_path=csv_path,
+        output_type='analysis',
+        api_key=api_key,
+        data_context=data_context_for_inspector,
         image_path=image_path,
-        dry_run=False
+        max_retries=3,
     )
+    if attempts > 1:
+        logger.info(f"Inspector Agent fixed Agent A code after {attempts} attempts")
+        # Update saved code with the fixed version
+        code_A = final_code_A
+        codeA_path = save_to_file("agentA_code.py", code_A)
+
     if isinstance(artifacts, Exception):
-        logger.error(f"Agent A execution error: {artifacts}")
+        logger.error(f"Agent A execution error (after {attempts} attempts): {artifacts}")
         return JsonResponse({'error': str(artifacts)}, status=500)
     if not isinstance(artifacts, dict):
         return JsonResponse({'error': 'Agent A did not produce artifacts dict.'}, status=500)
@@ -890,5 +935,60 @@ def execute_code_on_sample(request):
         return JsonResponse(out, status=200 if out.get('ok') else 500)
     except Exception as e:
         logger.exception("execute_code_on_sample failed")
+        return JsonResponse({'error': str(e)}, status=500)
+
+
+@csrf_exempt
+def rebuild_knowledge_base(request):
+    """
+    POST /api/rebuild-knowledge-base/
+    Rebuild the KIM knowledge base from positive feedback entries.
+    Computes embeddings for new entries and updates the index.
+    """
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+
+    api_key = os.getenv('OPENAI_API_KEY', '')
+    if not api_key:
+        return JsonResponse({'error': 'OPENAI_API_KEY not configured'}, status=500)
+
+    try:
+        kb = KnowledgeBase()
+        added = kb.rebuild_from_feedback(api_key)
+        index = kb.load_index()
+        return JsonResponse({
+            'success': True,
+            'new_entries': added,
+            'total_entries': len(index),
+        })
+    except Exception as e:
+        logger.exception("rebuild_knowledge_base failed")
+        return JsonResponse({'error': str(e)}, status=500)
+
+
+@csrf_exempt
+def get_data_profile(request):
+    """
+    POST /api/data-profile/
+    Body: {"csv_path": "uploads/..."}
+    Returns the full data profile for a CSV file.
+    """
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+
+    try:
+        data = json.loads(request.body or '{}')
+    except Exception:
+        return JsonResponse({'error': 'Invalid JSON'}, status=400)
+
+    csv_path = data.get('csv_path')
+    if not csv_path:
+        return JsonResponse({'error': 'csv_path is required'}, status=400)
+
+    try:
+        profile = DataProfiler.profile(csv_path)
+        return JsonResponse({'success': True, 'profile': profile})
+    except Exception as e:
+        logger.exception("get_data_profile failed")
         return JsonResponse({'error': str(e)}, status=500)
 

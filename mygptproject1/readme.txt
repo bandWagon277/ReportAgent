@@ -22,5 +22,6 @@ independent evaluate paper performance(compare result,format)
 user can Upload SRTR data agreement, then we directly access data
 
 Add：terms & agreement in the head of the page(add check box,let user select)
+#read papers
 LAMBDA works: wrap up as a paper
 Use which package to do analysis

@@ -1,0 +1,323 @@
+% Review: code/paper/what problems to be answered
+% clinical paper code: lack of detail
+
+Paper Analysis: Three Agent Papers from HKUST Team 
+Papers Reviewed:
+  1. LAMBDA: A Large Model Based Data Agent (Sun et al., 2025, 56 pages)
+  2. A Survey on Large Language Model-based Agents for Statistics and Data
+     Science (Sun et al., 2025, The American Statistician, 15 pages)
+  3. DARE: Aligning LLM Agents with the R Statistical Ecosystem via
+     Distribution-Aware Retrieval (Sun et al., 2026, 24 pages)
+
+All three papers are by the same research group at Hong Kong Polytechnic
+University, forming a coherent body of work: LAMBDA (the system), the Survey
+(the landscape), and DARE (the retrieval/evaluation layer).
+
+
+Data structure send to agent：
+
+ general information of the dataset:{
+    'num_rows': 150,
+    'num_features': 5,
+    'features': ['Sepal.Length', 'Sepal.Width', ...],   
+    'missing_val': ...,
+    'describe': ...
+  }
+
+statistical characteristics:
+
+  {
+    "data_modality": "tabular",
+    "feature_type": "numerical",
+    "distribution_assumption": "non-gaussian",
+    "dimensionality": "high"
+  }
+
+
+================================================================================
+  1. HOW CAN WE EVALUATE OUR LLM PERFORMANCE?
+================================================================================
+
+The papers describe multiple evaluation layers:
+
+CODE-LEVEL EVALUATION (LAMBDA, Table 2):
+  - Run the same analysis tasks in both the agent and manually in R/Python,
+    compare metrics (accuracy for classification, MSE for regression) using
+    5-fold cross-validation.
+  - Score system for knowledge integration tasks:
+      0   = code error + execution error, or exceeded runtime limit
+      0.5 = code error + execution successful
+      0.8 = code OK + execution error (environment issue)
+      1.0 = both code and execution successful
+
+RETRIEVAL-LEVEL EVALUATION (DARE):
+  - Recall@k     -- is the correct function/tool in the top-k retrieved results?
+  - NDCG@k       -- how early in the ranked list does the right answer appear?
+  - MRR@k        -- Mean Reciprocal Rank, position of the first correct result
+  - Success Rate -- end-to-end binary: did the agent produce the correct answer?
+  - Efficiency   -- average latency per query, throughput (queries per second)
+
+SYSTEM-LEVEL EVALUATION (Survey):
+  - Model-level reproducibility: do different prompt phrasings yield equivalent
+    analyses?
+  - System-level reproducibility: can the full execution be replayed via
+    exported notebooks?
+  - User satisfaction as a long-term metric.
+
+WHAT THIS MEANS FOR OUR SYSTEM:
+  We should evaluate at three levels:
+    (1) Does the generated code execute without errors?
+    (2) Does the output match expected analytical results?
+    (3) Does user feedback indicate the output was useful?
+  Our existing feedback loop (positive/negative ratings) is a start, but we
+  should add execution success/failure tracking and compare agent output
+  against known-good baselines.
+
+
+================================================================================
+  2. WHAT KIND OF STATISTICAL ANALYSIS SYSTEM SHOULD WE BUILD?
+================================================================================
+
+The papers paint a clear picture of what a modern data agent should handle:
+
+FROM LAMBDA (Table 2, Sections 4.1-4.2):
+  - Classical tabular analysis:
+      Classification: Logistic Regression, SVM, Decision Tree, Random Forest,
+                      XGBoost, AdaBoost, Neural Network
+      Regression:     Linear, Lasso, SVR, Gradient Boost, CatBoost
+  - High-dimensional data: PCA/dimensionality reduction as preprocessing
+  - Missing data handling: deletion vs. imputation strategies
+  - Unstructured data: image classification (CNN, Transformer on MNIST),
+    text classification (Naive Bayes, BERT on spam detection)
+  - Statistical diagnostics: residual analysis, Breusch-Pagan
+    heteroscedasticity test, bootstrap confidence intervals
+
+FROM THE SURVEY (Case Studies 1-4):
+  - Exploratory Data Analysis (EDA)
+  - Model building with cross-validation
+  - Regression diagnostics and assumption checking
+  - Nonparametric inference (bootstrap resampling)
+  - Domain-specific knowledge integration
+
+FROM DARE:
+  - Specialized statistical methods (e.g., survival analysis, mixed models,
+    factor analysis, goodness-of-fit tests, clustering)
+  - Distribution-aware method selection: the system should match statistical
+    methods to data characteristics
+
+WHAT THIS MEANS FOR OUR SYSTEM:
+  Our current CSV/PDF/IMAGE pipeline is a good start, but we should expand
+  toward a more structured statistical analysis menu: EDA, model
+  training/evaluation, statistical testing, and visualization -- rather than
+  treating every request as a free-form code generation task.
+
+
+================================================================================
+  3. HOW TO DETERMINE WHAT ANALYSIS TO APPLY?
+================================================================================
+
+LAMBDA'S APPROACH -- CONVERSATIONAL + HUMAN-IN-THE-LOOP:
+  - Users describe their task in natural language, step by step.
+  - The programmer agent interprets intent and picks appropriate methods.
+  - Human supervision allows course-correction at any point.
+  - The system prompt includes dataset metadata (dimensions, column names,
+    types, missing values, statistical description) so the LLM can make
+    informed choices.
+
+DARE'S APPROACH -- DISTRIBUTION-AWARE RETRIEVAL:
+  This is the most sophisticated answer to this question. DARE creates a
+  data profile from the uploaded dataset containing:
+    - data_modality
+    - distribution_assumptions
+    - dimensionality
+    - feature_type
+    - sparsity_structure
+  When a user submits a query, the system matches both the semantic intent
+  of the query AND the distributional characteristics of the data against a
+  knowledge base of statistical functions. This prevents the common failure
+  where an LLM suggests a method that does not match the data (e.g.,
+  suggesting a parametric test on non-Gaussian data).
+
+THE SURVEY'S TAXONOMY OF PLANNING STRATEGIES:
+  - Basic I/O:            simple conversational back-and-forth (LAMBDA, ChatGPT)
+  - Linear planning:      decompose into sequential steps (DS-Agent, TaskWeaver)
+  - Hierarchical planning: tree/graph of possible paths (Data Interpreter,
+                           SELA, AIDE) using CoT, ToT, GoT reasoning
+
+WHAT THIS MEANS FOR OUR SYSTEM:
+  We should build an intent classifier + data profiler at the front of our
+  pipeline. When a user uploads a CSV and asks a question, we should:
+    (1) Profile the data (types, distributions, dimensions, missing patterns)
+    (2) Classify the intent (EDA, modeling, testing, visualization)
+    (3) Use both to select the right analytical approach
+  Rather than dumping everything into a single GPT prompt.
+
+
+================================================================================
+  4. HOW TO ADJUST AGENT TO BETTER UNDERSTAND USER PROMPTS?
+================================================================================
+
+LAMBDA'S STRATEGIES:
+  - Rich system prompts: include dataset metadata (column names, types,
+    dimensions, missing values, descriptive statistics) so the LLM has context.
+  - Few-shot examples in the system prompt to demonstrate expected I/O format.
+  - Step-by-step interaction: encourage users to prompt incrementally rather
+    than in one shot, mimicking how data analysts actually work.
+  - Inspector agent: when code fails, a separate agent analyzes the error and
+    provides revision suggestions, effectively creating a feedback loop within
+    a single request.
+
+DARE'S STRATEGY:
+  - Data-conditional embeddings: do not just match user query text to function
+    descriptions; also match the user's data profile to the function's expected
+    input profile.
+  - Key insight from the paper: "the applicability of statistical methods often
+    depends not only on semantic intent but also on data distribution
+    characteristics."
+
+THE SURVEY'S OBSERVATIONS:
+  - Different prompt phrasings produce different implementations (e.g.,
+    "analyze residuals" vs "check model assumptions" lead to the same analysis
+    but different tests/plots).
+  - Prompt engineering matters: default hyperparameters, plot choices, and
+    method selection all vary with phrasing.
+  - Human-in-the-loop mechanisms let users correct misinterpretations.
+
+WHAT THIS MEANS FOR OUR SYSTEM:
+  We should:
+    (1) Enrich the system prompt with structured dataset metadata before
+        calling the LLM.
+    (2) Add data profiling that classifies distribution/dimensionality.
+    (3) Use our existing feedback loop to accumulate examples of what worked
+        vs. what did not, feeding them back as few-shot examples (which we
+        already partially do via build_feedback_context).
+    (4) Consider a planning/classification step before code generation.
+
+
+================================================================================
+  5. WHAT KIND OF MULTI-AGENT / KNOWLEDGE SYSTEM TO BUILD?
+================================================================================
+
+LAMBDA'S DUAL-AGENT ARCHITECTURE:
+  - Programmer agent: generates code from user instructions + dataset context
+    + domain knowledge.
+  - Inspector agent: receives failed code + error messages, provides revision
+    suggestions.
+  - This iterative self-correction loop continues until success or max
+    attempts reached.
+  - Human intervention is available at any point as a fallback.
+  - Key insight: separating code generation from error debugging reduces
+    context overload and improves accuracy.
+
+LAMBDA'S KNOWLEDGE INTEGRATION MECHANISM (KIM):
+  - KV Knowledge Base: key = description, value = source code.
+  - Embedding-based matching: cosine similarity between user instruction and
+    knowledge descriptions (using Sentence-BERT), with threshold theta.
+  - Two modes:
+      "Full" -- entire code as in-context learning (ICL) context
+      "Core" -- only core function via ICL, sub-functions executed in backend
+  - This outperforms other agents when there is misalignment between user
+    instructions and tool expectations.
+
+THE SURVEY'S MULTI-AGENT LANDSCAPE:
+  - AutoML-Agent: Manager, Prompt Agent, Operation Agent, Data Agent,
+    Model Agent
+  - AutoKaggle: Reader, Planner, Developer, Reviewer, Summarizer
+  - LAMBDA's simpler 2-agent approach is more token-efficient than
+    MetaGPT-style systems with many agents.
+
+DARE'S KNOWLEDGE SYSTEM:
+  - RPKB: curated knowledge base of 8,191 R functions with structured
+    metadata + data profiles.
+  - Distribution-aware retrieval: a 23M parameter model that outperforms
+    568M parameter general embeddings by incorporating data characteristics.
+  - Integrating DARE into agents increased success rates from ~6-25% to
+    ~56-75%.
+
+WHAT THIS MEANS FOR OUR SYSTEM:
+  Our current Agent A / Agent B pipeline (code generation then report
+  composition) is aligned with the dual-agent pattern. We should add:
+    (1) An inspector/debugger agent that catches code execution errors and
+        retries with fix suggestions (like LAMBDA's self-correcting mechanism).
+    (2) A knowledge base of domain-specific analysis patterns (medical data,
+        SRTR-specific methods) indexed by description embeddings.
+    (3) Data profiling at upload time that informs method selection.
+
+
+================================================================================
+  HOW TO IMPROVE OUR SYSTEM BASED ON THESE PAPERS
+================================================================================
+
+MAPPING PAPER CONCEPTS TO OUR CURRENT ARCHITECTURE:
+
+  Paper Concept                   Current State              Improvement
+  ---------------------------------------------------------------------------
+  Programmer + Inspector          Agent A (code gen)         Add self-correction:
+  dual agents                     + Agent B (report)         if Agent A code fails
+                                                             execution, send error
+                                                             to an Inspector prompt
+                                                             that suggests fixes,
+                                                             retry up to N times.
+
+  Dataset metadata in             CSV path passed to         Add summarize_csv output
+  system prompt                   GPT, minimal context       (columns, types, stats,
+                                                             missing values) to every
+                                                             prompt, not just some.
+
+  Knowledge Integration           No knowledge base          Build a library of
+  (KV base)                                                  successful analysis
+                                                             patterns from feedback
+                                                             history (query->code
+                                                             pairs that got positive
+                                                             ratings), retrieve via
+                                                             embedding similarity.
+
+  Data profiling for              User picks output type     Add automatic data
+  method selection                (CSV/IMAGE/PDF)            profiling (distribution
+                                                             detection, dimensionality
+                                                             classification) to guide
+                                                             the LLM toward
+                                                             appropriate methods.
+
+  Intent classification /         Single-step prompt         Add a lightweight
+  planning                        to code generation         planning step: classify
+                                                             user intent (EDA,
+                                                             modeling, testing,
+                                                             visualization) before
+                                                             code generation.
+
+  Evaluation framework            Feedback thumbs            Track execution success/
+                                  up/down only               failure rate, compare
+                                                             outputs against baselines,
+                                                             add retrieval metrics if
+                                                             we build a knowledge base.
+
+  Distribution-aware              No retrieval system        When building the
+  retrieval                                                  knowledge base, index
+                                                             entries by both semantic
+                                                             description AND data
+                                                             profile characteristics.
+
+  Reproducibility                 No export mechanism        Allow users to download
+                                                             the full analysis as a
+                                                             Jupyter notebook (LAMBDA
+                                                             already does this).
+
+HIGHEST-IMPACT, LOWEST-EFFORT IMPROVEMENTS:
+
+  1. Self-correction loop:
+     When execute_python_code fails, feed the error back to GPT for a fix
+     attempt (2-3 retries). This is what LAMBDA calls the "Inspector agent"
+     and it is the single biggest reliability improvement in their system.
+
+  2. Richer dataset context in prompts:
+     We already have summarize_csv_for_prompt. Ensure it is used everywhere
+     and includes column types, missing value counts, and basic statistics.
+     This is how LAMBDA's programmer agent gets its context.
+
+  3. Knowledge base from feedback:
+     We already collect feedback. Index positive-rated query->code pairs and
+     retrieve them as few-shot examples when similar queries arrive. This
+     extends our existing build_feedback_context toward LAMBDA's Knowledge
+     Integration Mechanism.
+
